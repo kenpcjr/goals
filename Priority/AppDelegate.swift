@@ -20,22 +20,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+//        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
         
         dataStore.fetchData()
         dataStore.saveContext()
         
-        if dataStore.userContainer[0].goalInProgress != nil {
-            
-            print("appDelegate sees a goal")
-            
-           let goalStatus = storyboard.instantiateViewControllerWithIdentifier("GoalStatus")
-            
-            self.window?.rootViewController = goalStatus
-            
-        }
-        
-        
+//        if dataStore.userContainer[0].goalInProgress != nil {
+//            
+//            print("appDelegate sees a goal")
+//            
+//           let goalStatus = storyboard.instantiateViewControllerWithIdentifier("GoalStatus")
+//            
+//            self.window?.rootViewController = goalStatus
+//        
+//        }
+//        
+//        
         return true
     }
 

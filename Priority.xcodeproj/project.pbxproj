@@ -22,6 +22,7 @@
 		4F99966C1D46F846009C5A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F99966A1D46F846009C5A99 /* LaunchScreen.storyboard */; };
 		4F99967A1D48D866009C5A99 /* GiveUpItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9996791D48D866009C5A99 /* GiveUpItemViewController.swift */; };
 		4FD3C9781D56652800F16915 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C9771D56652800F16915 /* Secrets.swift */; };
+		4FD3C97A1D56688C00F16915 /* InitialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */; };
 		4FED92E41D4D248300138562 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FED92E31D4D248300138562 /* WelcomeViewController.swift */; };
 		4FED92E61D4D24BD00138562 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FED92E51D4D24BD00138562 /* NewGoalViewController.swift */; };
 		4FED92E81D4D250400138562 /* giveUpItemFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FED92E71D4D250400138562 /* giveUpItemFrequencyViewController.swift */; };
@@ -50,6 +51,7 @@
 		4F99966D1D46F846009C5A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F9996791D48D866009C5A99 /* GiveUpItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveUpItemViewController.swift; sourceTree = "<group>"; };
 		4FD3C9771D56652800F16915 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialPageViewController.swift; sourceTree = "<group>"; };
 		4FED92E31D4D248300138562 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../WelcomeViewController.swift; sourceTree = "<group>"; };
 		4FED92E51D4D24BD00138562 /* NewGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
 		4FED92E71D4D250400138562 /* giveUpItemFrequencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = giveUpItemFrequencyViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		4FEFA4901D52B04B001DC071 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */,
 				4FED92E31D4D248300138562 /* WelcomeViewController.swift */,
 				4FED92E51D4D24BD00138562 /* NewGoalViewController.swift */,
 				4F9996791D48D866009C5A99 /* GiveUpItemViewController.swift */,
@@ -220,6 +223,7 @@
 				4FED92E61D4D24BD00138562 /* NewGoalViewController.swift in Sources */,
 				4F34F3441D4FBC6C00EC1D23 /* Goal+CoreDataProperties.swift in Sources */,
 				4FED92EE1D4D25A300138562 /* PurchaseSkipViewController.swift in Sources */,
+				4FD3C97A1D56688C00F16915 /* InitialPageViewController.swift in Sources */,
 				4F99967A1D48D866009C5A99 /* GiveUpItemViewController.swift in Sources */,
 				4FED92E81D4D250400138562 /* giveUpItemFrequencyViewController.swift in Sources */,
 				4FED92EC1D4D256F00138562 /* GoalStatusViewController.swift in Sources */,

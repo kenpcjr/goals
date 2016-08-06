@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15G31" minimumToolsVersion="Automatic">
+    <entity name="GiveUpItem" representedClassName=".GiveUpItem" syncable="YES">
+        <attribute name="cost" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="frequency" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="giveUpItem" inverseEntity="Goal" syncable="YES"/>
+        <relationship name="progressMonitor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProgressMonitor" inverseName="giveUpItem" inverseEntity="ProgressMonitor" syncable="YES"/>
+    </entity>
+    <entity name="Goal" representedClassName=".Goal" syncable="YES">
+        <attribute name="completed" attributeType="Boolean" syncable="YES"/>
+        <attribute name="cost" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" attributeType="Date" syncable="YES"/>
+        <relationship name="giveUpItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GiveUpItem" inverseName="goal" inverseEntity="GiveUpItem" syncable="YES"/>
+        <relationship name="progressMonitor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProgressMonitor" inverseName="goal" inverseEntity="ProgressMonitor" syncable="YES"/>
+    </entity>
+    <entity name="ProgressMonitor" representedClassName=".ProgressMonitor" syncable="YES">
+        <attribute name="mostRecentSacrifice" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="numberOfSacrifices" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="giveUpItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GiveUpItem" inverseName="progressMonitor" inverseEntity="GiveUpItem" syncable="YES"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Goal" inverseName="progressMonitor" inverseEntity="Goal" syncable="YES"/>
+        <relationship name="goalsComplete" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="goalsComplete" inverseEntity="User" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="goalInProgress" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName=".User" syncable="YES">
+        <attribute name="mostRecentSacrifice" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="goalInProgress" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProgressMonitor" inverseName="user" inverseEntity="ProgressMonitor" syncable="YES"/>
+        <relationship name="goalsComplete" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="ProgressMonitor" inverseName="goalsComplete" inverseEntity="ProgressMonitor" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="GiveUpItem" positionX="-1116" positionY="-144" width="128" height="120"/>
+        <element name="Goal" positionX="-1082" positionY="-387" width="128" height="148"/>
+        <element name="ProgressMonitor" positionX="-677" positionY="-288" width="128" height="133"/>
+        <element name="User" positionX="-506" positionY="-477" width="128" height="88"/>
+    </elements>
+</model>

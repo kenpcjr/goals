@@ -23,6 +23,8 @@
 		4F99967A1D48D866009C5A99 /* GiveUpItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9996791D48D866009C5A99 /* GiveUpItemViewController.swift */; };
 		4FD3C9781D56652800F16915 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C9771D56652800F16915 /* Secrets.swift */; };
 		4FD3C97A1D56688C00F16915 /* InitialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */; };
+		4FD3C97C1D566DCD00F16915 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C97B1D566DCD00F16915 /* SettingsTableView.swift */; };
+		4FD3C97E1D56931200F16915 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C97D1D56931200F16915 /* SettingsViewController.swift */; };
 		4FED92E41D4D248300138562 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FED92E31D4D248300138562 /* WelcomeViewController.swift */; };
 		4FED92E61D4D24BD00138562 /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FED92E51D4D24BD00138562 /* NewGoalViewController.swift */; };
 		4FED92E81D4D250400138562 /* giveUpItemFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FED92E71D4D250400138562 /* giveUpItemFrequencyViewController.swift */; };
@@ -52,6 +54,8 @@
 		4F9996791D48D866009C5A99 /* GiveUpItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveUpItemViewController.swift; sourceTree = "<group>"; };
 		4FD3C9771D56652800F16915 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialPageViewController.swift; sourceTree = "<group>"; };
+		4FD3C97B1D566DCD00F16915 /* SettingsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
+		4FD3C97D1D56931200F16915 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		4FED92E31D4D248300138562 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ../WelcomeViewController.swift; sourceTree = "<group>"; };
 		4FED92E51D4D24BD00138562 /* NewGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
 		4FED92E71D4D250400138562 /* giveUpItemFrequencyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = giveUpItemFrequencyViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				4FED92E91D4D253B00138562 /* NewGoalConfirmationViewController.swift */,
 				4FED92EB1D4D256F00138562 /* GoalStatusViewController.swift */,
 				4FED92ED1D4D25A300138562 /* PurchaseSkipViewController.swift */,
+				4FD3C97D1D56931200F16915 /* SettingsViewController.swift */,
+				4FD3C97B1D566DCD00F16915 /* SettingsTableView.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -214,11 +220,13 @@
 				4FED92EA1D4D253B00138562 /* NewGoalConfirmationViewController.swift in Sources */,
 				4F34F3481D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift in Sources */,
 				4F34F3471D4FBC6C00EC1D23 /* User.swift in Sources */,
+				4FD3C97C1D566DCD00F16915 /* SettingsTableView.swift in Sources */,
 				4F34F3421D4FBC6C00EC1D23 /* GiveUpItem+CoreDataProperties.swift in Sources */,
 				4F34F3491D4FBC6C00EC1D23 /* ProgressMonitor.swift in Sources */,
 				4F99965F1D46F846009C5A99 /* AppDelegate.swift in Sources */,
 				4F34F3451D4FBC6C00EC1D23 /* Goal.swift in Sources */,
 				4FED92F01D4D2F6300138562 /* DataStore.swift in Sources */,
+				4FD3C97E1D56931200F16915 /* SettingsViewController.swift in Sources */,
 				4F34F3461D4FBC6C00EC1D23 /* User+CoreDataProperties.swift in Sources */,
 				4FED92E61D4D24BD00138562 /* NewGoalViewController.swift in Sources */,
 				4F34F3441D4FBC6C00EC1D23 /* Goal+CoreDataProperties.swift in Sources */,

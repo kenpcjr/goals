@@ -15,7 +15,7 @@ class NewGoalConfirmationViewController: UIViewController {
     
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var goalItemLabel: UILabel!
- 
+    
     
     var progressMonitor: ProgressMonitor?
     
@@ -35,12 +35,23 @@ class NewGoalConfirmationViewController: UIViewController {
             
             print(dataStore.userContainer[0].tempGoal?.name)
             print(dataStore.userContainer[0].tempGoal?.giveUpItem?.name)
-        
+            
         }
         
         if let goalName = dataStore.userContainer[0].tempGoal?.name, giveUpItem = dataStore.userContainer[0].tempGoal?.giveUpItem?.name, frequency = self.progressMonitor?.initialDaysToGoal {
             
-            self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(frequency) days in order to get your"
+            if frequency >= 364 {
+                
+                let frequencyInWeeks = frequency / 7
+                
+                
+                self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(frequencyInWeeks) weeks in order to get your"
+                
+            } else {
+                
+                self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(frequency) days in order to get your"
+                
+            }
             
             self.goalItemLabel.text = goalName
             
@@ -54,44 +65,44 @@ class NewGoalConfirmationViewController: UIViewController {
         dataStore.saveContext()
         dataStore.fetchData()
         
-//        if dataStore.userContainer[0].goalInProgress != nil {
-//        
-//        dataStore.managedObjectContext.deleteObject(dataStore.userContainer[0].tempGoal!)
-//            
-//            dataStore.saveContext()
-//            dataStore.fetchData()
-//        
-//        }
+        //        if dataStore.userContainer[0].goalInProgress != nil {
+        //
+        //        dataStore.managedObjectContext.deleteObject(dataStore.userContainer[0].tempGoal!)
+        //
+        //            dataStore.saveContext()
+        //            dataStore.fetchData()
+        //
+        //        }
         
-//        let beforeGoalAdd = dataStore.userContainer[0].goalsInProgress.count
+        //        let beforeGoalAdd = dataStore.userContainer[0].goalsInProgress.count
         
-//        if let goalName = self.progressMonitor?.goal.name {
-//        
-//        dataStore.user.goalsInProgress[goalName] = self.progressMonitor
-//        
-//        }
+        //        if let goalName = self.progressMonitor?.goal.name {
+        //
+        //        dataStore.user.goalsInProgress[goalName] = self.progressMonitor
+        //
+        //        }
         
-//        if dataStore.user.goalsInProgress.count > beforeGoalAdd {
-//            
-//            dataStore.user.tempGoal = nil
-//            
-//        } else {
-//            
-//            print("Progress Monitor Didn't Save")
-//        }
+        //        if dataStore.user.goalsInProgress.count > beforeGoalAdd {
+        //
+        //            dataStore.user.tempGoal = nil
+        //
+        //        } else {
+        //
+        //            print("Progress Monitor Didn't Save")
+        //        }
         
-//    }
-    
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        let destVC = segue.destinationViewController as! GoalStatusViewController
-//        
-//        if let goal = dataStore.userContainer[0].goalInProgress?.goal {
-//        
-//        destVC.passedGoal = goal
-//            
-//        }
+        //    }
+        
+        //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //
+        //        let destVC = segue.destinationViewController as! GoalStatusViewController
+        //        
+        //        if let goal = dataStore.userContainer[0].goalInProgress?.goal {
+        //        
+        //        destVC.passedGoal = goal
+        //            
+        //        }
     }
-
+    
     
 }

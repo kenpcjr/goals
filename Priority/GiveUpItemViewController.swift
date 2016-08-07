@@ -16,7 +16,12 @@ class GiveUpItemViewController: UIViewController {
     @IBOutlet weak var itemTextField: UITextField!
     @IBOutlet weak var exploreButton: UIButton!
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.itemTextField.becomeFirstResponder()
+        
+    }
     
     @IBAction func exploreTapped(sender: AnyObject) {
         

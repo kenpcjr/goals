@@ -31,7 +31,5 @@ class giveUpItemFrequencyViewController: UIViewController {
         dataStore.userContainer[0].tempGoal?.giveUpItem?.cost = Double(self.giveUpCostTextField.text!)!
         dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(self.frequencyTextField.text!)!
         
-        
-        
     }
 }

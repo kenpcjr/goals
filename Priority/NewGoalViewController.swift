@@ -9,33 +9,37 @@
 import UIKit
 import CoreData
 
-class NewGoalViewController: UIViewController {
+class NewGoalViewController: UIViewController, UITextFieldDelegate {
     
     let dataStore = DataStore.sharedManager
     
     @IBOutlet weak var GoalNameTextField: UITextField!
-    @IBOutlet weak var goalCostTextField: UITextField!
+    
     @IBOutlet weak var exploreButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.exploreButton.enabled = false
+        //self.exploreButton.enabled = false
+        
+        self.GoalNameTextField.delegate = self
+        self.GoalNameTextField.becomeFirstResponder()
+        
         
     }
-
+    
     @IBAction func ExploreTapped(sender: AnyObject) {
         
-//        let newGoal = Goal()
-//        newGoal.name = self.GoalNameTextField.text!
-//        newGoal.cost = Double(self.goalCostTextField.text!)!
-//        
-//        dataStore.userContainer[0].tempGoal = newGoal
-//        
+        //        let newGoal = Goal()
+        //        newGoal.name = self.GoalNameTextField.text!
+        //        newGoal.cost = Double(self.goalCostTextField.text!)!
+        //
+        //        dataStore.userContainer[0].tempGoal = newGoal
+        //
         
         
         
-//        dataStore.userContainer[0].tempGoal = Goal.
+        //        dataStore.userContainer[0].tempGoal = Goal.
         
         let tempGoal = NSEntityDescription.insertNewObjectForEntityForName("Goal", inManagedObjectContext: dataStore.managedObjectContext) as! Goal
         dataStore.userContainer[0].tempGoal = tempGoal
@@ -43,26 +47,26 @@ class NewGoalViewController: UIViewController {
         dataStore.userContainer[0].tempGoal?.startDate = NSDate()
         
         dataStore.userContainer[0].tempGoal?.name = self.GoalNameTextField.text!
-        dataStore.userContainer[0].tempGoal?.cost = Double(self.goalCostTextField.text!)
+        //        dataStore.userContainer[0].tempGoal?.cost = Double(self.goalCostTextField.text!)
         
         print(dataStore.userContainer[0].tempGoal?.name)
         print(dataStore.userContainer[0].tempGoal?.cost)
         
     }
     
-    @IBAction func priceEditing(sender: AnyObject) {
-        
-        if validatePrice(self.goalCostTextField) {
-            
-            self.exploreButton.enabled = true
-            
-        } else {
-            
-            self.exploreButton.enabled = false
-            
-        }
-        
-    }
+    //    @IBAction func priceEditing(sender: AnyObject) {
+    //
+    //        if validatePrice(self.goalCostTextField) {
+    //
+    //            self.exploreButton.enabled = true
+    //
+    //        } else {
+    //
+    //            self.exploreButton.enabled = false
+    //
+    //        }
+    //
+    //    }
     
     func validateItemName(textField: UITextField) -> Bool {
         

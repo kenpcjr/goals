@@ -15,6 +15,7 @@
 		4F34F3471D4FBC6C00EC1D23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F33F1D4FBC6C00EC1D23 /* User.swift */; };
 		4F34F3481D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F3401D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift */; };
 		4F34F3491D4FBC6C00EC1D23 /* ProgressMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F3411D4FBC6C00EC1D23 /* ProgressMonitor.swift */; };
+		4F78BE1D1D578AFC0061CB40 /* NewGoalCost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78BE1C1D578AFC0061CB40 /* NewGoalCost.swift */; };
 		4F99965F1D46F846009C5A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F99965E1D46F846009C5A99 /* AppDelegate.swift */; };
 		4F9996641D46F846009C5A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9996621D46F846009C5A99 /* Main.storyboard */; };
 		4F9996671D46F846009C5A99 /* Priority.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F9996651D46F846009C5A99 /* Priority.xcdatamodeld */; };
@@ -43,6 +44,7 @@
 		4F34F33F1D4FBC6C00EC1D23 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4F34F3401D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressMonitor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4F34F3411D4FBC6C00EC1D23 /* ProgressMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressMonitor.swift; sourceTree = "<group>"; };
+		4F78BE1C1D578AFC0061CB40 /* NewGoalCost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalCost.swift; sourceTree = "<group>"; };
 		4F8BAE0B1D4FB96100167C91 /* Priority 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Priority 2.xcdatamodel"; sourceTree = "<group>"; };
 		4F99965B1D46F846009C5A99 /* Priority.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Priority.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F99965E1D46F846009C5A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */,
 				4FED92E31D4D248300138562 /* WelcomeViewController.swift */,
 				4FED92E51D4D24BD00138562 /* NewGoalViewController.swift */,
+				4F78BE1C1D578AFC0061CB40 /* NewGoalCost.swift */,
 				4F9996791D48D866009C5A99 /* GiveUpItemViewController.swift */,
 				4FED92E71D4D250400138562 /* giveUpItemFrequencyViewController.swift */,
 				4FED92E91D4D253B00138562 /* NewGoalConfirmationViewController.swift */,
@@ -222,6 +225,7 @@
 				4F34F3471D4FBC6C00EC1D23 /* User.swift in Sources */,
 				4FD3C97C1D566DCD00F16915 /* SettingsTableView.swift in Sources */,
 				4F34F3421D4FBC6C00EC1D23 /* GiveUpItem+CoreDataProperties.swift in Sources */,
+				4F78BE1D1D578AFC0061CB40 /* NewGoalCost.swift in Sources */,
 				4F34F3491D4FBC6C00EC1D23 /* ProgressMonitor.swift in Sources */,
 				4F99965F1D46F846009C5A99 /* AppDelegate.swift in Sources */,
 				4F34F3451D4FBC6C00EC1D23 /* Goal.swift in Sources */,

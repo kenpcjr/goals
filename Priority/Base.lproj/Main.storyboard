@@ -67,7 +67,7 @@
         <!--Give Up Item View Controller-->
         <scene sceneID="o76-ki-NW2">
             <objects>
-                <viewController id="754-0Q-ddT" customClass="GiveUpItemViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GiveUpItemName" useStoryboardIdentifierAsRestorationIdentifier="YES" id="754-0Q-ddT" customClass="GiveUpItemViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y4r-Q7-ksk"/>
                         <viewControllerLayoutGuide type="bottom" id="7mK-X0-vpe"/>
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wx9-De-M0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3701" y="472"/>
+            <point key="canvasLocation" x="4168" y="272"/>
         </scene>
         <!--New Goal View Controller-->
         <scene sceneID="YPH-73-Uga">
@@ -147,20 +147,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How Much Does It Cost?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="eTj-dr-MaJ">
-                                <rect key="frame" x="40" y="274" width="520" height="62"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.14901960780000001" green="0.64705882349999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$1,200" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="68J-1p-nNq">
-                                <rect key="frame" x="238" y="350" width="125" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                <connections>
-                                    <action selector="priceEditing:" destination="B70-tE-8hz" eventType="editingChanged" id="KwA-rg-Xnk"/>
-                                </connections>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Think of Something You Really want" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="Zso-et-uST">
                                 <rect key="frame" x="40" y="130" width="520" height="62"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -176,28 +162,90 @@
                                 <connections>
                                     <action selector="ExploreTapped:" destination="B70-tE-8hz" eventType="touchUpInside" id="yuw-IQ-9gZ"/>
                                     <action selector="exploreTapped:" destination="754-0Q-ddT" eventType="touchUpInside" id="SvR-uF-dNG"/>
-                                    <segue destination="754-0Q-ddT" kind="show" id="pbQ-e8-3df"/>
+                                    <segue destination="kQs-Es-npk" kind="show" id="Ixm-Ye-2b9"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1dx-mm-Oyx" firstAttribute="centerX" secondItem="7vp-DB-Pkp" secondAttribute="centerX" id="2za-ny-AQf"/>
-                            <constraint firstItem="68J-1p-nNq" firstAttribute="centerX" secondItem="7vp-DB-Pkp" secondAttribute="centerX" id="6JK-dB-Zev"/>
                             <constraint firstItem="Zso-et-uST" firstAttribute="centerX" secondItem="7vp-DB-Pkp" secondAttribute="centerX" id="DHp-7q-AzI"/>
-                            <constraint firstItem="eTj-dr-MaJ" firstAttribute="centerX" secondItem="7vp-DB-Pkp" secondAttribute="centerX" id="JBY-Fn-zV2"/>
                             <constraint firstItem="VMC-AQ-rJi" firstAttribute="centerX" secondItem="7vp-DB-Pkp" secondAttribute="centerX" id="wz3-NK-agb"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="GoalNameTextField" destination="VMC-AQ-rJi" id="JLl-wI-xHe"/>
                         <outlet property="exploreButton" destination="1dx-mm-Oyx" id="jvb-SL-i5C"/>
-                        <outlet property="goalCostTextField" destination="68J-1p-nNq" id="nuo-Vp-BSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vW-AB-C99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2983" y="472"/>
+        </scene>
+        <!--New Goal Cost-->
+        <scene sceneID="N7t-wR-hSv">
+            <objects>
+                <viewController id="kQs-Es-npk" customClass="NewGoalCost" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NvU-H3-VxK"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sbe-HN-69q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TYA-Ht-k2K">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How much will your goal cost?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="iLn-A1-JlA">
+                                <rect key="frame" x="40" y="186" width="520" height="62"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.14901960780000001" green="0.64705882349999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="1,200" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Y8v-5Q-tsy">
+                                <rect key="frame" x="261" y="285" width="79" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qx-db-j05">
+                                <rect key="frame" x="269" y="377" width="62" height="30"/>
+                                <state key="normal" title="Continue"/>
+                                <connections>
+                                    <action selector="continueTapped:" destination="kQs-Es-npk" eventType="touchUpInside" id="dW8-UO-RB3"/>
+                                    <segue destination="754-0Q-ddT" kind="show" id="6eq-J3-RPl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0qx-db-j05" firstAttribute="centerX" secondItem="TYA-Ht-k2K" secondAttribute="centerX" id="1Fb-3V-Z1d"/>
+                            <constraint firstItem="iLn-A1-JlA" firstAttribute="top" secondItem="NvU-H3-VxK" secondAttribute="bottom" constant="122" id="1yE-Gm-2Zi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y8v-5Q-tsy" secondAttribute="trailing" constant="240" id="3a5-yq-vQf"/>
+                            <constraint firstItem="0qx-db-j05" firstAttribute="centerX" secondItem="Y8v-5Q-tsy" secondAttribute="centerX" id="99G-5H-PTN"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="0qx-db-j05" secondAttribute="trailing" constant="249" id="Fme-HB-fq1"/>
+                            <constraint firstItem="iLn-A1-JlA" firstAttribute="centerX" secondItem="TYA-Ht-k2K" secondAttribute="centerX" id="PU8-Wm-Kf6"/>
+                            <constraint firstItem="0qx-db-j05" firstAttribute="leading" relation="lessThanOrEqual" secondItem="TYA-Ht-k2K" secondAttribute="leadingMargin" constant="249" id="XID-nK-61B"/>
+                            <constraint firstItem="Y8v-5Q-tsy" firstAttribute="leading" secondItem="TYA-Ht-k2K" secondAttribute="leadingMargin" constant="241" id="YTB-Qz-ORd"/>
+                            <constraint firstItem="iLn-A1-JlA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TYA-Ht-k2K" secondAttribute="leadingMargin" constant="20" id="Zrt-Xq-cJ5"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="iLn-A1-JlA" secondAttribute="trailing" constant="20" id="aDq-zE-c7j"/>
+                            <constraint firstItem="Y8v-5Q-tsy" firstAttribute="top" secondItem="iLn-A1-JlA" secondAttribute="bottom" constant="37" id="cJy-nf-tPM"/>
+                            <constraint firstItem="Y8v-5Q-tsy" firstAttribute="centerX" secondItem="TYA-Ht-k2K" secondAttribute="centerX" id="htm-ZW-lr3"/>
+                            <constraint firstItem="0qx-db-j05" firstAttribute="top" secondItem="Y8v-5Q-tsy" secondAttribute="bottom" constant="62" id="qJE-wa-hvU"/>
+                            <constraint firstItem="Y8v-5Q-tsy" firstAttribute="width" secondItem="TYA-Ht-k2K" secondAttribute="width" multiplier="0.25" id="sGx-kr-Hwn"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="3a5-yq-vQf"/>
+                                <exclude reference="YTB-Qz-ORd"/>
+                                <exclude reference="99G-5H-PTN"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="goalCostTextField" destination="Y8v-5Q-tsy" id="drz-Fp-R5f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="832-nd-LN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3636" y="343"/>
         </scene>
         <!--Give Up Item Frequency View Controller-->
         <scene sceneID="TM0-dr-Ako">

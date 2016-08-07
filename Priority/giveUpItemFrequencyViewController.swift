@@ -14,7 +14,7 @@ class giveUpItemFrequencyViewController: UIViewController {
 
     @IBOutlet weak var frequencyTextField: UITextField!
     @IBOutlet weak var howOftenLabel: UILabel!
-    @IBOutlet weak var giveUpCostTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class giveUpItemFrequencyViewController: UIViewController {
     
     @IBAction func continueTapped(sender: AnyObject) {
         
-        dataStore.userContainer[0].tempGoal?.giveUpItem?.cost = Double(self.giveUpCostTextField.text!)!
+        
         dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(self.frequencyTextField.text!)!
         
     }

@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wx9-De-M0u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4168" y="272"/>
+            <point key="canvasLocation" x="4212" y="472"/>
         </scene>
         <!--New Goal View Controller-->
         <scene sceneID="YPH-73-Uga">
@@ -180,7 +180,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1vW-AB-C99" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2983" y="472"/>
+            <point key="canvasLocation" x="2847" y="472"/>
         </scene>
         <!--New Goal Cost-->
         <scene sceneID="N7t-wR-hSv">
@@ -206,8 +206,11 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="next"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0qx-db-j05">
-                                <rect key="frame" x="269" y="377" width="62" height="30"/>
-                                <state key="normal" title="Continue"/>
+                                <rect key="frame" x="243" y="377" width="114" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.58059664020000001" green="0.29758170519999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="continueTapped:" destination="kQs-Es-npk" eventType="touchUpInside" id="dW8-UO-RB3"/>
                                     <segue destination="754-0Q-ddT" kind="show" id="6eq-J3-RPl"/>
@@ -220,9 +223,8 @@
                             <constraint firstItem="iLn-A1-JlA" firstAttribute="top" secondItem="NvU-H3-VxK" secondAttribute="bottom" constant="122" id="1yE-Gm-2Zi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y8v-5Q-tsy" secondAttribute="trailing" constant="240" id="3a5-yq-vQf"/>
                             <constraint firstItem="0qx-db-j05" firstAttribute="centerX" secondItem="Y8v-5Q-tsy" secondAttribute="centerX" id="99G-5H-PTN"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="0qx-db-j05" secondAttribute="trailing" constant="249" id="Fme-HB-fq1"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="0qx-db-j05" secondAttribute="trailing" constant="223" id="IE4-UH-B7h"/>
                             <constraint firstItem="iLn-A1-JlA" firstAttribute="centerX" secondItem="TYA-Ht-k2K" secondAttribute="centerX" id="PU8-Wm-Kf6"/>
-                            <constraint firstItem="0qx-db-j05" firstAttribute="leading" relation="lessThanOrEqual" secondItem="TYA-Ht-k2K" secondAttribute="leadingMargin" constant="249" id="XID-nK-61B"/>
                             <constraint firstItem="Y8v-5Q-tsy" firstAttribute="leading" secondItem="TYA-Ht-k2K" secondAttribute="leadingMargin" constant="241" id="YTB-Qz-ORd"/>
                             <constraint firstItem="iLn-A1-JlA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="TYA-Ht-k2K" secondAttribute="leadingMargin" constant="20" id="Zrt-Xq-cJ5"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="iLn-A1-JlA" secondAttribute="trailing" constant="20" id="aDq-zE-c7j"/>
@@ -230,6 +232,7 @@
                             <constraint firstItem="Y8v-5Q-tsy" firstAttribute="centerX" secondItem="TYA-Ht-k2K" secondAttribute="centerX" id="htm-ZW-lr3"/>
                             <constraint firstItem="0qx-db-j05" firstAttribute="top" secondItem="Y8v-5Q-tsy" secondAttribute="bottom" constant="62" id="qJE-wa-hvU"/>
                             <constraint firstItem="Y8v-5Q-tsy" firstAttribute="width" secondItem="TYA-Ht-k2K" secondAttribute="width" multiplier="0.25" id="sGx-kr-Hwn"/>
+                            <constraint firstItem="0qx-db-j05" firstAttribute="leading" relation="lessThanOrEqual" secondItem="TYA-Ht-k2K" secondAttribute="leadingMargin" constant="223" id="yvC-7e-vxG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -245,7 +248,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="832-nd-LN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3636" y="343"/>
+            <point key="canvasLocation" x="3536" y="472"/>
         </scene>
         <!--Give Up Item Frequency View Controller-->
         <scene sceneID="TM0-dr-Ako">
@@ -270,19 +273,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="How much do you pay each time?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="dkD-x5-6J5">
-                                <rect key="frame" x="40" y="299" width="520" height="62"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <color key="textColor" red="0.14901960780000001" green="0.64705882349999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="v9k-zn-7wn">
-                                <rect key="frame" x="185" y="392" width="230" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-nR-hEO">
-                                <rect key="frame" x="251" y="451" width="99" height="30"/>
+                                <rect key="frame" x="251" y="321" width="99" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                 <state key="normal" title="Continue">
                                     <color key="titleColor" red="0.58059664020000001" green="0.29758170519999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -290,31 +282,88 @@
                                 <connections>
                                     <action selector="continueTapped:" destination="mzV-En-c4o" eventType="touchUpInside" id="Q2a-md-8kq"/>
                                     <action selector="exploreTapped:" destination="754-0Q-ddT" eventType="touchUpInside" id="cmJ-L1-g9n"/>
-                                    <segue destination="hle-8M-bXQ" kind="show" id="opw-tE-86G"/>
+                                    <segue destination="GxY-XK-GzW" kind="show" id="ptT-Ec-z0d"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="v9k-zn-7wn" firstAttribute="centerX" secondItem="KXm-jz-gfT" secondAttribute="centerX" id="8Lf-Fp-e5A"/>
-                            <constraint firstItem="v9k-zn-7wn" firstAttribute="top" secondItem="dkD-x5-6J5" secondAttribute="bottom" constant="31" id="96v-g8-YkM"/>
-                            <constraint firstItem="dkD-x5-6J5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="KXm-jz-gfT" secondAttribute="leadingMargin" constant="20" id="Txb-e2-QlY"/>
+                            <constraint firstItem="y6V-nR-hEO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="KXm-jz-gfT" secondAttribute="leadingMargin" constant="231" id="GAQ-Zo-SMX"/>
                             <constraint firstItem="frz-Qf-tsm" firstAttribute="centerX" secondItem="KXm-jz-gfT" secondAttribute="centerX" id="Zpc-5j-oH0"/>
                             <constraint firstItem="y6V-nR-hEO" firstAttribute="centerX" secondItem="KXm-jz-gfT" secondAttribute="centerX" id="hPZ-UE-ZDN"/>
                             <constraint firstItem="ntH-ST-euD" firstAttribute="centerX" secondItem="KXm-jz-gfT" secondAttribute="centerX" id="lq7-13-zOt"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="y6V-nR-hEO" secondAttribute="trailing" constant="230" id="zDt-7u-JUV"/>
                             <constraint firstItem="frz-Qf-tsm" firstAttribute="top" secondItem="ntH-ST-euD" secondAttribute="bottom" constant="31" id="za1-7q-OLD"/>
-                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="dkD-x5-6J5" secondAttribute="trailing" constant="20" id="zq8-tD-pWZ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="frequencyTextField" destination="frz-Qf-tsm" id="IVk-fN-UWf"/>
-                        <outlet property="giveUpCostTextField" destination="v9k-zn-7wn" id="fhl-fX-Cfg"/>
                         <outlet property="howOftenLabel" destination="ntH-ST-euD" id="4gV-x9-zVj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fth-be-wDS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4420" y="472"/>
+            <point key="canvasLocation" x="4928" y="472"/>
+        </scene>
+        <!--Give Up Item Cost View Controller-->
+        <scene sceneID="dnC-56-05e">
+            <objects>
+                <viewController id="GxY-XK-GzW" customClass="GiveUpItemCostViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5ba-hy-thG"/>
+                        <viewControllerLayoutGuide type="bottom" id="6dg-xo-4ol"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kaN-gQ-F0g">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7n-z5-a5f">
+                                <rect key="frame" x="251" y="355" width="99" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.58059664020000001" green="0.29758170519999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueTapped:" destination="GxY-XK-GzW" eventType="touchUpInside" id="9dl-7U-enA"/>
+                                    <action selector="continueTapped:" destination="mzV-En-c4o" eventType="touchUpInside" id="ml8-Nn-QV0"/>
+                                    <action selector="exploreTapped:" destination="754-0Q-ddT" eventType="touchUpInside" id="Qh2-rN-RsP"/>
+                                    <segue destination="hle-8M-bXQ" kind="show" id="rmR-rF-MuM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="How much do you pay each time?" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="r3V-2r-b2h">
+                                <rect key="frame" x="40" y="148" width="520" height="62"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" red="0.14901960780000001" green="0.64705882349999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CAH-So-BXT">
+                                <rect key="frame" x="185" y="241" width="230" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q7n-z5-a5f" firstAttribute="leading" relation="lessThanOrEqual" secondItem="kaN-gQ-F0g" secondAttribute="leadingMargin" constant="231" id="1mn-hq-0j8"/>
+                            <constraint firstItem="CAH-So-BXT" firstAttribute="top" secondItem="r3V-2r-b2h" secondAttribute="bottom" constant="31" id="8xG-lW-3ea"/>
+                            <constraint firstItem="r3V-2r-b2h" firstAttribute="leading" relation="lessThanOrEqual" secondItem="kaN-gQ-F0g" secondAttribute="leadingMargin" constant="20" id="ATl-Q0-qOV"/>
+                            <constraint firstItem="r3V-2r-b2h" firstAttribute="centerX" secondItem="kaN-gQ-F0g" secondAttribute="centerX" id="Ejb-dj-cSp"/>
+                            <constraint firstItem="r3V-2r-b2h" firstAttribute="top" secondItem="5ba-hy-thG" secondAttribute="bottom" constant="84" id="I1n-kS-fhs"/>
+                            <constraint firstItem="CAH-So-BXT" firstAttribute="width" secondItem="kaN-gQ-F0g" secondAttribute="width" multiplier="0.3" id="Mf6-Ti-qTK"/>
+                            <constraint firstItem="q7n-z5-a5f" firstAttribute="centerX" secondItem="kaN-gQ-F0g" secondAttribute="centerX" id="bBy-dA-w4K"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="r3V-2r-b2h" secondAttribute="trailing" constant="20" id="e25-Wz-kUk"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="q7n-z5-a5f" secondAttribute="trailing" constant="230" id="rKH-BF-YpR"/>
+                            <constraint firstItem="q7n-z5-a5f" firstAttribute="top" secondItem="CAH-So-BXT" secondAttribute="bottom" constant="84" id="sX7-fv-GH8"/>
+                            <constraint firstItem="CAH-So-BXT" firstAttribute="centerX" secondItem="kaN-gQ-F0g" secondAttribute="centerX" id="wuV-qH-WUH"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="giveUpCostTextField" destination="CAH-So-BXT" id="uxG-0X-k2N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="esG-08-Mr8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5592" y="472"/>
         </scene>
         <!--New Goal Confirmation View Controller-->
         <scene sceneID="16H-5s-bB8">
@@ -375,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1jU-X0-r4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5213" y="472"/>
+            <point key="canvasLocation" x="6221" y="472"/>
         </scene>
         <!--Goal Status View Controller-->
         <scene sceneID="ACn-a3-aVP">

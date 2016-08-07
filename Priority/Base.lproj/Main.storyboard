@@ -268,11 +268,6 @@
                                 <color key="textColor" red="0.14901960780000001" green="0.64705882349999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="frz-Qf-tsm">
-                                <rect key="frame" x="185" y="237" width="230" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6V-nR-hEO">
                                 <rect key="frame" x="251" y="321" width="99" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
@@ -285,19 +280,24 @@
                                     <segue destination="GxY-XK-GzW" kind="show" id="ptT-Ec-z0d"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GfD-7C-u0z">
+                                <rect key="frame" x="0.0" y="384" width="600" height="216"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="y6V-nR-hEO" firstAttribute="leading" relation="lessThanOrEqual" secondItem="KXm-jz-gfT" secondAttribute="leadingMargin" constant="231" id="GAQ-Zo-SMX"/>
-                            <constraint firstItem="frz-Qf-tsm" firstAttribute="centerX" secondItem="KXm-jz-gfT" secondAttribute="centerX" id="Zpc-5j-oH0"/>
+                            <constraint firstItem="yyQ-2Y-NO5" firstAttribute="top" secondItem="GfD-7C-u0z" secondAttribute="bottom" id="NcL-9g-PeL"/>
+                            <constraint firstItem="GfD-7C-u0z" firstAttribute="centerX" secondItem="KXm-jz-gfT" secondAttribute="centerX" id="QsB-oS-wPQ"/>
+                            <constraint firstItem="GfD-7C-u0z" firstAttribute="width" secondItem="KXm-jz-gfT" secondAttribute="width" id="TTY-Wu-9ZK"/>
+                            <constraint firstItem="GfD-7C-u0z" firstAttribute="height" secondItem="KXm-jz-gfT" secondAttribute="height" multiplier="0.4" id="cBl-5g-uku"/>
                             <constraint firstItem="y6V-nR-hEO" firstAttribute="centerX" secondItem="KXm-jz-gfT" secondAttribute="centerX" id="hPZ-UE-ZDN"/>
                             <constraint firstItem="ntH-ST-euD" firstAttribute="centerX" secondItem="KXm-jz-gfT" secondAttribute="centerX" id="lq7-13-zOt"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="y6V-nR-hEO" secondAttribute="trailing" constant="230" id="zDt-7u-JUV"/>
-                            <constraint firstItem="frz-Qf-tsm" firstAttribute="top" secondItem="ntH-ST-euD" secondAttribute="bottom" constant="31" id="za1-7q-OLD"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="frequencyTextField" destination="frz-Qf-tsm" id="IVk-fN-UWf"/>
+                        <outlet property="frequencyPicker" destination="GfD-7C-u0z" id="4Zg-9k-q2l"/>
                         <outlet property="howOftenLabel" destination="ntH-ST-euD" id="4gV-x9-zVj"/>
                     </connections>
                 </viewController>

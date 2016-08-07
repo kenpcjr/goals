@@ -8,16 +8,22 @@
 
 import UIKit
 
-class giveUpItemFrequencyViewController: UIViewController {
+class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     let dataStore = DataStore.sharedManager
-
-    @IBOutlet weak var frequencyTextField: UITextField!
+    
+    let pickerNumbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9","10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"]
+    let pickerFrequencies = ["Per Day", "Per Week"]
+    
+    @IBOutlet weak var frequencyPicker: UIPickerView!
     @IBOutlet weak var howOftenLabel: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.frequencyPicker.delegate = self
+        self.frequencyPicker.dataSource = self
         
         if let text = dataStore.userContainer[0].tempGoal?.giveUpItem?.name {
         
@@ -26,10 +32,71 @@ class giveUpItemFrequencyViewController: UIViewController {
         }
     }
     
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+       
+        return 2
+        
+    }
+    
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        if component == 0 {
+            
+            return self.pickerNumbers.count
+        }
+        
+        if component == 1 {
+            
+            return self.pickerFrequencies.count
+            
+        }
+        
+        return 0
+        
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+        if component == 0 {
+            
+            return self.pickerNumbers[row]
+            
+        }
+        
+        if component == 1 {
+            
+            return self.pickerFrequencies[row]
+            
+        }
+        
+        return ""
+    }
+    
+    
+    
+    
+    
+    
+    
     @IBAction func continueTapped(sender: AnyObject) {
         
         
-        dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(self.frequencyTextField.text!)!
+        let frequencyNumber = self.pickerNumbers[self.frequencyPicker.selectedRowInComponent(0)]
+        
+        if self.frequencyPicker.selectedRowInComponent(1) == 1 {
+            
+            dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(frequencyNumber)! / 7
+            
+        } else {
+        
+        dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(frequencyNumber)
+            
+        }
+        
+        
+        print("The number being saved is \(dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency)")
         
     }
 }

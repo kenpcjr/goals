@@ -15,6 +15,7 @@ class InitialPageViewController: UIPageViewController, UIPageViewControllerDeleg
     var settings = UIViewController()
     var goalStatus = UIViewController()
     var pageTracker = 0
+    var lastViewController: UIViewController?
     
     
     override func viewDidLoad() {
@@ -84,17 +85,27 @@ class InitialPageViewController: UIPageViewController, UIPageViewControllerDeleg
 //            return views[Int(current!) - 1]
 //        }
         
+//        
+//        if self.pageTracker == 0 {
+//            
+//            return self.settings
+//            
+//        } else {
+//            
+//            return nil
+//            
+//        }
         
-        if self.pageTracker == 0 {
-            
-            return self.settings
-            
-        } else {
+        if self.lastViewController == self.goalStatus {
             
             return nil
             
+        } else if self.lastViewController == self.settings || self.lastViewController == nil {
+            
+            return self.settings
         }
         
+        return nil
     }
     
     
@@ -121,29 +132,49 @@ class InitialPageViewController: UIPageViewController, UIPageViewControllerDeleg
 //            return nil
 //        }
 
+//        
+//        if self.pageTracker == 1 {
+//            
+//            return self.goalStatus
+//            
+//        } else {
+//            
+//            return nil
+//        }
         
-        if self.pageTracker == 1 {
+        if self.lastViewController == self.goalStatus {
             
             return self.goalStatus
             
-        } else {
+        } else if self.lastViewController == self.settings {
             
             return nil
+            
         }
         
+        return nil
         
     }
     
     func pageViewController(pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         
-        if self.pageTracker == 0 {
+//        if self.pageTracker == 0 && completed == true && finished == true {
+//            
+//            self.pageTracker = 1
+//            
+//        } else if self.pageTracker == 1 && completed == true && finished == true {
+//            
+//            self.pageTracker = 0
+//        }
+        
+        if let last = previousViewControllers.last {
+        
+        self.lastViewController = last
             
-            self.pageTracker = 1
-            
-        } else {
-            
-            self.pageTracker = 0
         }
+        
+        print(previousViewControllers.last)
+        print(pageTracker)
     }
     
     

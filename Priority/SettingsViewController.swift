@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = ["Cancel Current Goal", "Goal History", "About Priority"]
+    let settings = ["Share Goal Status", "Current Goal Details", "Modify Current Goal", "Create New Goal", "User Stats", "Notifications", "About Priority"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,47 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         cell.textLabel?.text = settings[indexPath.row]
         
         return cell
+        
+    }
+    
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cellTapped = self.settings[indexPath.row]
+        
+        print(cellTapped)
+        
+        switch cellTapped {
+        case "Modify Current Goal":
+            
+            self.performSegueWithIdentifier("adjustGoal", sender: nil)
+            print("Adjust")
+            
+            case "User Stats":
+                
+                print("Stats")
+            
+            self.performSegueWithIdentifier("userStats", sender: nil)
+            
+            
+            
+            case "Create New Goal":
+            
+            self.performSegueWithIdentifier("newGoal", sender: nil)
+            
+            print("New Goal")
+            
+        default:
+            
+            print("No match")
+            
+        }
+        
+    }
+    
+    @IBAction func doneTapped(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
         
     }
 }

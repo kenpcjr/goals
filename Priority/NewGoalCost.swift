@@ -20,7 +20,7 @@ class NewGoalCost: UIViewController, UITextFieldDelegate {
         
         self.goalCostTextField.delegate = self
         
-        self.goalCostTextField.becomeFirstResponder()
+//        self.goalCostTextField.becomeFirstResponder()
     
     }
     

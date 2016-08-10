@@ -23,7 +23,7 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
         //self.exploreButton.enabled = false
         
         self.GoalNameTextField.delegate = self
-        self.GoalNameTextField.becomeFirstResponder()
+//        self.GoalNameTextField.becomeFirstResponder()
         
         
     }
@@ -41,12 +41,39 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
         
         //        dataStore.userContainer[0].tempGoal = Goal.
         
+        var goalNameProper = self.GoalNameTextField.text
+        
+        if self.GoalNameTextField.text?.hasPrefix("a ") == true {
+            
+            var goalName = self.GoalNameTextField.text?.stringByReplacingOccurrencesOfString("a ", withString: "")
+            
+            goalNameProper = goalName
+            
+        }
+        
+        if self.GoalNameTextField.text?.hasPrefix("A ") == true {
+            
+            var goalName = self.GoalNameTextField.text?.stringByReplacingOccurrencesOfString("A ", withString: "")
+            
+            goalNameProper = goalName
+            
+        }
+        
+        if self.GoalNameTextField.text?.hasSuffix(" ") == true {
+            
+            //removing spaces at the end of text
+            
+//            let newName = goalNameProper?.characters.removeLast()
+//            
+        }
+        
+        
         let tempGoal = NSEntityDescription.insertNewObjectForEntityForName("Goal", inManagedObjectContext: dataStore.managedObjectContext) as! Goal
         dataStore.userContainer[0].tempGoal = tempGoal
         dataStore.userContainer[0].tempGoal?.completed = 0
         dataStore.userContainer[0].tempGoal?.startDate = NSDate()
         
-        dataStore.userContainer[0].tempGoal?.name = self.GoalNameTextField.text!
+        dataStore.userContainer[0].tempGoal?.name = goalNameProper!
         //        dataStore.userContainer[0].tempGoal?.cost = Double(self.goalCostTextField.text!)
         
         print(dataStore.userContainer[0].tempGoal?.name)
@@ -100,4 +127,6 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
         return false
         
     }
+    
+    
 }

@@ -38,18 +38,18 @@ class NewGoalConfirmationViewController: UIViewController {
             
         }
         
-        if let goalName = dataStore.userContainer[0].tempGoal?.name, giveUpItem = dataStore.userContainer[0].tempGoal?.giveUpItem?.name, frequency = self.progressMonitor?.initialDaysToGoal {
+        if let goalName = dataStore.userContainer[0].tempGoal?.name, giveUpItem = dataStore.userContainer[0].tempGoal?.giveUpItem?.name, daysToGoal = self.progressMonitor?.initialDaysToGoal {
             
-            if frequency >= 364 {
+            if daysToGoal >= 364 {
                 
-                let frequencyInWeeks = frequency / 7
+                let frequencyInWeeks = Int(daysToGoal / 7.0)
                 
                 
                 self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(frequencyInWeeks) weeks in order to get your"
                 
             } else {
                 
-                self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(frequency) days in order to get your"
+                self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(Int(daysToGoal)) days in order to get your"
                 
             }
             

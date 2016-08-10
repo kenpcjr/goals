@@ -15,6 +15,15 @@ class GiveUpItemCostViewController: UIViewController {
     @IBOutlet weak var giveUpCostTextField: UITextField!
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        self.giveUpCostTextField.becomeFirstResponder()
+        
+    }
+    
+    
+    
     @IBAction func continueTapped(sender: AnyObject) {
     
     dataStore.userContainer[0].tempGoal?.giveUpItem?.cost = Double(self.giveUpCostTextField.text!)!

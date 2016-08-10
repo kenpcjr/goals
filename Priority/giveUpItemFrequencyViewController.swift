@@ -26,15 +26,15 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
         self.frequencyPicker.dataSource = self
         
         if let text = dataStore.userContainer[0].tempGoal?.giveUpItem?.name {
-        
-        self.howOftenLabel.text = "How often do you buy \(text)?"
+            
+            self.howOftenLabel.text = "How often do you buy \(text)?"
             
         }
     }
     
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-       
+        
         return 2
         
     }
@@ -87,11 +87,17 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
         
         if self.frequencyPicker.selectedRowInComponent(1) == 1 {
             
-            dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(frequencyNumber)! / 7
+            print("before division \(frequencyNumber)")
+            
+            let frequencyDecimalAsALargeNumber = (Double(frequencyNumber)! / 7.0) * 10000
+            
+            dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = frequencyDecimalAsALargeNumber
+            
+            print("manual division: \(frequencyDecimalAsALargeNumber)")
             
         } else {
-        
-        dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(frequencyNumber)
+            
+            dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(frequencyNumber)
             
         }
         

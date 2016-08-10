@@ -15,8 +15,11 @@
 		4F34F3471D4FBC6C00EC1D23 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F33F1D4FBC6C00EC1D23 /* User.swift */; };
 		4F34F3481D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F3401D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift */; };
 		4F34F3491D4FBC6C00EC1D23 /* ProgressMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F3411D4FBC6C00EC1D23 /* ProgressMonitor.swift */; };
+		4F6B89BB1D5A94800051BA1C /* UpdateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B89BA1D5A94800051BA1C /* UpdateGoalViewController.swift */; };
 		4F78BE1D1D578AFC0061CB40 /* NewGoalCost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78BE1C1D578AFC0061CB40 /* NewGoalCost.swift */; };
 		4F78BE1F1D5797E90061CB40 /* GiveUpItemCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78BE1E1D5797E90061CB40 /* GiveUpItemCostViewController.swift */; };
+		4F78BE211D57F5410061CB40 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78BE201D57F5410061CB40 /* MainNavigationController.swift */; };
+		4F78BE251D58029A0061CB40 /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78BE241D58029A0061CB40 /* MainTabController.swift */; };
 		4F99965F1D46F846009C5A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F99965E1D46F846009C5A99 /* AppDelegate.swift */; };
 		4F9996641D46F846009C5A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9996621D46F846009C5A99 /* Main.storyboard */; };
 		4F9996671D46F846009C5A99 /* Priority.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F9996651D46F846009C5A99 /* Priority.xcdatamodeld */; };
@@ -45,8 +48,11 @@
 		4F34F33F1D4FBC6C00EC1D23 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		4F34F3401D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressMonitor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4F34F3411D4FBC6C00EC1D23 /* ProgressMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressMonitor.swift; sourceTree = "<group>"; };
+		4F6B89BA1D5A94800051BA1C /* UpdateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateGoalViewController.swift; sourceTree = "<group>"; };
 		4F78BE1C1D578AFC0061CB40 /* NewGoalCost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalCost.swift; sourceTree = "<group>"; };
 		4F78BE1E1D5797E90061CB40 /* GiveUpItemCostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveUpItemCostViewController.swift; sourceTree = "<group>"; };
+		4F78BE201D57F5410061CB40 /* MainNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		4F78BE241D58029A0061CB40 /* MainTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		4F8BAE0B1D4FB96100167C91 /* Priority 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Priority 2.xcdatamodel"; sourceTree = "<group>"; };
 		4F99965B1D46F846009C5A99 /* Priority.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Priority.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F99965E1D46F846009C5A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +86,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F6B89B91D5A94560051BA1C /* UnusedViews */ = {
+			isa = PBXGroup;
+			children = (
+				4FD3C97B1D566DCD00F16915 /* SettingsTableView.swift */,
+				4F78BE201D57F5410061CB40 /* MainNavigationController.swift */,
+				4F78BE241D58029A0061CB40 /* MainTabController.swift */,
+				4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */,
+			);
+			name = UnusedViews;
+			sourceTree = "<group>";
+		};
 		4F9996521D46F846009C5A99 = {
 			isa = PBXGroup;
 			children = (
@@ -116,7 +133,6 @@
 		4FEFA4901D52B04B001DC071 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */,
 				4FED92E31D4D248300138562 /* WelcomeViewController.swift */,
 				4FED92E51D4D24BD00138562 /* NewGoalViewController.swift */,
 				4F78BE1C1D578AFC0061CB40 /* NewGoalCost.swift */,
@@ -127,7 +143,8 @@
 				4FED92EB1D4D256F00138562 /* GoalStatusViewController.swift */,
 				4FED92ED1D4D25A300138562 /* PurchaseSkipViewController.swift */,
 				4FD3C97D1D56931200F16915 /* SettingsViewController.swift */,
-				4FD3C97B1D566DCD00F16915 /* SettingsTableView.swift */,
+				4F6B89BA1D5A94800051BA1C /* UpdateGoalViewController.swift */,
+				4F6B89B91D5A94560051BA1C /* UnusedViews */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -225,6 +242,7 @@
 				4F34F3431D4FBC6C00EC1D23 /* GiveUpItem.swift in Sources */,
 				4FED92EA1D4D253B00138562 /* NewGoalConfirmationViewController.swift in Sources */,
 				4F34F3481D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift in Sources */,
+				4F78BE251D58029A0061CB40 /* MainTabController.swift in Sources */,
 				4F34F3471D4FBC6C00EC1D23 /* User.swift in Sources */,
 				4FD3C97C1D566DCD00F16915 /* SettingsTableView.swift in Sources */,
 				4F34F3421D4FBC6C00EC1D23 /* GiveUpItem+CoreDataProperties.swift in Sources */,
@@ -232,6 +250,7 @@
 				4F34F3491D4FBC6C00EC1D23 /* ProgressMonitor.swift in Sources */,
 				4F99965F1D46F846009C5A99 /* AppDelegate.swift in Sources */,
 				4F78BE1F1D5797E90061CB40 /* GiveUpItemCostViewController.swift in Sources */,
+				4F6B89BB1D5A94800051BA1C /* UpdateGoalViewController.swift in Sources */,
 				4F34F3451D4FBC6C00EC1D23 /* Goal.swift in Sources */,
 				4FED92F01D4D2F6300138562 /* DataStore.swift in Sources */,
 				4FD3C97E1D56931200F16915 /* SettingsViewController.swift in Sources */,
@@ -239,6 +258,7 @@
 				4FED92E61D4D24BD00138562 /* NewGoalViewController.swift in Sources */,
 				4F34F3441D4FBC6C00EC1D23 /* Goal+CoreDataProperties.swift in Sources */,
 				4FED92EE1D4D25A300138562 /* PurchaseSkipViewController.swift in Sources */,
+				4F78BE211D57F5410061CB40 /* MainNavigationController.swift in Sources */,
 				4FD3C97A1D56688C00F16915 /* InitialPageViewController.swift in Sources */,
 				4F99967A1D48D866009C5A99 /* GiveUpItemViewController.swift in Sources */,
 				4FED92E81D4D250400138562 /* giveUpItemFrequencyViewController.swift in Sources */,

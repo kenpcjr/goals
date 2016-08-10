@@ -19,17 +19,36 @@ class GiveUpItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.itemTextField.becomeFirstResponder()
+//        self.itemTextField.becomeFirstResponder()
         
     }
     
     @IBAction func exploreTapped(sender: AnyObject) {
         
+        
+        var giveUpNameProper = self.itemTextField.text
+        
+        if self.itemTextField.text?.hasPrefix("a ") == true {
+            
+            let giveUpName = self.itemTextField.text?.stringByReplacingOccurrencesOfString("a ", withString: "")
+            
+            giveUpNameProper = giveUpName
+            
+        }
+        
+        if self.itemTextField.text?.hasPrefix("A ") == true {
+            
+            let giveUpName = self.itemTextField.text?.stringByReplacingOccurrencesOfString("A ", withString: "")
+            
+            giveUpNameProper = giveUpName
+            
+        }
+        
         let newGiveUpItem = NSEntityDescription.insertNewObjectForEntityForName("GiveUpItem", inManagedObjectContext: dataStore.managedObjectContext) as! GiveUpItem
         
         dataStore.userContainer[0].tempGoal?.giveUpItem = newGiveUpItem
         
-        dataStore.userContainer[0].tempGoal?.giveUpItem?.name = self.itemTextField.text!
+        dataStore.userContainer[0].tempGoal?.giveUpItem?.name = giveUpNameProper!
         
     }
     

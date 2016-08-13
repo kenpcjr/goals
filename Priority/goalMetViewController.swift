@@ -19,6 +19,7 @@ class goalMetViewController: UIViewController {
         
         let confettiView = SAConfettiView(frame: self.view.bounds)
         self.view.addSubview(confettiView)
+        self.view.sendSubviewToBack(confettiView)
         
         confettiView.colors = [UIColor.blackColor(), UIColor.grayColor(), UIColor.darkGrayColor()]
         
@@ -43,6 +44,23 @@ class goalMetViewController: UIViewController {
         
     }
     
+    @IBAction func shareTapped(sender: AnyObject) {
+        
+        if let goal = dataStore.userContainer[0].goalInProgress?.goal?.name, sacrifice = dataStore.userContainer[0].goalInProgress?.giveUpItem?.name {
+        
+        
+      let shareText = "I just hit my goal with #PriorityApp! I'm getting a \(goal) by skipping \(sacrifice)."
+            
+            let activityVC = UIActivityViewController.init(activityItems: [shareText], applicationActivities: nil)
+            
+            activityVC.excludedActivityTypes = [UIActivityTypePostToVimeo, UIActivityTypeAirDrop, UIActivityTypePrint, UIActivityTypeOpenInIBooks, UIActivityTypePostToFlickr, UIActivityTypeAddToReadingList, UIActivityTypeSaveToCameraRoll]
+            
+            self.presentViewController(activityVC, animated: true, completion: nil)
+            
+        }
+        
+    }
+
     
     
 }

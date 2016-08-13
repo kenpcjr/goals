@@ -666,7 +666,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissTapped:" destination="Tlu-qk-kaF" eventType="touchUpInside" id="f3J-mk-ppQ"/>
+                                    <action selector="shareTapped:" destination="Tlu-qk-kaF" eventType="touchUpInside" id="3nT-5B-3cO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDe-IB-gfq">

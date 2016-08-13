@@ -6,6 +6,15 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+            <string>Raleway-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -632,27 +641,81 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mountains" translatesAutoresizingMaskIntoConstraints="NO" id="JQq-nC-Na5">
+                                <rect key="frame" x="0.0" y="426" width="600" height="174"/>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Goal Met!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="BAm-pt-VGK">
-                                <rect key="frame" x="126" y="204" width="352" height="95"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="54"/>
-                                <color key="textColor" red="0.1922376076" green="0.81960784310000001" blue="0.25933305490000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="124" y="119" width="352" height="95"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="54"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McP-wk-mCp">
-                                <rect key="frame" x="278" y="426" width="45" height="30"/>
-                                <state key="normal" title="Uh, ok"/>
+                                <rect key="frame" x="20" y="24" width="94" height="30"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                                <state key="normal" title="New Goal">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="dismissTapped:" destination="Tlu-qk-kaF" eventType="touchUpInside" id="r9B-Vo-mVa"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lt-ul-9N5">
+                                <rect key="frame" x="486" y="24" width="94" height="30"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="15"/>
+                                <state key="normal" title="Share">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissTapped:" destination="Tlu-qk-kaF" eventType="touchUpInside" id="f3J-mk-ppQ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDe-IB-gfq">
+                                <rect key="frame" x="266" y="28" width="69" height="21"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You did it! You've reached your goal. Why not shout about it? Or, keep up the momentum by setting a new goal." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfZ-84-waI">
+                                <rect key="frame" x="-220" y="235" width="1041" height="168"/>
+                                <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="8lt-ul-9N5" secondAttribute="trailing" id="3GG-fv-eYL"/>
+                            <constraint firstItem="McP-wk-mCp" firstAttribute="top" secondItem="6TR-ej-F59" secondAttribute="bottom" constant="4" id="83C-im-Kxd"/>
+                            <constraint firstItem="VDe-IB-gfq" firstAttribute="centerX" secondItem="9Rf-H2-6RT" secondAttribute="centerX" id="AXl-1W-H2v"/>
+                            <constraint firstItem="VDe-IB-gfq" firstAttribute="top" secondItem="6TR-ej-F59" secondAttribute="bottom" constant="8" id="H8l-tt-RMj"/>
+                            <constraint firstItem="JQq-nC-Na5" firstAttribute="centerX" secondItem="9Rf-H2-6RT" secondAttribute="centerX" id="Hg3-JQ-O39"/>
                             <constraint firstItem="McP-wk-mCp" firstAttribute="centerX" secondItem="9Rf-H2-6RT" secondAttribute="centerX" id="Jb1-yw-BJQ"/>
-                            <constraint firstItem="BAm-pt-VGK" firstAttribute="centerY" secondItem="9Rf-H2-6RT" secondAttribute="centerY" id="TgO-eE-vHr"/>
+                            <constraint firstItem="zfZ-84-waI" firstAttribute="centerY" secondItem="9Rf-H2-6RT" secondAttribute="centerY" constant="19" id="OYy-Ku-Ojy"/>
+                            <constraint firstItem="JQq-nC-Na5" firstAttribute="height" secondItem="9Rf-H2-6RT" secondAttribute="height" multiplier="0.66" constant="-222" id="Ofb-8I-XU3"/>
+                            <constraint firstItem="BAm-pt-VGK" firstAttribute="centerY" secondItem="9Rf-H2-6RT" secondAttribute="centerY" multiplier="0.5" constant="16.5" id="TgO-eE-vHr"/>
+                            <constraint firstItem="McP-wk-mCp" firstAttribute="top" secondItem="6TR-ej-F59" secondAttribute="bottom" id="WjR-Eg-gl7"/>
                             <constraint firstItem="McP-wk-mCp" firstAttribute="top" secondItem="BAm-pt-VGK" secondAttribute="bottom" constant="127" id="ffs-38-2gQ"/>
+                            <constraint firstItem="zfZ-84-waI" firstAttribute="centerX" secondItem="9Rf-H2-6RT" secondAttribute="centerX" id="j9O-8K-Syl"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="McP-wk-mCp" secondAttribute="leading" id="jfy-Ym-66T"/>
+                            <constraint firstItem="8lt-ul-9N5" firstAttribute="top" secondItem="6TR-ej-F59" secondAttribute="bottom" constant="8" id="lxH-oy-Ze5"/>
+                            <constraint firstItem="zfZ-84-waI" firstAttribute="leading" secondItem="9Rf-H2-6RT" secondAttribute="leadingMargin" constant="-324" id="mzG-jX-zGC"/>
                             <constraint firstItem="BAm-pt-VGK" firstAttribute="centerX" secondItem="9Rf-H2-6RT" secondAttribute="centerX" id="n14-0J-e3B"/>
+                            <constraint firstItem="8lt-ul-9N5" firstAttribute="top" secondItem="6TR-ej-F59" secondAttribute="bottom" constant="4" id="quZ-Yu-MPg"/>
+                            <constraint firstItem="zfZ-84-waI" firstAttribute="width" secondItem="9Rf-H2-6RT" secondAttribute="width" multiplier="0.8" id="wYT-mo-MLk"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zfZ-84-waI" secondAttribute="trailing" constant="-325" id="wfW-Tc-JaK"/>
+                            <constraint firstItem="JQq-nC-Na5" firstAttribute="width" secondItem="9Rf-H2-6RT" secondAttribute="width" id="x4O-ay-Zdn"/>
+                            <constraint firstItem="XLG-aM-LAd" firstAttribute="top" secondItem="JQq-nC-Na5" secondAttribute="bottom" id="yZP-sj-y8b"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jb1-yw-BJQ"/>
+                                <exclude reference="WjR-Eg-gl7"/>
+                                <exclude reference="ffs-38-2gQ"/>
+                                <exclude reference="mzG-jX-zGC"/>
+                                <exclude reference="wfW-Tc-JaK"/>
+                                <exclude reference="lxH-oy-Ze5"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F8-oG-9xS" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -907,6 +970,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="mountains" width="5472" height="3600"/>
         <image name="square-cross" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SAConfettiView
 
 class goalMetViewController: UIViewController {
     
@@ -15,6 +16,16 @@ class goalMetViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let confettiView = SAConfettiView(frame: self.view.bounds)
+        self.view.addSubview(confettiView)
+        
+        confettiView.colors = [UIColor.blackColor(), UIColor.grayColor(), UIColor.darkGrayColor()]
+        
+        
+        confettiView.startConfetti()
+        
+        
         
 //Array(arrayLiteral: dataStore.userContainer[0].goalsComplete).append(dataStore.userContainer[0].goalInProgress)
         //dataStore.userContainer[0].goalInProgress

@@ -1,12 +1,15 @@
 PODS:
   - CurrencyTextField (1.1)
+  - SAConfettiView (0.1.8)
 
 DEPENDENCIES:
   - CurrencyTextField
+  - SAConfettiView
 
 SPEC CHECKSUMS:
   CurrencyTextField: 949e4e7b1bb83ef4e49d05af697f9fc898293136
+  SAConfettiView: c87031a2280659261b730fce3669fb10e73636ee
 
-PODFILE CHECKSUM: 8b2820a6e1a5c3e4de0d253a1732d2fbfcff9975
+PODFILE CHECKSUM: 6dc37b2bf6ffa3422f4de2bd2eb80a71e8a037f5
 
 COCOAPODS: 1.0.1

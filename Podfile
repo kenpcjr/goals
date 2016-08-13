@@ -8,5 +8,6 @@ target 'Priority' do
   # Pods for Priority
 
   pod 'CurrencyTextField'
+  pod "SAConfettiView"
 
 end

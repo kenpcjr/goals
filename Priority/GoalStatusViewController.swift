@@ -11,8 +11,8 @@ import UIKit
 class GoalStatusViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
-
-
+    
+    
     @IBOutlet weak var savingsTotalLabel: UILabel!
     @IBOutlet weak var ItemsToGoalLabel: UILabel!
     
@@ -22,13 +22,13 @@ class GoalStatusViewController: UIViewController {
         let storesProgressMonitor = dataStore.userContainer[0].goalInProgress
         
         if let savings = storesProgressMonitor?.currentSavingsTotal,
-                numberOfItems = storesProgressMonitor?.sacrificesToGoal,
-                giveUpName = storesProgressMonitor?.giveUpItem!.name,
-                goalName = storesProgressMonitor?.goal!.name {
-        
-        self.savingsTotalLabel.text = "$\(savings)"
-        
-        self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpName)s away from \(goalName)"
+            numberOfItems = storesProgressMonitor?.sacrificesToGoal,
+            giveUpName = storesProgressMonitor?.giveUpItem!.name,
+            goalName = storesProgressMonitor?.goal!.name {
+            
+            self.savingsTotalLabel.text = "$\(savings)"
+            
+            self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpName)s away from \(goalName)"
             
         }
     }
@@ -36,6 +36,8 @@ class GoalStatusViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         
         dataStore.fetchData()
+        
+        checkForSucess()
         
         let storesProgressMonitor = dataStore.userContainer[0].goalInProgress
         
@@ -48,16 +50,28 @@ class GoalStatusViewController: UIViewController {
             
             self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpName)s away from \(goalName)"
         }
-
+        
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        let destVC = segue.destinationViewController as! PurchaseSkipViewController
-//        
-//            destVC.passedGoal = self.passedGoal
-//            
-//    }
-
+    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    //
+    //        let destVC = segue.destinationViewController as! PurchaseSkipViewController
+    //
+    //            destVC.passedGoal = self.passedGoal
+    //
+    //    }
+    
+    
+    func checkForSucess(){
+        
+        if dataStore.userContainer[0].goalInProgress?.isGoalAcheived == true {
+            
+            self.performSegueWithIdentifier("goalMet", sender: nil)
+        }
+        
+    }
     
 }
+
+
+

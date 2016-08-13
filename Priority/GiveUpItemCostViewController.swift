@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import CurrencyTextField
 
 class GiveUpItemCostViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
     
-    @IBOutlet weak var giveUpCostTextField: UITextField!
+    @IBOutlet weak var giveUpCostTextField: CurrencyTextField!
     
     
     override func viewDidLoad() {
@@ -25,8 +26,11 @@ class GiveUpItemCostViewController: UIViewController {
     
     
     @IBAction func continueTapped(sender: AnyObject) {
+        
+        let costMinusDollar = self.giveUpCostTextField.text?.stringByReplacingOccurrencesOfString("$", withString: "")
+        let cleanCost = costMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
     
-    dataStore.userContainer[0].tempGoal?.giveUpItem?.cost = Double(self.giveUpCostTextField.text!)!
+    dataStore.userContainer[0].tempGoal?.giveUpItem?.cost = Double(cleanCost!)
 
     }
 }

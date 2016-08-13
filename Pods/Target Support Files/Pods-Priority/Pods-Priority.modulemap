@@ -1,0 +1,6 @@
+framework module Pods_Priority {
+  umbrella header "Pods-Priority-umbrella.h"
+
+  export *
+  module * { export * }
+}

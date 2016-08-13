@@ -8,17 +8,19 @@
 
 import UIKit
 import CoreData
+import CurrencyTextField
 
 class NewGoalCost: UIViewController, UITextFieldDelegate {
     
-     @IBOutlet weak var goalCostTextField: UITextField!
+    @IBOutlet weak var goalCostTextField: CurrencyTextField!
+    
     
     let dataStore = DataStore.sharedManager
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.goalCostTextField.delegate = self
+//        self.goalCostTextField.delegate = self
         
 //        self.goalCostTextField.becomeFirstResponder()
     
@@ -27,7 +29,11 @@ class NewGoalCost: UIViewController, UITextFieldDelegate {
 
     @IBAction func continueTapped(sender: AnyObject) {
         
-        dataStore.userContainer[0].tempGoal?.cost = Double(self.goalCostTextField.text!)
+        let costMinusDollar = self.goalCostTextField.text?.stringByReplacingOccurrencesOfString("$", withString: "")
+        let cleanCost = costMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
+        
+        dataStore.userContainer[0].tempGoal?.cost = Double(cleanCost!)
+        
         
     }
     

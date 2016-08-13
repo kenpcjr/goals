@@ -51,7 +51,14 @@ class GoalStatusViewController: UIViewController {
             self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpName)s away from \(goalName)"
         }
         
+        
+        
+        print("Goal: \(dataStore.userContainer[0].goalInProgress?.goal?.cost) \n Savings Total:\(dataStore.userContainer[0].goalInProgress?.currentSavingsTotal)")
+        
     }
+    
+    
+    
     
     //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     //

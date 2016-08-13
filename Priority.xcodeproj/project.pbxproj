@@ -129,7 +129,6 @@
 				4FED92EF1D4D2F6300138562 /* DataStore.swift */,
 				4F99965E1D46F846009C5A99 /* AppDelegate.swift */,
 				4F9996621D46F846009C5A99 /* Main.storyboard */,
-				4F57E5D41D5BECDD00A6B27B /* goalMetViewController.swift */,
 				4FD3C9771D56652800F16915 /* Secrets.swift */,
 				4FEFA4901D52B04B001DC071 /* ViewControllers */,
 				4F9996681D46F846009C5A99 /* Assets.xcassets */,
@@ -154,6 +153,7 @@
 				4FED92ED1D4D25A300138562 /* PurchaseSkipViewController.swift */,
 				4FD3C97D1D56931200F16915 /* SettingsViewController.swift */,
 				4F6B89BA1D5A94800051BA1C /* UpdateGoalViewController.swift */,
+				4F57E5D41D5BECDD00A6B27B /* goalMetViewController.swift */,
 				4F6B89B91D5A94560051BA1C /* UnusedViews */,
 			);
 			name = ViewControllers;

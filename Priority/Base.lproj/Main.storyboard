@@ -623,7 +623,7 @@
         <!--Goal Met View Controller-->
         <scene sceneID="Zk2-fU-it0">
             <objects>
-                <viewController id="Tlu-qk-kaF" customClass="goalMetViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="goalMet" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Tlu-qk-kaF" customClass="goalMetViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6TR-ej-F59"/>
                         <viewControllerLayoutGuide type="bottom" id="XLG-aM-LAd"/>
@@ -642,7 +642,7 @@
                                 <rect key="frame" x="278" y="426" width="45" height="30"/>
                                 <state key="normal" title="Uh, ok"/>
                                 <connections>
-                                    <action selector="dismissTapped:" destination="Tlu-qk-kaF" eventType="touchUpInside" id="r3X-0X-nW2"/>
+                                    <action selector="dismissTapped:" destination="Tlu-qk-kaF" eventType="touchUpInside" id="r9B-Vo-mVa"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -654,9 +654,6 @@
                             <constraint firstItem="BAm-pt-VGK" firstAttribute="centerX" secondItem="9Rf-H2-6RT" secondAttribute="centerX" id="n14-0J-e3B"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="tappedDismiss" destination="McP-wk-mCp" id="3sY-Mk-8AL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F8-oG-9xS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -42,7 +42,7 @@ class NewGoalConfirmationViewController: UIViewController {
             
             if daysToGoal >= 364 {
                 
-                let frequencyInWeeks = Int(daysToGoal / 7.0)
+                let frequencyInWeeks = Int(ceil(daysToGoal / 7.0))
                 
                 
                 self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(frequencyInWeeks) weeks in order to get your"

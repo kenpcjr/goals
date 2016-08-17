@@ -102,14 +102,27 @@ class pastGoalsTableViewController: UIViewController, UITableViewDelegate, UITab
      }
      */
     
-    /*
+    
      // MARK: - Navigation
      
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
      override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+        
+        let destinationViewController = segue.destinationViewController as! GoalDetailViewController
+        
+        let index = tableView.indexPathForSelectedRow?.row
+        
+        if let monitors = dataStore.userContainer[0].goalsComplete, index = index {
+            
+            let progressToPass = monitors[index] as! ProgressMonitor
+            
+            destinationViewController.progressToDisplay = progressToPass
+            
+        }
+        
+        
+    
      }
-     */
+    
     
 }

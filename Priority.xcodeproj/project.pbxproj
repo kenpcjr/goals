@@ -41,6 +41,7 @@
 		4F7BDD371D5FB8E5003AEBB5 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4F7BDD241D5FB8E5003AEBB5 /* Raleway-ThinItalic.ttf */; };
 		4F7BDD381D5FB8E5003AEBB5 /* SIL Open Font License.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F7BDD251D5FB8E5003AEBB5 /* SIL Open Font License.txt */; };
 		4F82FE4F1D63F0250085DBA4 /* pastGoalsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82FE4E1D63F0250085DBA4 /* pastGoalsTableViewController.swift */; };
+		4F82FE511D64833A0085DBA4 /* GoalDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F82FE501D64833A0085DBA4 /* GoalDetailViewController.swift */; };
 		4F99965F1D46F846009C5A99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F99965E1D46F846009C5A99 /* AppDelegate.swift */; };
 		4F9996641D46F846009C5A99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9996621D46F846009C5A99 /* Main.storyboard */; };
 		4F9996671D46F846009C5A99 /* Priority.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4F9996651D46F846009C5A99 /* Priority.xcdatamodeld */; };
@@ -97,6 +98,7 @@
 		4F7BDD241D5FB8E5003AEBB5 /* Raleway-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ThinItalic.ttf"; sourceTree = "<group>"; };
 		4F7BDD251D5FB8E5003AEBB5 /* SIL Open Font License.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "SIL Open Font License.txt"; sourceTree = "<group>"; };
 		4F82FE4E1D63F0250085DBA4 /* pastGoalsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pastGoalsTableViewController.swift; sourceTree = "<group>"; };
+		4F82FE501D64833A0085DBA4 /* GoalDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalDetailViewController.swift; sourceTree = "<group>"; };
 		4F8BAE0B1D4FB96100167C91 /* Priority 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Priority 2.xcdatamodel"; sourceTree = "<group>"; };
 		4F99965B1D46F846009C5A99 /* Priority.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Priority.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F99965E1D46F846009C5A99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				4F6B89BA1D5A94800051BA1C /* UpdateGoalViewController.swift */,
 				4F57E5D41D5BECDD00A6B27B /* goalMetViewController.swift */,
 				4F82FE4E1D63F0250085DBA4 /* pastGoalsTableViewController.swift */,
+				4F82FE501D64833A0085DBA4 /* GoalDetailViewController.swift */,
 				4F6B89B91D5A94560051BA1C /* UnusedViews */,
 				4F7BDD121D5FB8E5003AEBB5 /* raleway */,
 			);
@@ -429,6 +432,7 @@
 				4FD3C97A1D56688C00F16915 /* InitialPageViewController.swift in Sources */,
 				4F99967A1D48D866009C5A99 /* GiveUpItemViewController.swift in Sources */,
 				4FED92E81D4D250400138562 /* giveUpItemFrequencyViewController.swift in Sources */,
+				4F82FE511D64833A0085DBA4 /* GoalDetailViewController.swift in Sources */,
 				4FED92EC1D4D256F00138562 /* GoalStatusViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

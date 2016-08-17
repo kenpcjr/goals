@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = ["Share Goal Status", "Current Goal Details", "Modify Current Goal", "Create New Goal", "User Stats", "Notifications", "About Priority"]
+    let settings = ["Share Goal Status", "Current Goal Details", "Modify Current Goal", "Create New Goal", "User Stats","View Completed Goals", "Notifications", "About Priority"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,6 +65,10 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             self.performSegueWithIdentifier("newGoal", sender: nil)
             
             print("New Goal")
+            
+            case "View Completed Goals":
+            
+            self.performSegueWithIdentifier("pastGoals", sender: nil)
             
         default:
             

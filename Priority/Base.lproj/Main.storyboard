@@ -426,7 +426,7 @@
                                 </state>
                                 <connections>
                                     <action selector="tryTapped:" destination="hle-8M-bXQ" eventType="touchUpInside" id="E6G-n1-IQg"/>
-                                    <segue destination="5IR-ai-6Es" kind="show" id="4bR-8b-anX"/>
+                                    <segue destination="uWv-6M-tY6" kind="show" id="4bR-8b-anX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -456,7 +456,7 @@
             </objects>
             <point key="canvasLocation" x="7057" y="472"/>
         </scene>
-        <!--Title-->
+        <!--Goal Status View Controller-->
         <scene sceneID="ACn-a3-aVP">
             <objects>
                 <viewController storyboardIdentifier="GoalStatus" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5IR-ai-6Es" customClass="GoalStatusViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
@@ -542,7 +542,7 @@
                             <constraint firstItem="SsN-x7-9vx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JbE-Ua-v5V" secondAttribute="leadingMargin" constant="20" id="xyo-i1-wai"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="cyI-Cd-tws"/>
+                    <navigationItem key="navigationItem" id="7Ed-5U-vBJ"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="ItemsToGoalLabel" destination="SsN-x7-9vx" id="JdX-rX-ena"/>
@@ -552,7 +552,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJH-nM-EOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5577" y="1359"/>
+            <point key="canvasLocation" x="6389" y="1359"/>
         </scene>
         <!--Purchase Skip View Controller-->
         <scene sceneID="AgB-ZJ-YR1">
@@ -627,7 +627,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHc-nZ-cdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6230" y="1359"/>
+            <point key="canvasLocation" x="7042" y="1359"/>
         </scene>
         <!--Goal Met View Controller-->
         <scene sceneID="Zk2-fU-it0">
@@ -656,7 +656,7 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismissTapped:" destination="Tlu-qk-kaF" eventType="touchUpInside" id="r9B-Vo-mVa"/>
+                                    <segue destination="1QM-KK-dos" kind="show" id="Br1-kU-hnP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lt-ul-9N5">
@@ -717,6 +717,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="backgroundImage" destination="JQq-nC-Na5" id="Kll-DN-Qes"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7F8-oG-9xS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -968,12 +971,31 @@
             </objects>
             <point key="canvasLocation" x="4628" y="2193"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DZJ-1E-wZK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="uWv-6M-tY6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iHR-X2-Cw3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5IR-ai-6Es" kind="relationship" relationship="rootViewController" id="6iP-WN-FQP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O3W-5j-dL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5577" y="1359"/>
+        </scene>
     </scenes>
     <resources>
         <image name="mountains" width="5472" height="3600"/>
         <image name="square-cross" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Br1-kU-hnP"/>
         <segue reference="lpU-NH-7t4"/>
     </inferredMetricsTieBreakers>
 </document>

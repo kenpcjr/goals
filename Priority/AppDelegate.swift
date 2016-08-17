@@ -25,6 +25,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         dataStore.fetchData()
         dataStore.saveContext()
         
+        for goal in dataStore.userContainer[0].goalsComplete! {
+        
+        let goal = goal as! ProgressMonitor
+            
+            print(goal.goal?.name)
+            
+        }
+        
         if dataStore.userContainer[0].goalInProgress != nil {
             
             print("appDelegate sees a goal")

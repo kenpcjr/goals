@@ -19,6 +19,10 @@ class GoalStatusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        dataStore.fetchData()
+        
+        checkForSucess()
+        
         let storesProgressMonitor = dataStore.userContainer[0].goalInProgress
         
         if let savings = storesProgressMonitor?.currentSavingsTotal,
@@ -57,16 +61,6 @@ class GoalStatusViewController: UIViewController {
         
     }
     
-    
-    
-    
-    //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    //
-    //        let destVC = segue.destinationViewController as! PurchaseSkipViewController
-    //
-    //            destVC.passedGoal = self.passedGoal
-    //
-    //    }
     
     
     func checkForSucess(){

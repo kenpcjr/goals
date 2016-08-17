@@ -13,6 +13,7 @@ class goalMetViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
     
+    @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,36 +21,25 @@ class goalMetViewController: UIViewController {
         let confettiView = SAConfettiView(frame: self.view.bounds)
         self.view.addSubview(confettiView)
         self.view.sendSubviewToBack(confettiView)
+        self.view.sendSubviewToBack(self.backgroundImage)
+        
         
         confettiView.colors = [UIColor.blackColor(), UIColor.grayColor(), UIColor.darkGrayColor()]
         
         
         confettiView.startConfetti()
         
-        
-        
-//Array(arrayLiteral: dataStore.userContainer[0].goalsComplete).append(dataStore.userContainer[0].goalInProgress)
-        //dataStore.userContainer[0].goalInProgress
-        
+        saveCurrentGoalToCompleted()
         
     }
     
-    
-    
-    
-
-    @IBAction func dismissTapped(sender: AnyObject) {
-        
-        self.dismissViewControllerAnimated(true, completion: nil)
-        
-    }
     
     @IBAction func shareTapped(sender: AnyObject) {
         
         if let goal = dataStore.userContainer[0].goalInProgress?.goal?.name, sacrifice = dataStore.userContainer[0].goalInProgress?.giveUpItem?.name {
-        
-        
-      let shareText = "I just hit my goal with #PriorityApp! I'm getting a \(goal) by skipping \(sacrifice)."
+            
+            
+            let shareText = "I just hit my goal with #PriorityApp! I'm getting a \(goal) by skipping \(sacrifice)."
             
             let activityVC = UIActivityViewController.init(activityItems: [shareText], applicationActivities: nil)
             
@@ -60,7 +50,37 @@ class goalMetViewController: UIViewController {
         }
         
     }
-
     
+    func saveCurrentGoalToCompleted() {
+        
+        let initialCompletedCount = dataStore.userContainer[0].goalsComplete?.count
+        
+        print(initialCompletedCount)
+        
+        let currentProgressMonitor = dataStore.userContainer[0].goalInProgress
+        
+        let completedGoalMutableCopy = dataStore.userContainer[0].goalsComplete?.mutableCopy() as! NSMutableOrderedSet
+        
+        if let currentProgressMonitor = currentProgressMonitor {
+            
+            completedGoalMutableCopy.addObject(currentProgressMonitor)
+            
+            dataStore.userContainer[0].goalsComplete = completedGoalMutableCopy as NSOrderedSet
+            
+            
+        }
+        
+        let currentCompletedCount = dataStore.userContainer[0].goalsComplete?.count
+        
+        if initialCompletedCount < currentCompletedCount {
+            
+            dataStore.userContainer[0].goalInProgress = nil
+            
+            dataStore.saveContext()
+            dataStore.fetchData()
+            
+        }
+        
+    }
     
 }

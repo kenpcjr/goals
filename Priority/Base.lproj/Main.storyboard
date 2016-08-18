@@ -672,13 +672,13 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Success" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VDe-IB-gfq">
                                 <rect key="frame" x="266" y="28" width="69" height="21"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You did it! You've reached your goal. Why not shout about it? Or, keep up the momentum by setting a new goal." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfZ-84-waI">
                                 <rect key="frame" x="-220" y="235" width="1041" height="168"/>
                                 <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -995,10 +995,10 @@
             </objects>
             <point key="canvasLocation" x="6847" y="2763"/>
         </scene>
-        <!--View Controller-->
+        <!--User Stats View Controller-->
         <scene sceneID="vkD-l1-W0q">
             <objects>
-                <viewController id="Tcj-bS-NAC" sceneMemberID="viewController">
+                <viewController id="Tcj-bS-NAC" customClass="UserStatsViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JIP-Nd-Dmc"/>
                         <viewControllerLayoutGuide type="bottom" id="9sK-mQ-5jz"/>
@@ -1031,7 +1031,7 @@
                                 <color key="textColor" red="0.1922376076" green="0.81960784310000001" blue="0.25933305490000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Abandoned Goals" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-7s-I9g">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Lifetime Skips" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="R3d-7s-I9g">
                                 <rect key="frame" x="41" y="368" width="446" height="39"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <color key="textColor" red="0.14901960780000001" green="0.64705882349999999" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1043,18 +1043,33 @@
                                 <color key="textColor" red="0.1922376076" green="0.81960784310000001" blue="0.25933305490000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R4w-eH-0Gu">
+                                <rect key="frame" x="25" y="20" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneTapped:" destination="Tcj-bS-NAC" eventType="touchUpInside" id="10V-fA-O8b"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="R4w-eH-0Gu" firstAttribute="top" secondItem="JIP-Nd-Dmc" secondAttribute="bottom" id="32Y-ya-Wjs"/>
                             <constraint firstItem="GQB-fT-y6g" firstAttribute="centerX" secondItem="YxT-WQ-Dp1" secondAttribute="centerX" id="7yO-id-DVR"/>
                             <constraint firstItem="xHD-Ud-KRl" firstAttribute="centerX" secondItem="YxT-WQ-Dp1" secondAttribute="centerX" id="Df1-nz-SKE"/>
                             <constraint firstItem="R3d-7s-I9g" firstAttribute="centerX" secondItem="YxT-WQ-Dp1" secondAttribute="centerX" id="KFQ-es-cnw"/>
                             <constraint firstItem="rIB-QI-RNR" firstAttribute="centerX" secondItem="YxT-WQ-Dp1" secondAttribute="centerX" id="Kww-bJ-OIa"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="R4w-eH-0Gu" secondAttribute="leading" id="Om6-Ii-23O"/>
                             <constraint firstItem="N50-db-wUO" firstAttribute="centerX" secondItem="YxT-WQ-Dp1" secondAttribute="centerX" id="XY3-XV-z1l"/>
                             <constraint firstItem="Shg-vJ-TYR" firstAttribute="centerX" secondItem="YxT-WQ-Dp1" secondAttribute="centerX" id="gqv-jP-K6S"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fR4-zC-pUB"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="goalsAcheivedLabel" destination="GQB-fT-y6g" id="nEi-oY-So9"/>
+                        <outlet property="lifetimeSavingsLabel" destination="rIB-QI-RNR" id="1Ww-0w-Df0"/>
+                        <outlet property="totalSkipsLabel" destination="xHD-Ud-KRl" id="XL5-wQ-q9R"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YOc-re-U6r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

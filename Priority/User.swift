@@ -20,8 +20,8 @@ class User: NSManagedObject {
     var numberOfGoalsMet: Int {
         
         guard let complete = goalsComplete else {return 0}
-            
-            return complete.count
+        
+        return complete.count
         
     }
     
@@ -30,22 +30,53 @@ class User: NSManagedObject {
         
         var sumTotal = 0.0
         
-        
-        guard let inProgress = goalInProgress, completed = self.goalsComplete else {return sumTotal}
-        
-        
-        sumTotal += inProgress.currentSavingsTotal
-        
-        
-        for monitor in completed {
+        if let inProgress = self.goalInProgress {
             
-            let monitorConverted =  monitor as! ProgressMonitor
+            sumTotal = inProgress.currentSavingsTotal
             
-            sumTotal += monitorConverted.currentSavingsTotal
+        }
+        
+        if let completed = self.goalsComplete {
+            
+            
+            for monitor in completed {
+                
+                let monitorConverted =  monitor as! ProgressMonitor
+                
+                sumTotal += monitorConverted.currentSavingsTotal
+                
+            }
             
         }
         
         return sumTotal
+        
+    }
+    
+    var totalSacrifices: Int {
+        
+        var totalSacrifice = 0
+        
+        if let currentGoalSacrifices = self.goalInProgress?.numberOfSacrifices {
+            
+            totalSacrifice = Int(currentGoalSacrifices)
+            
+        }
+        
+        
+        if let goalsComplete = self.goalsComplete {
+            
+            for monitor in goalsComplete {
+                
+                let progressMonitor = monitor as! ProgressMonitor
+                
+                totalSacrifice += Int(progressMonitor.numberOfSacrifices!)
+                
+            }
+            
+        }
+        
+        return totalSacrifice
         
     }
     

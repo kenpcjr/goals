@@ -16,6 +16,7 @@
 		4F34F3481D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F3401D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift */; };
 		4F34F3491D4FBC6C00EC1D23 /* ProgressMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F3411D4FBC6C00EC1D23 /* ProgressMonitor.swift */; };
 		4F57E5D51D5BECDD00A6B27B /* goalMetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F57E5D41D5BECDD00A6B27B /* goalMetViewController.swift */; };
+		4F66D8C61D65271300C45E8F /* UserStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F66D8C51D65271300C45E8F /* UserStatsViewController.swift */; };
 		4F6B89BB1D5A94800051BA1C /* UpdateGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6B89BA1D5A94800051BA1C /* UpdateGoalViewController.swift */; };
 		4F78BE1D1D578AFC0061CB40 /* NewGoalCost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78BE1C1D578AFC0061CB40 /* NewGoalCost.swift */; };
 		4F78BE1F1D5797E90061CB40 /* GiveUpItemCostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F78BE1E1D5797E90061CB40 /* GiveUpItemCostViewController.swift */; };
@@ -73,6 +74,7 @@
 		4F34F3401D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ProgressMonitor+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4F34F3411D4FBC6C00EC1D23 /* ProgressMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressMonitor.swift; sourceTree = "<group>"; };
 		4F57E5D41D5BECDD00A6B27B /* goalMetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = goalMetViewController.swift; sourceTree = "<group>"; };
+		4F66D8C51D65271300C45E8F /* UserStatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserStatsViewController.swift; sourceTree = "<group>"; };
 		4F6B89BA1D5A94800051BA1C /* UpdateGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateGoalViewController.swift; sourceTree = "<group>"; };
 		4F78BE1C1D578AFC0061CB40 /* NewGoalCost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewGoalCost.swift; sourceTree = "<group>"; };
 		4F78BE1E1D5797E90061CB40 /* GiveUpItemCostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveUpItemCostViewController.swift; sourceTree = "<group>"; };
@@ -220,6 +222,7 @@
 				4FED92EB1D4D256F00138562 /* GoalStatusViewController.swift */,
 				4FED92ED1D4D25A300138562 /* PurchaseSkipViewController.swift */,
 				4FD3C97D1D56931200F16915 /* SettingsViewController.swift */,
+				4F66D8C51D65271300C45E8F /* UserStatsViewController.swift */,
 				4F6B89BA1D5A94800051BA1C /* UpdateGoalViewController.swift */,
 				4F57E5D41D5BECDD00A6B27B /* goalMetViewController.swift */,
 				4F82FE4E1D63F0250085DBA4 /* pastGoalsTableViewController.swift */,
@@ -412,6 +415,7 @@
 				4FED92EA1D4D253B00138562 /* NewGoalConfirmationViewController.swift in Sources */,
 				4F34F3481D4FBC6C00EC1D23 /* ProgressMonitor+CoreDataProperties.swift in Sources */,
 				4F57E5D51D5BECDD00A6B27B /* goalMetViewController.swift in Sources */,
+				4F66D8C61D65271300C45E8F /* UserStatsViewController.swift in Sources */,
 				4F78BE251D58029A0061CB40 /* MainTabController.swift in Sources */,
 				4F34F3471D4FBC6C00EC1D23 /* User.swift in Sources */,
 				4FD3C97C1D566DCD00F16915 /* SettingsTableView.swift in Sources */,

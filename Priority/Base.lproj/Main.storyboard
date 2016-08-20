@@ -16,7 +16,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Welcome View Controller-->
+        <!--Welcome-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="Welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,11 +67,56 @@
                             <constraint firstItem="Lvd-My-mic" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vzR-lR-uuu"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="AUB-kk-pVj"/>
+                    <navigationItem key="navigationItem" title="Welcome" id="AUB-kk-pVj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2962" y="472"/>
+        </scene>
+        <!--Set a New Goal-->
+        <scene sceneID="cqR-ml-l1c">
+            <objects>
+                <viewController id="kcD-1V-Gps" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="53F-62-eJR"/>
+                        <viewControllerLayoutGuide type="bottom" id="uSC-vp-Q1n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zcc-I9-V1z">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="New Goal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ok4-tt-wEP">
+                                <rect key="frame" x="247" y="289" width="74" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MEc-pN-PZh">
+                                <rect key="frame" x="261" y="411" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="B70-tE-8hz" kind="show" id="rSK-e1-QJ0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ok4-tt-wEP" firstAttribute="centerX" secondItem="zcc-I9-V1z" secondAttribute="centerX" id="Iso-71-US7"/>
+                            <constraint firstItem="ok4-tt-wEP" firstAttribute="centerY" secondItem="zcc-I9-V1z" secondAttribute="centerY" id="VTq-hE-6DS"/>
+                            <constraint firstItem="MEc-pN-PZh" firstAttribute="centerX" secondItem="zcc-I9-V1z" secondAttribute="centerX" id="q8a-EY-l0w"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Set a New Goal" id="sv8-I9-UhU">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Yzj-av-GT7">
+                            <connections>
+                                <segue destination="1QM-KK-dos" kind="presentation" id="OBy-tO-MFh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f29-ST-KB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3771" y="1236"/>
         </scene>
         <!--Title-->
         <scene sceneID="o76-ki-NW2">
@@ -552,7 +597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vJH-nM-EOF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6389" y="1359"/>
+            <point key="canvasLocation" x="7201" y="1359"/>
         </scene>
         <!--Purchase Skip View Controller-->
         <scene sceneID="AgB-ZJ-YR1">
@@ -627,7 +672,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHc-nZ-cdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7042" y="1359"/>
+            <point key="canvasLocation" x="7854" y="1359"/>
         </scene>
         <!--Goal Met View Controller-->
         <scene sceneID="Zk2-fU-it0">
@@ -824,13 +869,13 @@
                         <outlet property="tableView" destination="Q8p-aQ-3kF" id="0Li-Mq-JuP"/>
                         <segue destination="Tcj-bS-NAC" kind="show" identifier="userStats" id="O61-xg-csK"/>
                         <segue destination="Tlb-87-fbW" kind="show" identifier="adjustGoal" id="B91-Gg-FRI"/>
-                        <segue destination="XJg-WE-VDb" kind="show" identifier="newGoal" id="5wf-K1-DCm"/>
                         <segue destination="l3o-DD-gzS" kind="show" identifier="pastGoals" id="bBK-3D-Qxe"/>
+                        <segue destination="p40-vc-Xcz" kind="show" identifier="newGoal" id="xP0-rz-Dcl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ssc-BH-5yl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5493" y="2167"/>
+            <point key="canvasLocation" x="4130" y="1947"/>
         </scene>
         <!--Update Goal View Controller-->
         <scene sceneID="51y-rV-sU2">
@@ -1091,7 +1136,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3W-5j-dL8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5577" y="1359"/>
+            <point key="canvasLocation" x="6389" y="1359"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LGT-jP-zMV">
+            <objects>
+                <navigationController storyboardIdentifier="newGoal" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="p40-vc-Xcz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qTs-7Y-GGD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="kcD-1V-Gps" kind="relationship" relationship="rootViewController" id="FER-VC-CRC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t2W-GA-zCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2959" y="1236"/>
         </scene>
     </scenes>
     <resources>
@@ -1099,7 +1162,7 @@
         <image name="square-cross" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Br1-kU-hnP"/>
-        <segue reference="lpU-NH-7t4"/>
+        <segue reference="rSK-e1-QJ0"/>
+        <segue reference="OBy-tO-MFh"/>
     </inferredMetricsTieBreakers>
 </document>

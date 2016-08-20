@@ -39,12 +39,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
 //            let navController = storyboard.instantiateViewControllerWithIdentifier("nav")
 //            
-            let goalStatus = storyboard.instantiateViewControllerWithIdentifier("GoalStatus")
+            let goalStatusViewController = storyboard.instantiateViewControllerWithIdentifier("GoalStatus")
 //
-            self.window?.rootViewController = goalStatus
+            self.window?.rootViewController = goalStatusViewController
 //
 //            navController.presentViewController(goalStatus, animated: true, completion: nil)
 //            
+        }
+        
+        if dataStore.userContainer[0].goalInProgress == nil && dataStore.userContainer[0].goalsComplete?.count != 0 {
+            
+            
+            let newGoalViewController = storyboard.instantiateViewControllerWithIdentifier("newGoal")
+            
+            self.window?.rootViewController = newGoalViewController
+            
+            
         }
         
         

@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import CurrencyTextField
 
 class UpdateGoalViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
 
-    @IBOutlet weak var currentGoalCostTextField: UITextField!
-    @IBOutlet weak var currentGiveUpItemCost: UITextField!
+    @IBOutlet weak var currentGoalCostTextField: CurrencyTextField!
+    @IBOutlet weak var currentGiveUpItemCost: CurrencyTextField!
     @IBOutlet weak var updateButton: UIButton!
     
     
@@ -40,5 +41,11 @@ class UpdateGoalViewController: UIViewController {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    @IBAction func cancelTapped(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+        
+    }
     
 }

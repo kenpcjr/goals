@@ -30,6 +30,8 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
             self.howOftenLabel.text = "How often do you buy \(text)?"
             
         }
+        
+        
     }
     
     
@@ -73,9 +75,6 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
         
         return ""
     }
-    
-    
-    
     
     
     

@@ -48,6 +48,8 @@ class PurchaseSkipViewController: UIViewController {
         
         dataStore.userContainer[0].goalInProgress?.numberOfSacrifices = sacrifices
         
+        dataStore.userContainer[0].goalInProgress?.mostRecentSacrifice = NSDate.init()
+        
         dataStore.saveContext()
         dataStore.fetchData()
         

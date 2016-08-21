@@ -29,6 +29,8 @@ class goalMetViewController: UIViewController {
         
         confettiView.startConfetti()
         
+        self.dataStore.userContainer[0].goalInProgress?.goal?.endDate = NSDate.init()
+        
         saveCurrentGoalToCompleted()
         
     }

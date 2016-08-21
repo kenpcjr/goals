@@ -9,17 +9,19 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     let settingsLabels = ["Share Goal Status", "Current Goal Details", "Modify Current Goal", "Create New Goal", "User Stats","View Completed Goals", "Notifications", "About Priority"]
     
     let images = [UIImage.init(named: "text"), UIImage.init(named: "details"), UIImage.init(named: "edit"), UIImage.init(named: "new"), UIImage.init(named: "timeline"), UIImage.init(named: "complete"), UIImage.init(named: "notification"), UIImage.init(named: "info")]
     
+    let dataStore = DataStore.sharedManager
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let tableViewDelegate = SettingsTableView()
+        //        let tableViewDelegate = SettingsTableView()
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
@@ -51,28 +53,30 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         print(cellTapped)
         
         switch cellTapped {
+            
         case "Modify Current Goal":
             
             self.performSegueWithIdentifier("adjustGoal", sender: nil)
-            print("Adjust")
             
-            case "User Stats":
-                
-                print("Stats")
+        case "User Stats":
             
             self.performSegueWithIdentifier("userStats", sender: nil)
             
-            
-            
-            case "Create New Goal":
+        case "Create New Goal":
             
             self.performSegueWithIdentifier("newGoal", sender: nil)
             
-            print("New Goal")
-            
-            case "View Completed Goals":
+        case "View Completed Goals":
             
             self.performSegueWithIdentifier("pastGoals", sender: nil)
+            
+        case "Current Goal Details":
+            
+            self.performSegueWithIdentifier("currentGoalDetails", sender: nil)
+            
+        case "Share Goal Status": 
+            
+            shareProgress()
             
         default:
             
@@ -82,9 +86,41 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "currentGoalDetails" {
+            
+            let destinationVC = segue.destinationViewController as! GoalDetailViewController
+            
+            destinationVC.progressToDisplay = self.dataStore.userContainer[0].goalInProgress
+            
+        }
+        
+        
+    }
+    
+    
     @IBAction func doneTapped(sender: AnyObject) {
         
         self.dismissViewControllerAnimated(true, completion: nil)
         
     }
+    
+    
+    func shareProgress() {
+        
+        if let goal = dataStore.userContainer[0].goalInProgress?.goal?.name, sacrifice = dataStore.userContainer[0].goalInProgress?.giveUpItem?.name, savings = dataStore.userContainer[0].goalInProgress?.currentSavingsTotal {
+            
+            let shareText = "So far, I've saved $\(savings) towards my goal with #PriorityApp! I'm working on getting a \(goal) by skipping \(sacrifice)."
+            
+            let activityVC = UIActivityViewController.init(activityItems: [shareText], applicationActivities: nil)
+            
+            activityVC.excludedActivityTypes = [UIActivityTypePostToVimeo, UIActivityTypeAirDrop, UIActivityTypePrint, UIActivityTypeOpenInIBooks, UIActivityTypePostToFlickr, UIActivityTypeAddToReadingList, UIActivityTypeSaveToCameraRoll]
+            
+            self.presentViewController(activityVC, animated: true, completion: nil)
+            
+        }
+        
+    }
+    
 }

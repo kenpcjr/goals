@@ -124,5 +124,10 @@ class pastGoalsTableViewController: UIViewController, UITableViewDelegate, UITab
     
      }
     
+    @IBAction func doneTapped(sender: AnyObject) {
+        
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
+    }
     
 }

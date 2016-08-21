@@ -39,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
 //            let navController = storyboard.instantiateViewControllerWithIdentifier("nav")
 //            
-            let goalStatusViewController = storyboard.instantiateViewControllerWithIdentifier("GoalStatus")
+            let goalStatusViewController = storyboard.instantiateViewControllerWithIdentifier("goalStatusNav")
 //
             self.window?.rootViewController = goalStatusViewController
 //

@@ -12,7 +12,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
 
     @IBOutlet weak var tableView: UITableView!
     
-    let settings = ["Share Goal Status", "Current Goal Details", "Modify Current Goal", "Create New Goal", "User Stats","View Completed Goals", "Notifications", "About Priority"]
+    let settingsLabels = ["Share Goal Status", "Current Goal Details", "Modify Current Goal", "Create New Goal", "User Stats","View Completed Goals", "Notifications", "About Priority"]
+    
+    let images = [UIImage.init(named: "text"), UIImage.init(named: "details"), UIImage.init(named: "edit"), UIImage.init(named: "new"), UIImage.init(named: "timeline"), UIImage.init(named: "complete"), UIImage.init(named: "notification"), UIImage.init(named: "info")]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,14 +28,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return settings.count
+        return settingsLabels.count
         
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
         
-        cell.textLabel?.text = settings[indexPath.row]
+        cell.textLabel?.text = settingsLabels[indexPath.row]
+        
+        cell.imageView?.image = images[indexPath.row]
         
         return cell
         
@@ -42,7 +46,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        let cellTapped = self.settings[indexPath.row]
+        let cellTapped = self.settingsLabels[indexPath.row]
         
         print(cellTapped)
         

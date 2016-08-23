@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F30262E1D6B2D6A00A9E539 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F30262D1D6B2D6A00A9E539 /* AboutViewController.swift */; };
 		4F34F3421D4FBC6C00EC1D23 /* GiveUpItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F33A1D4FBC6C00EC1D23 /* GiveUpItem+CoreDataProperties.swift */; };
 		4F34F3431D4FBC6C00EC1D23 /* GiveUpItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F33B1D4FBC6C00EC1D23 /* GiveUpItem.swift */; };
 		4F34F3441D4FBC6C00EC1D23 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F34F33C1D4FBC6C00EC1D23 /* Goal+CoreDataProperties.swift */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		1A2E3B44046582E4B57F631D /* Pods-Priority.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Priority.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Priority/Pods-Priority.debug.xcconfig"; sourceTree = "<group>"; };
+		4F30262D1D6B2D6A00A9E539 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		4F34F33A1D4FBC6C00EC1D23 /* GiveUpItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GiveUpItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		4F34F33B1D4FBC6C00EC1D23 /* GiveUpItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveUpItem.swift; sourceTree = "<group>"; };
 		4F34F33C1D4FBC6C00EC1D23 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 				4F57E5D41D5BECDD00A6B27B /* goalMetViewController.swift */,
 				4F82FE4E1D63F0250085DBA4 /* pastGoalsTableViewController.swift */,
 				4F82FE501D64833A0085DBA4 /* GoalDetailViewController.swift */,
+				4F30262D1D6B2D6A00A9E539 /* AboutViewController.swift */,
 				4F6B89B91D5A94560051BA1C /* UnusedViews */,
 				4F7BDD121D5FB8E5003AEBB5 /* raleway */,
 			);
@@ -421,6 +424,7 @@
 				4FD3C97C1D566DCD00F16915 /* SettingsTableView.swift in Sources */,
 				4F34F3421D4FBC6C00EC1D23 /* GiveUpItem+CoreDataProperties.swift in Sources */,
 				4F78BE1D1D578AFC0061CB40 /* NewGoalCost.swift in Sources */,
+				4F30262E1D6B2D6A00A9E539 /* AboutViewController.swift in Sources */,
 				4F34F3491D4FBC6C00EC1D23 /* ProgressMonitor.swift in Sources */,
 				4F99965F1D46F846009C5A99 /* AppDelegate.swift in Sources */,
 				4F78BE1F1D5797E90061CB40 /* GiveUpItemCostViewController.swift in Sources */,

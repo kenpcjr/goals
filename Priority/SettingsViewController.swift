@@ -74,9 +74,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             self.performSegueWithIdentifier("currentGoalDetails", sender: nil)
             
-        case "Share Goal Status": 
+        case "Share Goal Status":
             
             shareProgress()
+            
+        case "About Priority":
+            
+            self.performSegueWithIdentifier("showAbout", sender: nil)
             
         default:
             

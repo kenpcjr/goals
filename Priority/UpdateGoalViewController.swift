@@ -32,9 +32,27 @@ class UpdateGoalViewController: UIViewController {
     
     @IBAction func updateTapped(sender: AnyObject) {
         
-        dataStore.userContainer[0].goalInProgress?.goal?.cost = Double(self.currentGoalCostTextField.text!)
+        let newGoalCostMinusDollar = self.currentGoalCostTextField.text?.stringByReplacingOccurrencesOfString("$", withString: "")
         
-        dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost = Double(self.currentGiveUpItemCost.text!)
+        let newCleanGoalCost = newGoalCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
+        
+        if let newGoalCost = newCleanGoalCost {
+        
+        dataStore.userContainer[0].goalInProgress?.goal?.cost = Double(newGoalCost)
+            
+        }
+        
+        
+        let newItemCostMinusDollar = self.currentGiveUpItemCost.text?.stringByReplacingOccurrencesOfString("$", withString: "")
+        
+        let newCleanItemCost = newItemCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
+        
+        if let newItemCost = newCleanItemCost {
+
+        
+        dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost = Double(newItemCost)
+            
+        }
         
         dataStore.saveContext()
         

@@ -45,11 +45,11 @@ class NewGoalConfirmationViewController: UIViewController {
                 let frequencyInWeeks = Int(ceil(daysToGoal / 7.0))
                 
                 
-                self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(frequencyInWeeks) weeks in order to get your"
+                self.summaryLabel.text = "So it looks like you would need to give up \(giveUpItem) for \(frequencyInWeeks) weeks in order to get your"
                 
             } else {
                 
-                self.summaryLabel.text = "Great! So it looks like you would need to give up \(giveUpItem) for \(Int(daysToGoal)) days in order to get your"
+                self.summaryLabel.text = "So it looks like you would need to give up \(giveUpItem) for \(Int(daysToGoal)) days in order to get your"
                 
             }
             

@@ -13,6 +13,9 @@ class goalMetViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
     
+    var goalNameForShare: String?
+    var skipNameForShare: String?
+    
     @IBOutlet weak var backgroundImage: UIImageView!
     
     override func viewDidLoad() {
@@ -31,6 +34,10 @@ class goalMetViewController: UIViewController {
         
         self.dataStore.userContainer[0].goalInProgress?.goal?.endDate = NSDate.init()
         
+        self.goalNameForShare = dataStore.userContainer[0].goalInProgress?.goal?.name
+        
+        self.skipNameForShare = dataStore.userContainer[0].goalInProgress?.giveUpItem?.name
+        
         saveCurrentGoalToCompleted()
         
     }
@@ -38,7 +45,7 @@ class goalMetViewController: UIViewController {
     
     @IBAction func shareTapped(sender: AnyObject) {
         
-        if let goal = dataStore.userContainer[0].goalInProgress?.goal?.name, sacrifice = dataStore.userContainer[0].goalInProgress?.giveUpItem?.name {
+        if let goal = self.goalNameForShare, sacrifice = self.skipNameForShare {
             
             
             let shareText = "I just hit my goal with #PriorityApp! I'm getting a \(goal) by skipping \(sacrifice)."

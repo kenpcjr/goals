@@ -59,12 +59,14 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
             
         }
         
-        if self.GoalNameTextField.text?.hasSuffix(" ") == true {
+        if goalNameProper!.hasSuffix(" ") == true {
             
-            //removing spaces at the end of text
-            
-//            let newName = goalNameProper?.characters.removeLast()
-//            
+            while goalNameProper!.hasSuffix(" ") {
+                
+                goalNameProper!.removeAtIndex(goalNameProper!.endIndex.predecessor())
+                
+            }
+           
         }
         
         

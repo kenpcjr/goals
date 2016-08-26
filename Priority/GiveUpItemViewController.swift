@@ -44,6 +44,18 @@ class GiveUpItemViewController: UIViewController {
             
         }
         
+        if giveUpNameProper!.hasSuffix(" ") {
+            
+            while giveUpNameProper!.hasSuffix(" ") {
+                
+                giveUpNameProper!.removeAtIndex(giveUpNameProper!.endIndex.predecessor())
+                
+            }
+            
+            
+            
+        }
+        
         let newGiveUpItem = NSEntityDescription.insertNewObjectForEntityForName("GiveUpItem", inManagedObjectContext: dataStore.managedObjectContext) as! GiveUpItem
         
         dataStore.userContainer[0].tempGoal?.giveUpItem = newGiveUpItem

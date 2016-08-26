@@ -65,6 +65,8 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func addDetailStatsToStatsArrayBasedOnCompletion() {
         
+        // find a way to substitute (else) nil.
+        
         if self.progressToDisplay?.isGoalAcheived == false {
             
             self.detailStats = ["\(self.progressToDisplay?.goal?.name)", "\(self.progressToDisplay?.goal?.startDate)", "\(self.progressToDisplay?.goal?.cost)", "\(self.progressToDisplay?.giveUpItem?.name)", "\(self.progressToDisplay?.mostRecentSacrifice)", "\(self.progressToDisplay?.giveUpItem?.frequency)", "\(self.progressToDisplay?.giveUpItem?.cost)", "\(self.progressToDisplay?.numberOfSacrifices)","\(self.progressToDisplay?.sacrificesToGoal)", "\(self.progressToDisplay?.currentSavingsTotal)", "\(self.progressToDisplay?.dollarsToGoal)", "\(self.progressToDisplay?.initialDaysToGoal)"]
@@ -76,7 +78,21 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             
         }
         
-        
+//        if let goalName = self.progressToDisplay?.goal?.name, startDate = self.progressToDisplay?.goal?.startDate, goalCost = self.progressToDisplay?.goal?.cost, skipName = self.progressToDisplay?.giveUpItem?.name, recentSkip = self.progressToDisplay?.mostRecentSacrifice, skipFrequency = self.progressToDisplay?.giveUpItem?.frequency, skipCost = self.progressToDisplay?.giveUpItem?.cost, numberOfSkips = self.progressToDisplay?.numberOfSacrifices, skipsToGoal = self.progressToDisplay?.sacrificesToGoal, currentSavings = self.progressToDisplay?.currentSavingsTotal, dollarsToGoal = self.progressToDisplay?.dollarsToGoal, daysToGoal = self.progressToDisplay?.initialDaysToGoal  {
+//            
+//            
+//            if self.progressToDisplay?.isGoalAcheived == false {
+//                
+//                self.detailStats = ["\(goalName)", "\(startDate)", "\(goalCost)", "\(skipName)", "\(recentSkip)", "\(skipFrequency)", "\(skipCost)", "\(numberOfSkips)","\(skipsToGoal)", "\(currentSavings)", "\(dollarsToGoal)", "\(daysToGoal)"]
+//                
+//            } else {
+//                
+//                self.detailStats = ["\(goalName)", "\(startDate)", "\(goalCost)", "\(skipName)", "\(skipFrequency)", "\(skipCost)", "\(numberOfSkips)", "\(currentSavings)", "\(recentSkip)"]
+//                
+//                
+//            }
+//            
+//        }
         
     }
     

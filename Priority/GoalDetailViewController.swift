@@ -67,16 +67,38 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
         // find a way to substitute (else) nil.
         
+        let goalName = self.progressToDisplay?.goal?.name ?? "No Current goal"
+        let startDate = self.progressToDisplay?.goal?.startDate ?? NSDate.distantPast()
+        let goalCost = self.progressToDisplay?.goal?.cost ?? 0
+        let sacrificeName = self.progressToDisplay?.giveUpItem?.name ?? "No Skip Item set"
+        let lastSacrifice = self.progressToDisplay?.mostRecentSacrifice ?? NSDate.distantPast()
+        let sacrificeFrequency = self.progressToDisplay?.giveUpItem?.frequency ?? 0
+        let sacrificeCost = self.progressToDisplay?.giveUpItem?.cost ?? 0
+        let sacrificeCount = self.progressToDisplay?.numberOfSacrifices ?? 0
+        let sacrificesToGoal = self.progressToDisplay?.sacrificesToGoal ?? 0
+        let savingsTotal = self.progressToDisplay?.currentSavingsTotal ?? 0
+        let dollarsToGoal = self.progressToDisplay?.dollarsToGoal ?? 0
+        let daysToGoal = self.progressToDisplay?.initialDaysToGoal ?? 0
+        
+        let dateFormat = NSDateFormatter()
+        dateFormat.dateStyle = .MediumStyle
+        
+        let formattedStartDate = dateFormat.stringFromDate(startDate)
+        let formattedLastSacrifice = dateFormat.stringFromDate(lastSacrifice)
+        
+        
         if self.progressToDisplay?.isGoalAcheived == false {
             
-            self.detailStats = ["\(self.progressToDisplay?.goal?.name)", "\(self.progressToDisplay?.goal?.startDate)", "\(self.progressToDisplay?.goal?.cost)", "\(self.progressToDisplay?.giveUpItem?.name)", "\(self.progressToDisplay?.mostRecentSacrifice)", "\(self.progressToDisplay?.giveUpItem?.frequency)", "\(self.progressToDisplay?.giveUpItem?.cost)", "\(self.progressToDisplay?.numberOfSacrifices)","\(self.progressToDisplay?.sacrificesToGoal)", "\(self.progressToDisplay?.currentSavingsTotal)", "\(self.progressToDisplay?.dollarsToGoal)", "\(self.progressToDisplay?.initialDaysToGoal)"]
+            self.detailStats = ["\(goalName)", "\(formattedStartDate)", "\(goalCost)", "\(sacrificeName)", "\(formattedLastSacrifice)", "\(sacrificeFrequency)", "\(sacrificeCost)", "\(sacrificeCount)","\(sacrificesToGoal)", "\(savingsTotal)", "\(dollarsToGoal)", "\(daysToGoal)"]
             
         } else {
             
-            self.detailStats = ["\(self.progressToDisplay?.goal?.name)", "\(self.progressToDisplay?.goal?.startDate)", "\(self.progressToDisplay?.goal?.cost)", "\(self.progressToDisplay?.giveUpItem?.name)", "\(self.progressToDisplay?.giveUpItem?.frequency)", "\(self.progressToDisplay?.giveUpItem?.cost)", "\(self.progressToDisplay?.numberOfSacrifices)", "\(self.progressToDisplay?.currentSavingsTotal)", "\(self.progressToDisplay?.mostRecentSacrifice)"]
+            self.detailStats = ["\(goalName)", "\(formattedStartDate)", "\(goalCost)", "\(sacrificeName)", "\(sacrificeFrequency)", "\(sacrificeCost)", "\(sacrificeCount)", "\(savingsTotal)", "\(formattedLastSacrifice)"]
             
             
         }
+        
+       // "\(self.progressToDisplay?.goal?.name ?? "")"
         
 //        if let goalName = self.progressToDisplay?.goal?.name, startDate = self.progressToDisplay?.goal?.startDate, goalCost = self.progressToDisplay?.goal?.cost, skipName = self.progressToDisplay?.giveUpItem?.name, recentSkip = self.progressToDisplay?.mostRecentSacrifice, skipFrequency = self.progressToDisplay?.giveUpItem?.frequency, skipCost = self.progressToDisplay?.giveUpItem?.cost, numberOfSkips = self.progressToDisplay?.numberOfSacrifices, skipsToGoal = self.progressToDisplay?.sacrificesToGoal, currentSavings = self.progressToDisplay?.currentSavingsTotal, dollarsToGoal = self.progressToDisplay?.dollarsToGoal, daysToGoal = self.progressToDisplay?.initialDaysToGoal  {
 //            

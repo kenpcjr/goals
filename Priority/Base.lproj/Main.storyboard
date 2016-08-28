@@ -11,6 +11,7 @@
         <mutableArray key="Raleway-Light.ttf">
             <string>Raleway-Light</string>
             <string>Raleway-Light</string>
+            <string>Raleway-Light</string>
         </mutableArray>
         <mutableArray key="Raleway-LightItalic.ttf">
             <string>Raleway-LightItalic</string>
@@ -1545,18 +1546,36 @@
                                     <action selector="doneTapped:" destination="Tcj-bS-NAC" eventType="touchUpInside" id="LRF-cX-cXb"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUq-kG-XHo">
+                                <rect key="frame" x="41" y="120" width="297" height="391"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <mutableString key="text">"The Habit-Breaking Savings App"  Developed By: Kenneth Cooke  Designed By : Katharine Sherman  Mountain Photo By: Thomas Kelley  Font: Google's Raleway  Icons: Google's Material Icons  This app is dedicated to Melissa, who always reminds me I should be better at saving.</mutableString>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Raleway-Light" family="Raleway" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yUq-kG-XHo" firstAttribute="width" secondItem="TgM-H1-eZz" secondAttribute="width" multiplier="0.8" id="949-ed-mO9"/>
                             <constraint firstItem="xpK-UH-RHp" firstAttribute="centerX" secondItem="TgM-H1-eZz" secondAttribute="centerX" id="DlI-95-bh3"/>
                             <constraint firstItem="xpK-UH-RHp" firstAttribute="top" secondItem="MPl-CF-RGc" secondAttribute="bottom" constant="12" id="ELV-RE-2B4"/>
                             <constraint firstItem="vmN-op-42Z" firstAttribute="leading" secondItem="TgM-H1-eZz" secondAttribute="leadingMargin" id="IzV-zf-8LW"/>
+                            <constraint firstItem="pe2-IC-S2J" firstAttribute="top" secondItem="yUq-kG-XHo" secondAttribute="bottom" constant="156" id="RhF-OA-PC0"/>
                             <constraint firstItem="vmN-op-42Z" firstAttribute="top" secondItem="MPl-CF-RGc" secondAttribute="bottom" constant="8" id="gMl-xA-gcD"/>
                             <constraint firstItem="XQC-Ly-UAq" firstAttribute="centerY" secondItem="TgM-H1-eZz" secondAttribute="centerY" id="jbd-0Y-mjA"/>
+                            <constraint firstItem="yUq-kG-XHo" firstAttribute="top" secondItem="MPl-CF-RGc" secondAttribute="bottom" constant="100" id="jvb-Kq-VDG"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="yUq-kG-XHo" secondAttribute="leading" id="mkN-tC-7jf"/>
+                            <constraint firstItem="yUq-kG-XHo" firstAttribute="centerX" secondItem="TgM-H1-eZz" secondAttribute="centerX" id="nCF-rk-WNU"/>
                             <constraint firstItem="XQC-Ly-UAq" firstAttribute="width" secondItem="TgM-H1-eZz" secondAttribute="width" id="o8z-ud-h6D"/>
                             <constraint firstItem="XQC-Ly-UAq" firstAttribute="height" secondItem="TgM-H1-eZz" secondAttribute="height" id="oP3-0x-xYS"/>
                             <constraint firstItem="XQC-Ly-UAq" firstAttribute="centerX" secondItem="TgM-H1-eZz" secondAttribute="centerX" id="zff-Qs-WsW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mkN-tC-7jf"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8yn-EI-WFJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1734,8 +1753,8 @@
         <image name="yes_btn" width="196" height="196"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xbI-cU-OJv"/>
-        <segue reference="Br1-kU-hnP"/>
+        <segue reference="rSK-e1-QJ0"/>
+        <segue reference="OBy-tO-MFh"/>
         <segue reference="bKy-GV-ixf"/>
     </inferredMetricsTieBreakers>
 </document>

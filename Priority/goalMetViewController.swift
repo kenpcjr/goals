@@ -52,7 +52,13 @@ class goalMetViewController: UIViewController {
             
             let activityVC = UIActivityViewController.init(activityItems: [shareText], applicationActivities: nil)
             
-            activityVC.excludedActivityTypes = [UIActivityTypePostToVimeo, UIActivityTypeAirDrop, UIActivityTypePrint, UIActivityTypeOpenInIBooks, UIActivityTypePostToFlickr, UIActivityTypeAddToReadingList, UIActivityTypeSaveToCameraRoll]
+            activityVC.excludedActivityTypes = [UIActivityTypePostToVimeo,
+                                                UIActivityTypeAirDrop,
+                                                UIActivityTypePrint,
+                                                UIActivityTypeOpenInIBooks,
+                                                UIActivityTypePostToFlickr,
+                                                UIActivityTypeAddToReadingList,
+                                                UIActivityTypeSaveToCameraRoll]
             
             self.presentViewController(activityVC, animated: true, completion: nil)
             

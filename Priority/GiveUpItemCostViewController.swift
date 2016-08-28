@@ -19,7 +19,6 @@ class GiveUpItemCostViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.giveUpCostTextField.becomeFirstResponder()
         
     }
     

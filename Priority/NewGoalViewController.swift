@@ -23,51 +23,43 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
         //self.exploreButton.enabled = false
         
         self.GoalNameTextField.delegate = self
-//        self.GoalNameTextField.becomeFirstResponder()
         
         
     }
     
     @IBAction func ExploreTapped(sender: AnyObject) {
         
-        //        let newGoal = Goal()
-        //        newGoal.name = self.GoalNameTextField.text!
-        //        newGoal.cost = Double(self.goalCostTextField.text!)!
-        //
-        //        dataStore.userContainer[0].tempGoal = newGoal
-        //
         
+        // working on upper and lowercase
         
+        var goalNameProper = self.GoalNameTextField.text!.lowercaseString
         
-        //        dataStore.userContainer[0].tempGoal = Goal.
+        print(goalNameProper)
         
-        var goalNameProper = self.GoalNameTextField.text
-        
-        if self.GoalNameTextField.text?.hasPrefix("a ") == true {
+        if goalNameProper.hasPrefix("a ") == true {
             
-            var goalName = self.GoalNameTextField.text?.stringByReplacingOccurrencesOfString("a ", withString: "")
-            
-            goalNameProper = goalName
+            goalNameProper = goalNameProper.stringByReplacingOccurrencesOfString("a ", withString: "")
             
         }
         
-        if self.GoalNameTextField.text?.hasPrefix("A ") == true {
+        if goalNameProper.hasSuffix(" ") == true {
             
-            var goalName = self.GoalNameTextField.text?.stringByReplacingOccurrencesOfString("A ", withString: "")
-            
-            goalNameProper = goalName
-            
-        }
-        
-        if goalNameProper!.hasSuffix(" ") == true {
-            
-            while goalNameProper!.hasSuffix(" ") {
+            while goalNameProper.hasSuffix(" ") {
                 
-                goalNameProper!.removeAtIndex(goalNameProper!.endIndex.predecessor())
+                goalNameProper.removeAtIndex(goalNameProper.endIndex.predecessor())
                 
             }
-           
+            
         }
+        
+        if goalNameProper.hasPrefix("my ") {
+            
+            goalNameProper = goalNameProper.stringByReplacingOccurrencesOfString("my ", withString: "")
+            
+        }
+        
+        
+        goalNameProper = goalNameProper.capitalizedString
         
         
         let tempGoal = NSEntityDescription.insertNewObjectForEntityForName("Goal", inManagedObjectContext: dataStore.managedObjectContext) as! Goal
@@ -75,8 +67,7 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
         dataStore.userContainer[0].tempGoal?.completed = 0
         dataStore.userContainer[0].tempGoal?.startDate = NSDate()
         
-        dataStore.userContainer[0].tempGoal?.name = goalNameProper!
-        //        dataStore.userContainer[0].tempGoal?.cost = Double(self.goalCostTextField.text!)
+        dataStore.userContainer[0].tempGoal?.name = goalNameProper
         
         print(dataStore.userContainer[0].tempGoal?.name)
         print(dataStore.userContainer[0].tempGoal?.cost)

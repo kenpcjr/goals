@@ -19,8 +19,6 @@ class GiveUpItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.itemTextField.becomeFirstResponder()
-        
     }
     
     @IBAction func exploreTapped(sender: AnyObject) {

@@ -12,8 +12,6 @@ class PurchaseSkipViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
     
-//    var passedGoal = Goal()
-    
     var monitor: ProgressMonitor?
     
     @IBOutlet weak var aboutToSkipLabel: UILabel!

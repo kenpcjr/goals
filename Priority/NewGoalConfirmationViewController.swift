@@ -65,43 +65,7 @@ class NewGoalConfirmationViewController: UIViewController {
         dataStore.saveContext()
         dataStore.fetchData()
         
-        //        if dataStore.userContainer[0].goalInProgress != nil {
-        //
-        //        dataStore.managedObjectContext.deleteObject(dataStore.userContainer[0].tempGoal!)
-        //
-        //            dataStore.saveContext()
-        //            dataStore.fetchData()
-        //
-        //        }
-        
-        //        let beforeGoalAdd = dataStore.userContainer[0].goalsInProgress.count
-        
-        //        if let goalName = self.progressMonitor?.goal.name {
-        //
-        //        dataStore.user.goalsInProgress[goalName] = self.progressMonitor
-        //
-        //        }
-        
-        //        if dataStore.user.goalsInProgress.count > beforeGoalAdd {
-        //
-        //            dataStore.user.tempGoal = nil
-        //
-        //        } else {
-        //
-        //            print("Progress Monitor Didn't Save")
-        //        }
-        
-        //    }
-        
-        //    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //
-        //        let destVC = segue.destinationViewController as! GoalStatusViewController
-        //        
-        //        if let goal = dataStore.userContainer[0].goalInProgress?.goal {
-        //        
-        //        destVC.passedGoal = goal
-        //            
-        //        }
+ 
     }
     
     

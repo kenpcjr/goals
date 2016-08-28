@@ -21,8 +21,6 @@ class NewGoalCost: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
 //        self.goalCostTextField.delegate = self
-        
-//        self.goalCostTextField.becomeFirstResponder()
     
     }
     
@@ -36,19 +34,6 @@ class NewGoalCost: UIViewController, UITextFieldDelegate {
         
         
     }
-    
-//    func textFieldShouldReturn(textField: UITextField) -> Bool {
-//        
-//
-//        
-//        let giveUpVC = self.storyboard?.instantiateViewControllerWithIdentifier("GiveUpItemName")
-//        
-//         self.presentViewController(giveUpVC!, animated: true, completion: nil)
-//        
-//        return false
-//    
-//    
-//    }
     
     
 }

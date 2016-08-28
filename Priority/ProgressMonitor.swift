@@ -18,7 +18,6 @@ class ProgressMonitor: NSManagedObject {
         
         guard let giveUpItem = self.giveUpItem, sacrifices = numberOfSacrifices else {return 0}
         
-        //Watch this force unwrap
         
         return Double(sacrifices) * Double(giveUpItem.cost!)
         

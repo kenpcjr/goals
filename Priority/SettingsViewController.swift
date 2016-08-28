@@ -12,9 +12,23 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     @IBOutlet weak var tableView: UITableView!
     
-    let settingsLabels = ["Share Goal Status", "Current Goal Details", "Modify Current Goal", "Create New Goal", "User Stats","View Completed Goals", "Notifications", "About Priority"]
+    let settingsLabels = ["Share Goal Status",
+                          "Current Goal Details",
+                          "Modify Current Goal",
+                          "Create New Goal",
+                          "User Stats",
+                          "View Completed Goals",
+                          "Notifications",
+                          "About Priority"]
     
-    let images = [UIImage.init(named: "text"), UIImage.init(named: "details"), UIImage.init(named: "edit"), UIImage.init(named: "new"), UIImage.init(named: "timeline"), UIImage.init(named: "complete"), UIImage.init(named: "notification"), UIImage.init(named: "info")]
+    let images = [UIImage.init(named: "text"),
+                  UIImage.init(named: "details"),
+                  UIImage.init(named: "edit"),
+                  UIImage.init(named: "new"),
+                  UIImage.init(named: "timeline"),
+                  UIImage.init(named: "complete"),
+                  UIImage.init(named: "notification"),
+                  UIImage.init(named: "info")]
     
     let dataStore = DataStore.sharedManager
     
@@ -119,7 +133,13 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             let activityVC = UIActivityViewController.init(activityItems: [shareText], applicationActivities: nil)
             
-            activityVC.excludedActivityTypes = [UIActivityTypePostToVimeo, UIActivityTypeAirDrop, UIActivityTypePrint, UIActivityTypeOpenInIBooks, UIActivityTypePostToFlickr, UIActivityTypeAddToReadingList, UIActivityTypeSaveToCameraRoll]
+            activityVC.excludedActivityTypes = [UIActivityTypePostToVimeo,
+                                                UIActivityTypeAirDrop,
+                                                UIActivityTypePrint,
+                                                UIActivityTypeOpenInIBooks,
+                                                UIActivityTypePostToFlickr,
+                                                UIActivityTypeAddToReadingList,
+                                                UIActivityTypeSaveToCameraRoll]
             
             self.presentViewController(activityVC, animated: true, completion: nil)
             

@@ -22,8 +22,6 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         self.detailsTableView.delegate = self
         self.detailsTableView.dataSource = self
         
-        // Do any additional setup after loading the view.
-        
         addDetailStatsToStatsArrayBasedOnCompletion()
         addCategoriesToCategoriesArrayBasedOnCompletion()
         
@@ -32,7 +30,7 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+       
     }
     
     
@@ -52,16 +50,6 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell
     }
     
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
     func addDetailStatsToStatsArrayBasedOnCompletion() {
         
@@ -89,44 +77,55 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         
         if self.progressToDisplay?.isGoalAcheived == false {
             
-            self.detailStats = ["\(goalName)", "\(formattedStartDate)", "\(goalCost)", "\(sacrificeName)", "\(formattedLastSacrifice)", "\(sacrificeFrequency)", "\(sacrificeCost)", "\(sacrificeCount)","\(sacrificesToGoal)", "\(savingsTotal)", "\(dollarsToGoal)", "\(daysToGoal)"]
+            self.detailStats = ["\(goalName)",
+                                "\(formattedStartDate)",
+                                "\(goalCost)",
+                                "\(sacrificeName)",
+                                "\(formattedLastSacrifice)",
+                                "\(sacrificeFrequency)",
+                                "\(sacrificeCost)",
+                                "\(sacrificeCount)",
+                                "\(sacrificesToGoal)",
+                                "\(savingsTotal)",
+                                "\(dollarsToGoal)",
+                                "\(daysToGoal)"]
             
         } else {
             
-            self.detailStats = ["\(goalName)", "\(formattedStartDate)", "\(goalCost)", "\(sacrificeName)", "\(sacrificeFrequency)", "\(sacrificeCost)", "\(sacrificeCount)", "\(savingsTotal)", "\(formattedLastSacrifice)"]
+            self.detailStats = ["\(goalName)",
+                                "\(formattedStartDate)",
+                                "\(goalCost)",
+                                "\(sacrificeName)",
+                                "\(sacrificeFrequency)",
+                                "\(sacrificeCost)",
+                                "\(sacrificeCount)",
+                                "\(savingsTotal)",
+                                "\(formattedLastSacrifice)"]
             
             
         }
         
-       // "\(self.progressToDisplay?.goal?.name ?? "")"
-        
-//        if let goalName = self.progressToDisplay?.goal?.name, startDate = self.progressToDisplay?.goal?.startDate, goalCost = self.progressToDisplay?.goal?.cost, skipName = self.progressToDisplay?.giveUpItem?.name, recentSkip = self.progressToDisplay?.mostRecentSacrifice, skipFrequency = self.progressToDisplay?.giveUpItem?.frequency, skipCost = self.progressToDisplay?.giveUpItem?.cost, numberOfSkips = self.progressToDisplay?.numberOfSacrifices, skipsToGoal = self.progressToDisplay?.sacrificesToGoal, currentSavings = self.progressToDisplay?.currentSavingsTotal, dollarsToGoal = self.progressToDisplay?.dollarsToGoal, daysToGoal = self.progressToDisplay?.initialDaysToGoal  {
-//            
-//            
-//            if self.progressToDisplay?.isGoalAcheived == false {
-//                
-//                self.detailStats = ["\(goalName)", "\(startDate)", "\(goalCost)", "\(skipName)", "\(recentSkip)", "\(skipFrequency)", "\(skipCost)", "\(numberOfSkips)","\(skipsToGoal)", "\(currentSavings)", "\(dollarsToGoal)", "\(daysToGoal)"]
-//                
-//            } else {
-//                
-//                self.detailStats = ["\(goalName)", "\(startDate)", "\(goalCost)", "\(skipName)", "\(skipFrequency)", "\(skipCost)", "\(numberOfSkips)", "\(currentSavings)", "\(recentSkip)"]
-//                
-//                
-//            }
-//            
-//        }
-        
+    
     }
     
     func addCategoriesToCategoriesArrayBasedOnCompletion() {
         
         if self.progressToDisplay?.isGoalAcheived == false {
             
-            self.detailCategories = ["Goal Name:", "Goal Started:", "Goal Cost:", "Skip Item:", "Last Skip", "Skip Frequency:", "Skip Cost:", "Total Skips:", "Skips to Goal:", "Total Savings:", "Dollars to Goal:", "Days to Goal:"]
+            self.detailCategories = ["Goal Name:", "Goal Started:",
+                                     "Goal Cost:", "Skip Item:",
+                                     "Last Skip", "Skip Frequency:",
+                                     "Skip Cost:", "Total Skips:",
+                                     "Skips to Goal:", "Total Savings:",
+                                     "Dollars to Goal:", "Days to Goal:"]
             
         } else {
             
-            self.detailCategories = ["Goal Name:", "Goal Started:", "Goal Cost:", "Skip Item:", "Skip Frequency:", "Skip Cost:", "Total Skips:", "Total Savings:", "Date Completed:"]
+            self.detailCategories = ["Goal Name:", "Goal Started:",
+                                     "Goal Cost:", "Skip Item:",
+                                     "Skip Frequency:", "Skip Cost:",
+                                     "Total Skips:", "Total Savings:",
+                                     "Date Completed:"]
             
         }
         

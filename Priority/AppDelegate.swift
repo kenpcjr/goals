@@ -37,14 +37,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             print("appDelegate sees a goal")
             
-//            let navController = storyboard.instantiateViewControllerWithIdentifier("nav")
-//            
             let goalStatusViewController = storyboard.instantiateViewControllerWithIdentifier("goalStatusNav")
-//
+
             self.window?.rootViewController = goalStatusViewController
-//
-//            navController.presentViewController(goalStatus, animated: true, completion: nil)
-//            
+        
         }
         
         if dataStore.userContainer[0].goalInProgress == nil && dataStore.userContainer[0].goalsComplete?.count != 0 {

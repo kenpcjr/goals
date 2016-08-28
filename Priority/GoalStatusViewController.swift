@@ -19,26 +19,13 @@ class GoalStatusViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        dataStore.fetchData()
-        
-        checkForSucess()
-        
-        let storesProgressMonitor = dataStore.userContainer[0].goalInProgress
-        
-        if let savings = storesProgressMonitor?.currentSavingsTotal,
-            numberOfItems = storesProgressMonitor?.sacrificesToGoal,
-            giveUpName = storesProgressMonitor?.giveUpItem!.name,
-            goalName = storesProgressMonitor?.goal!.name {
-            
-            self.savingsTotalLabel.text = "$\(savings)"
-            
-            self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpName)s away from \(goalName)"
-            
-        }
+
     }
     
     override func viewWillAppear(animated: Bool) {
         
+        print("fetched")
+        
         dataStore.fetchData()
         
         checkForSucess()
@@ -50,12 +37,15 @@ class GoalStatusViewController: UIViewController {
             giveUpName = storesProgressMonitor?.giveUpItem!.name,
             goalName = storesProgressMonitor?.goal!.name {
             
+            var giveUpNameCopy = giveUpName
+            
+            giveUpNameCopy.removePluralSuffix()
+            
+            
             self.savingsTotalLabel.text = "$\(savings)"
             
-            self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpName)s away from \(goalName)"
+            self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpNameCopy)s away from your \(goalName)"
         }
-        
-        
         
         print("Goal: \(dataStore.userContainer[0].goalInProgress?.goal?.cost) \n Savings Total:\(dataStore.userContainer[0].goalInProgress?.currentSavingsTotal)")
         

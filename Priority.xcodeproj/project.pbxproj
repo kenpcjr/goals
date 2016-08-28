@@ -51,6 +51,7 @@
 		4F99966C1D46F846009C5A99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F99966A1D46F846009C5A99 /* LaunchScreen.storyboard */; };
 		4F99967A1D48D866009C5A99 /* GiveUpItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9996791D48D866009C5A99 /* GiveUpItemViewController.swift */; };
 		4FCD8F621D730A5A00CB1594 /* LanguageHandling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD8F611D730A5A00CB1594 /* LanguageHandling.swift */; };
+		4FCD8F661D73509E00CB1594 /* NextGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FCD8F651D73509E00CB1594 /* NextGoalViewController.swift */; };
 		4FD3C9781D56652800F16915 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C9771D56652800F16915 /* Secrets.swift */; };
 		4FD3C97A1D56688C00F16915 /* InitialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */; };
 		4FD3C97C1D566DCD00F16915 /* SettingsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FD3C97B1D566DCD00F16915 /* SettingsTableView.swift */; };
@@ -114,6 +115,7 @@
 		4F99966D1D46F846009C5A99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F9996791D48D866009C5A99 /* GiveUpItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GiveUpItemViewController.swift; sourceTree = "<group>"; };
 		4FCD8F611D730A5A00CB1594 /* LanguageHandling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageHandling.swift; sourceTree = "<group>"; };
+		4FCD8F651D73509E00CB1594 /* NextGoalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NextGoalViewController.swift; sourceTree = "<group>"; };
 		4FD3C9771D56652800F16915 /* Secrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		4FD3C9791D56688C00F16915 /* InitialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialPageViewController.swift; sourceTree = "<group>"; };
 		4FD3C97B1D566DCD00F16915 /* SettingsTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableView.swift; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 				4F82FE4E1D63F0250085DBA4 /* pastGoalsTableViewController.swift */,
 				4F82FE501D64833A0085DBA4 /* GoalDetailViewController.swift */,
 				4F30262D1D6B2D6A00A9E539 /* AboutViewController.swift */,
+				4FCD8F651D73509E00CB1594 /* NextGoalViewController.swift */,
 				4F6B89B91D5A94560051BA1C /* UnusedViews */,
 				4F7BDD121D5FB8E5003AEBB5 /* raleway */,
 			);
@@ -443,6 +446,7 @@
 				4F78BE211D57F5410061CB40 /* MainNavigationController.swift in Sources */,
 				4FD3C97A1D56688C00F16915 /* InitialPageViewController.swift in Sources */,
 				4F99967A1D48D866009C5A99 /* GiveUpItemViewController.swift in Sources */,
+				4FCD8F661D73509E00CB1594 /* NextGoalViewController.swift in Sources */,
 				4FED92E81D4D250400138562 /* giveUpItemFrequencyViewController.swift in Sources */,
 				4F82FE511D64833A0085DBA4 /* GoalDetailViewController.swift in Sources */,
 				4FED92EC1D4D256F00138562 /* GoalStatusViewController.swift in Sources */,

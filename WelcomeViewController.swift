@@ -12,12 +12,12 @@ class WelcomeViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
     
-   
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         dataStore.fetchData()
         
@@ -30,7 +30,15 @@ class WelcomeViewController: UIViewController {
             
             print("There is no goal set")
         }
+        
+        
+        let backNav = UIBarButtonItem()
+        backNav.title = ""
+        navigationItem.backBarButtonItem = backNav
+        
+        
     }
     
+
     
 }

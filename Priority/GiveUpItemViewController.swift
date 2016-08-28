@@ -22,6 +22,12 @@ class GiveUpItemViewController: UIViewController {
         self.exploreButton.enabled = false
         self.hideKeyboardWhenTappedAround()
         
+        
+        let backNav = UIBarButtonItem()
+        backNav.title = ""
+        navigationItem.backBarButtonItem = backNav
+        
+        
     }
     
     @IBAction func giveUpItemEditing(sender: AnyObject) {

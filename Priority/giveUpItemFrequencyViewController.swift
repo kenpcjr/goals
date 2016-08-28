@@ -29,6 +29,12 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
             
             self.howOftenLabel.text = "How often do you buy \(text)?"
             
+            
+            let backNav = UIBarButtonItem()
+            backNav.title = ""
+            navigationItem.backBarButtonItem = backNav
+            
+            
         }
         
         

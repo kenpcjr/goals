@@ -20,6 +20,10 @@ class NewGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let backNav = UIBarButtonItem()
+        backNav.title = ""
+        navigationItem.backBarButtonItem = backNav
+        
         self.exploreButton.enabled = false
         
         self.hideKeyboardWhenTappedAround()

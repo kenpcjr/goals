@@ -46,6 +46,12 @@ class GoalStatusViewController: UIViewController {
             self.savingsTotalLabel.text = "$\(savingsWithTwoDecimals)"
             
             self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpNameCopy)s away from your \(goalName)"
+            
+            
+            let backNav = UIBarButtonItem()
+            backNav.title = ""
+            navigationItem.backBarButtonItem = backNav
+            
         }
         
         print("Goal: \(dataStore.userContainer[0].goalInProgress?.goal?.cost) \n Savings Total:\(dataStore.userContainer[0].goalInProgress?.currentSavingsTotal)")

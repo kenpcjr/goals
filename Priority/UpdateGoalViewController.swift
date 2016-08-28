@@ -12,7 +12,7 @@ import CurrencyTextField
 class UpdateGoalViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
-
+    
     @IBOutlet weak var currentGoalCostTextField: CurrencyTextField!
     @IBOutlet weak var currentGiveUpItemCost: CurrencyTextField!
     @IBOutlet weak var updateButton: UIButton!
@@ -38,8 +38,15 @@ class UpdateGoalViewController: UIViewController {
         
         self.currentGiveUpItemCost.text = "$\(giveUpCostWithTwoDecimals)"
         
+        
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        
+        presentModificationAlert()
+    }
+    
     
     @IBAction func updateTapped(sender: AnyObject) {
         
@@ -48,8 +55,8 @@ class UpdateGoalViewController: UIViewController {
         let newCleanGoalCost = newGoalCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
         
         if let newGoalCost = newCleanGoalCost {
-        
-        dataStore.userContainer[0].goalInProgress?.goal?.cost = Double(newGoalCost)
+            
+            dataStore.userContainer[0].goalInProgress?.goal?.cost = Double(newGoalCost)
             
         }
         
@@ -59,9 +66,9 @@ class UpdateGoalViewController: UIViewController {
         let newCleanItemCost = newItemCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
         
         if let newItemCost = newCleanItemCost {
-
-        
-        dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost = Double(newItemCost)
+            
+            
+            dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost = Double(newItemCost)
             
         }
         
@@ -74,6 +81,20 @@ class UpdateGoalViewController: UIViewController {
         
         self.dismissViewControllerAnimated(true, completion: nil)
         
+        
+    }
+    
+    func presentModificationAlert() {
+        
+        let exisitngGoalAlert = UIAlertController.init(title: "Careful!", message: "Any changes you make here will affect all other stats for the current goal", preferredStyle: .Alert)
+        
+        exisitngGoalAlert.addAction(UIAlertAction.init(title: "Cancel", style: .Cancel, handler: { (Alert) in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        
+        exisitngGoalAlert.addAction(UIAlertAction(title: "Change Goal", style: .Destructive, handler: nil))
+        
+        self.presentViewController(exisitngGoalAlert, animated: true, completion: nil)
         
     }
     

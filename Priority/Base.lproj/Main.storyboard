@@ -139,7 +139,7 @@
         <!--Set a New Goal-->
         <scene sceneID="cqR-ml-l1c">
             <objects>
-                <viewController id="kcD-1V-Gps" sceneMemberID="viewController">
+                <viewController id="kcD-1V-Gps" customClass="NextGoalViewController" customModule="Priority" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="53F-62-eJR"/>
                         <viewControllerLayoutGuide type="bottom" id="uSC-vp-Q1n"/>
@@ -1640,7 +1640,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iHR-X2-Cw3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" type="system" weight="light" pointSize="22"/>
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -1691,7 +1691,7 @@
         <image name="yes_btn" width="196" height="196"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lpU-NH-7t4"/>
+        <segue reference="rSK-e1-QJ0"/>
         <segue reference="OBy-tO-MFh"/>
         <segue reference="bKy-GV-ixf"/>
     </inferredMetricsTieBreakers>

@@ -23,6 +23,12 @@ class GiveUpItemCostViewController: UIViewController {
         self.continueButton.enabled = false
         self.hideKeyboardWhenTappedAround()
         
+        
+        let backNav = UIBarButtonItem()
+        backNav.title = ""
+        navigationItem.backBarButtonItem = backNav
+        
+        
     }
     
     @IBAction func costEditing(sender: AnyObject) {

@@ -23,6 +23,12 @@ class NewGoalCost: UIViewController {
         
         self.continueButton.enabled = false
         self.hideKeyboardWhenTappedAround()
+        
+        
+        let backNav = UIBarButtonItem()
+        backNav.title = ""
+        navigationItem.backBarButtonItem = backNav
+        
     
     }
     

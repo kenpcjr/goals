@@ -36,6 +36,12 @@ class NewGoalConfirmationViewController: UIViewController {
             print(dataStore.userContainer[0].tempGoal?.name)
             print(dataStore.userContainer[0].tempGoal?.giveUpItem?.name)
             
+            
+            let backNav = UIBarButtonItem()
+            backNav.title = ""
+            navigationItem.backBarButtonItem = backNav
+            
+            
         }
         
         if let goalName = dataStore.userContainer[0].tempGoal?.name, giveUpItem = dataStore.userContainer[0].tempGoal?.giveUpItem?.name, daysToGoal = self.progressMonitor?.initialDaysToGoal {

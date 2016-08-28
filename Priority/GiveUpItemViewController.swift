@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class GiveUpItemViewController: UIViewController {
+class GiveUpItemViewController: UIViewController, UITextFieldDelegate {
     
     let dataStore = DataStore.sharedManager
 
@@ -19,46 +19,49 @@ class GiveUpItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.itemTextField.delegate = self
+    
+        self.exploreButton.enabled = false
+        
     }
+    
+    @IBAction func giveUpItemEditing(sender: AnyObject) {
+        
+        if LanguageHandling.validateItemName(self.itemTextField) {
+            
+            self.exploreButton.enabled = true
+            
+        } else {
+            
+            self.exploreButton.enabled = false
+            
+        }
+        
+    }
+    
+ 
     
     @IBAction func exploreTapped(sender: AnyObject) {
         
         
-        var giveUpNameProper = self.itemTextField.text
+        var giveUpNameProper = self.itemTextField.text!
         
-        if self.itemTextField.text?.hasPrefix("a ") == true {
-            
-            let giveUpName = self.itemTextField.text?.stringByReplacingOccurrencesOfString("a ", withString: "")
-            
-            giveUpNameProper = giveUpName
-            
-        }
+        giveUpNameProper.editTextForStorage()
         
-        if self.itemTextField.text?.hasPrefix("A ") == true {
-            
-            let giveUpName = self.itemTextField.text?.stringByReplacingOccurrencesOfString("A ", withString: "")
-            
-            giveUpNameProper = giveUpName
-            
-        }
+        setUpNewGiveUpItem(giveUpNameProper)
         
-        if giveUpNameProper!.hasSuffix(" ") {
-            
-            while giveUpNameProper!.hasSuffix(" ") {
-                
-                giveUpNameProper!.removeAtIndex(giveUpNameProper!.endIndex.predecessor())
-                
-            }
-            
-            
-            
-        }
+       
+        
+    }
+    
+    func setUpNewGiveUpItem(giveUpItemName: String) {
         
         let newGiveUpItem = NSEntityDescription.insertNewObjectForEntityForName("GiveUpItem", inManagedObjectContext: dataStore.managedObjectContext) as! GiveUpItem
         
         dataStore.userContainer[0].tempGoal?.giveUpItem = newGiveUpItem
         
-        dataStore.userContainer[0].tempGoal?.giveUpItem?.name = giveUpNameProper!
+        dataStore.userContainer[0].tempGoal?.giveUpItem?.name = giveUpItemName
+        
         
     }
     

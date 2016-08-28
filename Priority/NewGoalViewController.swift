@@ -20,7 +20,7 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.exploreButton.enabled = false
+        self.exploreButton.enabled = false
         
         self.GoalNameTextField.delegate = self
         
@@ -29,97 +29,38 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func ExploreTapped(sender: AnyObject) {
         
-        
-        // working on upper and lowercase
-        
         var goalNameProper = self.GoalNameTextField.text!.lowercaseString
         
-        print(goalNameProper)
+        goalNameProper.editTextForStorage()
         
-        if goalNameProper.hasPrefix("a ") == true {
-            
-            goalNameProper = goalNameProper.stringByReplacingOccurrencesOfString("a ", withString: "")
-            
-        }
+        setUpTempGoal(goalNameProper)
         
-        if goalNameProper.hasSuffix(" ") == true {
-            
-            while goalNameProper.hasSuffix(" ") {
-                
-                goalNameProper.removeAtIndex(goalNameProper.endIndex.predecessor())
-                
-            }
-            
-        }
+    }
+    
+    @IBAction func goalNameEditing(sender: AnyObject) {
         
-        if goalNameProper.hasPrefix("my ") {
+        if LanguageHandling.validateItemName(self.GoalNameTextField) {
             
-            goalNameProper = goalNameProper.stringByReplacingOccurrencesOfString("my ", withString: "")
+            self.exploreButton.enabled = true
+            
+        } else {
+            
+            self.exploreButton.enabled = false
             
         }
         
         
-        goalNameProper = goalNameProper.capitalizedString
-        
+    }
+    
+    func setUpTempGoal(goalName: String) {
         
         let tempGoal = NSEntityDescription.insertNewObjectForEntityForName("Goal", inManagedObjectContext: dataStore.managedObjectContext) as! Goal
         dataStore.userContainer[0].tempGoal = tempGoal
         dataStore.userContainer[0].tempGoal?.completed = 0
         dataStore.userContainer[0].tempGoal?.startDate = NSDate()
         
-        dataStore.userContainer[0].tempGoal?.name = goalNameProper
-        
-        print(dataStore.userContainer[0].tempGoal?.name)
-        print(dataStore.userContainer[0].tempGoal?.cost)
+        dataStore.userContainer[0].tempGoal?.name = goalName
         
     }
-    
-    //    @IBAction func priceEditing(sender: AnyObject) {
-    //
-    //        if validatePrice(self.goalCostTextField) {
-    //
-    //            self.exploreButton.enabled = true
-    //
-    //        } else {
-    //
-    //            self.exploreButton.enabled = false
-    //
-    //        }
-    //
-    //    }
-    
-    func validateItemName(textField: UITextField) -> Bool {
-        
-        let hasContent = textField.text?.characters.count > 0
-        let isThreeWordsOrLess = textField.text?.componentsSeparatedByString(" ").count <= 3
-        
-        if hasContent && isThreeWordsOrLess {
-            
-            return true
-            
-        }
-        
-        return false
-        
-    }
-    
-    func validatePrice(textField: UITextField) -> Bool {
-        
-        let hasContent = textField.text?.characters.count > 0
-        let numbersSet = NSCharacterSet.init(charactersInString: "0123456789")
-        let isNumbersOnly = textField.text?.rangeOfCharacterFromSet(numbersSet.invertedSet) == nil
-        
-        if hasContent && isNumbersOnly {
-            
-            print("True")
-            return true
-            
-        }
-        
-        print(false)
-        return false
-        
-    }
-    
     
 }

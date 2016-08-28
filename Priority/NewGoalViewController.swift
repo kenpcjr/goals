@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class NewGoalViewController: UIViewController, UITextFieldDelegate {
+class NewGoalViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
     
@@ -22,7 +22,7 @@ class NewGoalViewController: UIViewController, UITextFieldDelegate {
         
         self.exploreButton.enabled = false
         
-        self.GoalNameTextField.delegate = self
+        self.hideKeyboardWhenTappedAround()
         
         
     }

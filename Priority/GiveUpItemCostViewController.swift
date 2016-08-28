@@ -14,14 +14,30 @@ class GiveUpItemCostViewController: UIViewController {
     let dataStore = DataStore.sharedManager
     
     @IBOutlet weak var giveUpCostTextField: CurrencyTextField!
+    @IBOutlet weak var continueButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.continueButton.enabled = false
+        self.hideKeyboardWhenTappedAround()
         
     }
     
+    @IBAction func costEditing(sender: AnyObject) {
+       
+        if LanguageHandling.checkForValidPrice(self.giveUpCostTextField) {
+            
+            self.continueButton.enabled = true
+            
+        } else {
+            
+            self.continueButton.enabled = false
+            
+        }
+        
+    }
     
     
     @IBAction func continueTapped(sender: AnyObject) {

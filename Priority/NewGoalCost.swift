@@ -10,9 +10,10 @@ import UIKit
 import CoreData
 import CurrencyTextField
 
-class NewGoalCost: UIViewController, UITextFieldDelegate {
+class NewGoalCost: UIViewController {
     
     @IBOutlet weak var goalCostTextField: CurrencyTextField!
+    @IBOutlet weak var continueButton: UIButton!
     
     
     let dataStore = DataStore.sharedManager
@@ -20,10 +21,24 @@ class NewGoalCost: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.goalCostTextField.delegate = self
+        self.continueButton.enabled = false
+        self.hideKeyboardWhenTappedAround()
     
     }
     
+    @IBAction func priceEditing(sender: AnyObject) {
+        
+        if LanguageHandling.checkForValidPrice(self.goalCostTextField) {
+            
+            self.continueButton.enabled = true
+            
+        } else {
+            
+            self.continueButton.enabled = false
+            
+        }
+        
+    }
 
     @IBAction func continueTapped(sender: AnyObject) {
         

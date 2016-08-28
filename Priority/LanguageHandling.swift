@@ -26,7 +26,17 @@ class LanguageHandling {
         
     }
     
+    class func checkForValidPrice(textField: UITextField) -> Bool {
+        
+        if textField.text == "$0.00" {
+            
+            return false
+            
+        }
+            
+            return true
 
+    }
     
 }
 
@@ -72,8 +82,18 @@ extension String {
         
     }
     
+}
+
+extension UIViewController {
     
+    func hideKeyboardWhenTappedAround() {
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
     
-    
-    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }

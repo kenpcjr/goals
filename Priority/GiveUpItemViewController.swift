@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class GiveUpItemViewController: UIViewController, UITextFieldDelegate {
+class GiveUpItemViewController: UIViewController {
     
     let dataStore = DataStore.sharedManager
 
@@ -19,9 +19,8 @@ class GiveUpItemViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.itemTextField.delegate = self
-    
         self.exploreButton.enabled = false
+        self.hideKeyboardWhenTappedAround()
         
     }
     

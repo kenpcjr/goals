@@ -33,7 +33,9 @@ class PurchaseSkipViewController: UIViewController {
             
             let potentialSkipTotal = currentSavings + Double(itemCost)
             
-            self.potentialSkipTotalLabel.text = "$\(potentialSkipTotal)"
+            let potentialSkipWithTwoDecimals = String(format: "%.2f", potentialSkipTotal)
+            
+            self.potentialSkipTotalLabel.text = "$\(potentialSkipWithTwoDecimals)"
             
         }
     }

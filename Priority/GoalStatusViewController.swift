@@ -41,8 +41,9 @@ class GoalStatusViewController: UIViewController {
             
             giveUpNameCopy.removePluralSuffix()
             
+            let savingsWithTwoDecimals = String(format: "%.2f", savings)
             
-            self.savingsTotalLabel.text = "$\(savings)"
+            self.savingsTotalLabel.text = "$\(savingsWithTwoDecimals)"
             
             self.ItemsToGoalLabel.text = "You're \(numberOfItems) \(giveUpNameCopy)s away from your \(goalName)"
         }

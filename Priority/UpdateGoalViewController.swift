@@ -25,9 +25,18 @@ class UpdateGoalViewController: UIViewController {
         
         guard let goalCost = dataStore.userContainer[0].goalInProgress?.goal?.cost, giveUpCost = dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost else { return }
         
-        self.currentGoalCostTextField.text = String(goalCost)
+        print(goalCost)
+        print(giveUpCost)
         
-        self.currentGiveUpItemCost.text = String(giveUpCost)
+        let goalCostWithTwoDecimals = String(format: "%.2f", Double(goalCost))
+        let giveUpCostWithTwoDecimals = String(format: "%.2f", Double(giveUpCost))
+        
+        print(goalCostWithTwoDecimals)
+        print(giveUpCostWithTwoDecimals)
+        
+        self.currentGoalCostTextField.text = "$\(goalCostWithTwoDecimals)"
+        
+        self.currentGiveUpItemCost.text = "$\(giveUpCostWithTwoDecimals)"
         
     }
 

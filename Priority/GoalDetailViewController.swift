@@ -68,38 +68,43 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         let dollarsToGoal = self.progressToDisplay?.dollarsToGoal ?? 0
         let daysToGoal = self.progressToDisplay?.initialDaysToGoal ?? 0
         
+        let goalCostWithTwoDecimals = String(format: "%.2f", Double(goalCost))
+        let sacrificeCostWithTwoDecimals = String(format: "%.2f", Double(sacrificeCost))
+        
         let dateFormat = NSDateFormatter()
         dateFormat.dateStyle = .MediumStyle
         
         let formattedStartDate = dateFormat.stringFromDate(startDate)
         let formattedLastSacrifice = dateFormat.stringFromDate(lastSacrifice)
+        let savingsTotalWithTwoDecimals = String(format: "%.2f", Double(savingsTotal))
+        let dollarsToGoalWithTwoDecimals = String(format: "%.2f", Double(dollarsToGoal))
         
         
         if self.progressToDisplay?.isGoalAcheived == false {
             
             self.detailStats = ["\(goalName)",
                                 "\(formattedStartDate)",
-                                "\(goalCost)",
+                                "$\(goalCostWithTwoDecimals)",
                                 "\(sacrificeName)",
                                 "\(formattedLastSacrifice)",
                                 "\(sacrificeFrequency)",
-                                "\(sacrificeCost)",
+                                "$\(sacrificeCostWithTwoDecimals)",
                                 "\(sacrificeCount)",
                                 "\(sacrificesToGoal)",
-                                "\(savingsTotal)",
-                                "\(dollarsToGoal)",
-                                "\(daysToGoal)"]
+                                "$\(savingsTotalWithTwoDecimals)",
+                                "$\(dollarsToGoalWithTwoDecimals)",
+                                "\(Int(daysToGoal))"]
             
         } else {
             
             self.detailStats = ["\(goalName)",
                                 "\(formattedStartDate)",
-                                "\(goalCost)",
+                                "$\(goalCostWithTwoDecimals)",
                                 "\(sacrificeName)",
                                 "\(sacrificeFrequency)",
-                                "\(sacrificeCost)",
+                                "$\(sacrificeCostWithTwoDecimals)",
                                 "\(sacrificeCount)",
-                                "\(savingsTotal)",
+                                "$\(savingsTotalWithTwoDecimals)",
                                 "\(formattedLastSacrifice)"]
             
             

@@ -20,7 +20,9 @@ class UserStatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.lifetimeSavingsLabel.text = "\(dataStore.userContainer[0].lifetimeTotalSaved)"
+        let lifetimeSavingsWithTwoDecimals = String(format: "%.2f", dataStore.userContainer[0].lifetimeTotalSaved)
+        
+        self.lifetimeSavingsLabel.text = "$\(lifetimeSavingsWithTwoDecimals)"
         self.goalsAcheivedLabel.text = "\(dataStore.userContainer[0].numberOfGoalsMet)"
         self.totalSkipsLabel.text = "\(dataStore.userContainer[0].totalSacrifices)"
         

@@ -129,7 +129,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         if let goal = dataStore.userContainer[0].goalInProgress?.goal?.name, sacrifice = dataStore.userContainer[0].goalInProgress?.giveUpItem?.name, savings = dataStore.userContainer[0].goalInProgress?.currentSavingsTotal {
             
-            let shareText = "So far, I've saved $\(savings) towards my goal with #PriorityApp! I'm working on getting a \(goal) by skipping \(sacrifice)."
+            let savingsWithTwoDecimals = String(format: "%.2f", savings)
+            
+            let shareText = "So far, I've saved $\(savingsWithTwoDecimals) towards my goal with #PriorityApp! I'm working on getting a \(goal) by skipping \(sacrifice)."
             
             let activityVC = UIActivityViewController.init(activityItems: [shareText], applicationActivities: nil)
             

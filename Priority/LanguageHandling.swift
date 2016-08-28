@@ -81,8 +81,10 @@ extension String {
         self = self.capitalizedString
         
     }
+
     
 }
+
 
 extension UIViewController {
     

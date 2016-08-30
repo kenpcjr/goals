@@ -23,12 +23,12 @@ class WelcomeViewController: UIViewController {
         
         if dataStore.userContainer[0].goalInProgress != nil {
             
-            print(dataStore.userContainer[0].goalInProgress?.goal!.name)
-            print(dataStore.userContainer[0].goalInProgress?.giveUpItem!.name)
+//            print(dataStore.userContainer[0].goalInProgress?.goal!.name)
+//            print(dataStore.userContainer[0].goalInProgress?.giveUpItem!.name)
             
         } else {
             
-            print("There is no goal set")
+//            print("There is no goal set")
         }
         
         

@@ -18,7 +18,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                           "Create New Goal",
                           "User Stats",
                           "View Completed Goals",
-                          "Notifications",
                           "About Priority"]
     
     let images = [UIImage.init(named: "text"),
@@ -27,7 +26,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
                   UIImage.init(named: "new"),
                   UIImage.init(named: "timeline"),
                   UIImage.init(named: "complete"),
-                  UIImage.init(named: "notification"),
                   UIImage.init(named: "info")]
     
     let dataStore = DataStore.sharedManager
@@ -64,7 +62,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         let cellTapped = self.settingsLabels[indexPath.row]
         
-        print(cellTapped)
+//        print(cellTapped)
         
         switch cellTapped {
             
@@ -98,7 +96,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
         default:
             
-            print("No match")
+//            print("No match")
+            
+            break
             
         }
         

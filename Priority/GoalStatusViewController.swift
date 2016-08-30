@@ -24,7 +24,7 @@ class GoalStatusViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         
-        print("fetched")
+//        print("fetched")
         
         dataStore.fetchData()
         
@@ -54,7 +54,7 @@ class GoalStatusViewController: UIViewController {
             
         }
         
-        print("Goal: \(dataStore.userContainer[0].goalInProgress?.goal?.cost) \n Savings Total:\(dataStore.userContainer[0].goalInProgress?.currentSavingsTotal)")
+//        print("Goal: \(dataStore.userContainer[0].goalInProgress?.goal?.cost) \n Savings Total:\(dataStore.userContainer[0].goalInProgress?.currentSavingsTotal)")
         
     }
     

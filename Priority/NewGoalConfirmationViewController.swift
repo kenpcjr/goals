@@ -22,8 +22,8 @@ class NewGoalConfirmationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(dataStore.userContainer[0].tempGoal?.name)
-        print(dataStore.userContainer[0].tempGoal?.giveUpItem?.name)
+//        print(dataStore.userContainer[0].tempGoal?.name)
+//        print(dataStore.userContainer[0].tempGoal?.giveUpItem?.name)
         
         if let goal = dataStore.userContainer[0].tempGoal, giveItem = dataStore.userContainer[0].tempGoal!.giveUpItem {
             
@@ -33,8 +33,8 @@ class NewGoalConfirmationViewController: UIViewController {
             newProgressMonitor.user = dataStore.userContainer[0]
             self.progressMonitor = newProgressMonitor
             
-            print(dataStore.userContainer[0].tempGoal?.name)
-            print(dataStore.userContainer[0].tempGoal?.giveUpItem?.name)
+//            print(dataStore.userContainer[0].tempGoal?.name)
+//            print(dataStore.userContainer[0].tempGoal?.giveUpItem?.name)
             
             
             let backNav = UIBarButtonItem()

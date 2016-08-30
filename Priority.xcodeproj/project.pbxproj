@@ -309,7 +309,7 @@
 				TargetAttributes = {
 					4F99965A1D46F846009C5A99 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = SBQJQSJKE9;
+						DevelopmentTeam = 955825D98U;
 					};
 				};
 			};
@@ -563,10 +563,12 @@
 			baseConfigurationReference = 1A2E3B44046582E4B57F631D /* Pods-Priority.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Priority/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kencooke.Priority;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kennethcooke.Priority;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "04eea5d6-2ef5-4774-922c-39fffec11aac";
 			};
 			name = Debug;
 		};
@@ -575,10 +577,12 @@
 			baseConfigurationReference = 8688B14306D42DE78BFE0CE6 /* Pods-Priority.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Kenneth Cooke (955825D98U)";
 				INFOPLIST_FILE = Priority/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kencooke.Priority;
+				PRODUCT_BUNDLE_IDENTIFIER = com.kennethcooke.Priority;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "e2491432-eb68-4580-a7a5-16431e42b871";
 			};
 			name = Release;
 		};

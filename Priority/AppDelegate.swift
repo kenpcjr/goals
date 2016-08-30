@@ -29,13 +29,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let goal = goal as! ProgressMonitor
             
-            print(goal.goal?.name)
+//            print(goal.goal?.name)
             
         }
         
         if dataStore.userContainer[0].goalInProgress != nil {
             
-            print("appDelegate sees a goal")
+//            print("appDelegate sees a goal")
             
             let goalStatusViewController = storyboard.instantiateViewControllerWithIdentifier("goalStatusNav")
 

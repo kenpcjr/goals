@@ -57,7 +57,7 @@ class ProgressMonitor: NSManagedObject {
             
             let daysToGo = Double(cost) / (Double(giveUpItem.cost!) * Double(giveUpItem.frequency!))
             
-            print("cost: \(cost), giveUpCost:\(giveUpItem.cost!), giveUpItemFrequency \(giveUpItem.frequency!) = Days to go: \(daysToGo)")
+//            print("cost: \(cost), giveUpCost:\(giveUpItem.cost!), giveUpItemFrequency \(giveUpItem.frequency!) = Days to go: \(daysToGo)")
             
             return ceil(daysToGo)
             

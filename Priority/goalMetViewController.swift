@@ -70,7 +70,7 @@ class goalMetViewController: UIViewController {
         
         let initialCompletedCount = dataStore.userContainer[0].goalsComplete?.count
         
-        print(initialCompletedCount)
+//        print(initialCompletedCount)
         
         let currentProgressMonitor = dataStore.userContainer[0].goalInProgress
         

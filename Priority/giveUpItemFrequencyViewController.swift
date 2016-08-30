@@ -92,13 +92,13 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
         
         if self.frequencyPicker.selectedRowInComponent(1) == 1 {
             
-            print("before division \(frequencyNumber)")
+//            print("before division \(frequencyNumber)")
             
             let frequencyDecimalAsALargeNumber = (Double(frequencyNumber)! / 7.0) * 10000
             
             dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = frequencyDecimalAsALargeNumber
             
-            print("manual division: \(frequencyDecimalAsALargeNumber)")
+//            print("manual division: \(frequencyDecimalAsALargeNumber)")
             
         } else {
             
@@ -107,7 +107,7 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
         }
         
         
-        print("The number being saved is \(dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency)")
+//        print("The number being saved is \(dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency)")
         
     }
 }

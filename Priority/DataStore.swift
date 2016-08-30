@@ -34,7 +34,7 @@ class DataStore {
             
         } catch {
             
-            print("Fetch Error")
+//            print("Fetch Error")
             
         }
         

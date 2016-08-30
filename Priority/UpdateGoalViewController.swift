@@ -25,14 +25,8 @@ class UpdateGoalViewController: UIViewController {
         
         guard let goalCost = dataStore.userContainer[0].goalInProgress?.goal?.cost, giveUpCost = dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost else { return }
         
-        print(goalCost)
-        print(giveUpCost)
-        
         let goalCostWithTwoDecimals = String(format: "%.2f", Double(goalCost))
         let giveUpCostWithTwoDecimals = String(format: "%.2f", Double(giveUpCost))
-        
-        print(goalCostWithTwoDecimals)
-        print(giveUpCostWithTwoDecimals)
         
         self.currentGoalCostTextField.text = "$\(goalCostWithTwoDecimals)"
         
@@ -50,27 +44,7 @@ class UpdateGoalViewController: UIViewController {
     
     @IBAction func updateTapped(sender: AnyObject) {
         
-        let newGoalCostMinusDollar = self.currentGoalCostTextField.text?.stringByReplacingOccurrencesOfString("$", withString: "")
-        
-        let newCleanGoalCost = newGoalCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
-        
-        if let newGoalCost = newCleanGoalCost {
-            
-            dataStore.userContainer[0].goalInProgress?.goal?.cost = Double(newGoalCost)
-            
-        }
-        
-        
-        let newItemCostMinusDollar = self.currentGiveUpItemCost.text?.stringByReplacingOccurrencesOfString("$", withString: "")
-        
-        let newCleanItemCost = newItemCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
-        
-        if let newItemCost = newCleanItemCost {
-            
-            
-            dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost = Double(newItemCost)
-            
-        }
+        formatAndAssignUpdates()
         
         dataStore.saveContext()
         
@@ -95,6 +69,33 @@ class UpdateGoalViewController: UIViewController {
         exisitngGoalAlert.addAction(UIAlertAction(title: "Change Goal", style: .Destructive, handler: nil))
         
         self.presentViewController(exisitngGoalAlert, animated: true, completion: nil)
+        
+    }
+    
+    func formatAndAssignUpdates() {
+        
+        let newGoalCostMinusDollar = self.currentGoalCostTextField.text?.stringByReplacingOccurrencesOfString("$", withString: "")
+        
+        let newCleanGoalCost = newGoalCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
+        
+        if let newGoalCost = newCleanGoalCost {
+            
+            dataStore.userContainer[0].goalInProgress?.goal?.cost = Double(newGoalCost)
+            
+        }
+        
+        
+        let newItemCostMinusDollar = self.currentGiveUpItemCost.text?.stringByReplacingOccurrencesOfString("$", withString: "")
+        
+        let newCleanItemCost = newItemCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
+        
+        if let newItemCost = newCleanItemCost {
+            
+            
+            dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost = Double(newItemCost)
+            
+        }
+        
         
     }
     

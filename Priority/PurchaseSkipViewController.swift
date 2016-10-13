@@ -29,7 +29,7 @@ class PurchaseSkipViewController: UIViewController {
             
         }
         
-        if let currentSavings = monitor?.currentSavingsTotal, itemCost = monitor?.giveUpItem!.cost {
+        if let currentSavings = monitor?.currentSavingsTotal, let itemCost = monitor?.giveUpItem!.cost {
             
             let potentialSkipTotal = currentSavings + Double(itemCost)
             
@@ -40,26 +40,26 @@ class PurchaseSkipViewController: UIViewController {
         }
     }
     
-    @IBAction func skipTapped(sender: AnyObject) {
+    @IBAction func skipTapped(_ sender: AnyObject) {
         
         var sacrifices = Int((dataStore.userContainer[0].goalInProgress?.numberOfSacrifices)!)
         
         sacrifices += 1
         
-        dataStore.userContainer[0].goalInProgress?.numberOfSacrifices = sacrifices
+        dataStore.userContainer[0].goalInProgress?.numberOfSacrifices = sacrifices as NSNumber?
         
-        dataStore.userContainer[0].goalInProgress?.mostRecentSacrifice = NSDate.init()
+        dataStore.userContainer[0].goalInProgress?.mostRecentSacrifice = Date.init()
         
         dataStore.saveContext()
         dataStore.fetchData()
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
-    @IBAction func cancelTapped(sender: AnyObject) {
+    @IBAction func cancelTapped(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
 }

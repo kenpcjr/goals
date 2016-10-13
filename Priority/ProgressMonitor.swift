@@ -16,7 +16,7 @@ class ProgressMonitor: NSManagedObject {
     
     var currentSavingsTotal: Double {
         
-        guard let giveUpItem = self.giveUpItem, sacrifices = numberOfSacrifices else {return 0}
+        guard let giveUpItem = self.giveUpItem, let sacrifices = numberOfSacrifices else {return 0}
         
         
         return Double(sacrifices) * Double(giveUpItem.cost!)
@@ -25,7 +25,7 @@ class ProgressMonitor: NSManagedObject {
     
     var isGoalAcheived: Bool {
         
-        guard let goal = self.goal, cost = goal.cost else {return false}
+        guard let goal = self.goal, let cost = goal.cost else {return false}
         
         return self.currentSavingsTotal >= Double(cost)
         
@@ -33,7 +33,7 @@ class ProgressMonitor: NSManagedObject {
     
     var dollarsToGoal: Double? {
         
-        guard let goal = self.goal, cost = goal.cost else {return nil}
+        guard let goal = self.goal, let cost = goal.cost else {return nil}
         
         return Double(cost) - self.currentSavingsTotal
         
@@ -42,7 +42,7 @@ class ProgressMonitor: NSManagedObject {
     var initialDaysToGoal: Double? {
         
         
-        guard let goal = self.goal, giveUpItem = self.giveUpItem, cost = goal.cost else { return nil }
+        guard let goal = self.goal, let giveUpItem = self.giveUpItem, let cost = goal.cost else { return nil }
         
         if Double(giveUpItem.frequency!) > 30 {
             
@@ -69,7 +69,7 @@ class ProgressMonitor: NSManagedObject {
     
     var sacrificesToGoal: Int? {
         
-        guard let item = giveUpItem, dollarsToGoal = self.dollarsToGoal else {return nil}
+        guard let item = giveUpItem, let dollarsToGoal = self.dollarsToGoal else {return nil}
         
         return Int(ceil(dollarsToGoal / Double(item.cost!)))
         

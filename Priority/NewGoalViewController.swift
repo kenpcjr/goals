@@ -24,16 +24,16 @@ class NewGoalViewController: UIViewController {
         backNav.title = ""
         navigationItem.backBarButtonItem = backNav
         
-        self.exploreButton.enabled = false
+        self.exploreButton.isEnabled = false
         
         self.hideKeyboardWhenTappedAround()
         
         
     }
     
-    @IBAction func ExploreTapped(sender: AnyObject) {
+    @IBAction func ExploreTapped(_ sender: AnyObject) {
         
-        var goalNameProper = self.GoalNameTextField.text!.lowercaseString
+        var goalNameProper = self.GoalNameTextField.text!.lowercased()
         
         goalNameProper.editTextForStorage()
         
@@ -41,27 +41,27 @@ class NewGoalViewController: UIViewController {
         
     }
     
-    @IBAction func goalNameEditing(sender: AnyObject) {
+    @IBAction func goalNameEditing(_ sender: AnyObject) {
         
         if LanguageHandling.validateItemName(self.GoalNameTextField) {
             
-            self.exploreButton.enabled = true
+            self.exploreButton.isEnabled = true
             
         } else {
             
-            self.exploreButton.enabled = false
+            self.exploreButton.isEnabled = false
             
         }
         
         
     }
     
-    func setUpTempGoal(goalName: String) {
+    func setUpTempGoal(_ goalName: String) {
         
-        let tempGoal = NSEntityDescription.insertNewObjectForEntityForName("Goal", inManagedObjectContext: dataStore.managedObjectContext) as! Goal
+        let tempGoal = NSEntityDescription.insertNewObject(forEntityName: "Goal", into: dataStore.managedObjectContext) as! Goal
         dataStore.userContainer[0].tempGoal = tempGoal
         dataStore.userContainer[0].tempGoal?.completed = 0
-        dataStore.userContainer[0].tempGoal?.startDate = NSDate()
+        dataStore.userContainer[0].tempGoal?.startDate = Date()
         
         dataStore.userContainer[0].tempGoal?.name = goalName
         

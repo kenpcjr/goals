@@ -23,7 +23,7 @@ class UpdateGoalViewController: UIViewController {
         
         self.hideKeyboardWhenTappedAround()
         
-        guard let goalCost = dataStore.userContainer[0].goalInProgress?.goal?.cost, giveUpCost = dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost else { return }
+        guard let goalCost = dataStore.userContainer[0].goalInProgress?.goal?.cost, let giveUpCost = dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost else { return }
         
         print(goalCost)
         print(giveUpCost)
@@ -41,60 +41,60 @@ class UpdateGoalViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
         presentModificationAlert()
     }
     
     
-    @IBAction func updateTapped(sender: AnyObject) {
+    @IBAction func updateTapped(_ sender: AnyObject) {
         
-        let newGoalCostMinusDollar = self.currentGoalCostTextField.text?.stringByReplacingOccurrencesOfString("$", withString: "")
+        let newGoalCostMinusDollar = self.currentGoalCostTextField.text?.replacingOccurrences(of: "$", with: "")
         
-        let newCleanGoalCost = newGoalCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
+        let newCleanGoalCost = newGoalCostMinusDollar?.replacingOccurrences(of: ",", with: "")
         
         if let newGoalCost = newCleanGoalCost {
             
-            dataStore.userContainer[0].goalInProgress?.goal?.cost = Double(newGoalCost)
+            dataStore.userContainer[0].goalInProgress?.goal?.cost = Double(newGoalCost) as NSNumber?
             
         }
         
         
-        let newItemCostMinusDollar = self.currentGiveUpItemCost.text?.stringByReplacingOccurrencesOfString("$", withString: "")
+        let newItemCostMinusDollar = self.currentGiveUpItemCost.text?.replacingOccurrences(of: "$", with: "")
         
-        let newCleanItemCost = newItemCostMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
+        let newCleanItemCost = newItemCostMinusDollar?.replacingOccurrences(of: ",", with: "")
         
         if let newItemCost = newCleanItemCost {
             
             
-            dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost = Double(newItemCost)
+            dataStore.userContainer[0].goalInProgress?.giveUpItem?.cost = Double(newItemCost) as NSNumber?
             
         }
         
         dataStore.saveContext()
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func cancelTapped(sender: AnyObject) {
+    @IBAction func cancelTapped(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
         
     }
     
     func presentModificationAlert() {
         
-        let exisitngGoalAlert = UIAlertController.init(title: "Careful!", message: "Any changes you make here will affect all other stats for the current goal", preferredStyle: .Alert)
+        let exisitngGoalAlert = UIAlertController.init(title: "Careful!", message: "Any changes you make here will affect all other stats for the current goal", preferredStyle: .alert)
         
-        exisitngGoalAlert.addAction(UIAlertAction.init(title: "Cancel", style: .Cancel, handler: { (Alert) in
-            self.dismissViewControllerAnimated(true, completion: nil)
+        exisitngGoalAlert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (Alert) in
+            self.dismiss(animated: true, completion: nil)
         }))
         
-        exisitngGoalAlert.addAction(UIAlertAction(title: "Change Goal", style: .Destructive, handler: nil))
+        exisitngGoalAlert.addAction(UIAlertAction(title: "Change Goal", style: .destructive, handler: nil))
         
-        self.presentViewController(exisitngGoalAlert, animated: true, completion: nil)
+        self.present(exisitngGoalAlert, animated: true, completion: nil)
         
     }
     

@@ -34,18 +34,18 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.detailCategories.count
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
         
-        cell.textLabel?.text = self.detailCategories[indexPath.row]
-        cell.detailTextLabel?.text = self.detailStats[indexPath.row]
+        cell.textLabel?.text = self.detailCategories[(indexPath as NSIndexPath).row]
+        cell.detailTextLabel?.text = self.detailStats[(indexPath as NSIndexPath).row]
         
         return cell
     }
@@ -56,10 +56,10 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         // find a way to substitute (else) nil.
         
         let goalName = self.progressToDisplay?.goal?.name ?? "No Current goal"
-        let startDate = self.progressToDisplay?.goal?.startDate ?? NSDate.distantPast()
+        let startDate = self.progressToDisplay?.goal?.startDate ?? Date.distantPast
         let goalCost = self.progressToDisplay?.goal?.cost ?? 0
         let sacrificeName = self.progressToDisplay?.giveUpItem?.name ?? "No Skip Item set"
-        let lastSacrifice = self.progressToDisplay?.mostRecentSacrifice ?? NSDate.distantPast()
+        let lastSacrifice = self.progressToDisplay?.mostRecentSacrifice ?? Date.distantPast
         let sacrificeFrequency = self.progressToDisplay?.giveUpItem?.frequency ?? 0
         let sacrificeCost = self.progressToDisplay?.giveUpItem?.cost ?? 0
         let sacrificeCount = self.progressToDisplay?.numberOfSacrifices ?? 0
@@ -71,11 +71,11 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         let goalCostWithTwoDecimals = String(format: "%.2f", Double(goalCost))
         let sacrificeCostWithTwoDecimals = String(format: "%.2f", Double(sacrificeCost))
         
-        let dateFormat = NSDateFormatter()
-        dateFormat.dateStyle = .MediumStyle
+        let dateFormat = DateFormatter()
+        dateFormat.dateStyle = .medium
         
-        let formattedStartDate = dateFormat.stringFromDate(startDate)
-        let formattedLastSacrifice = dateFormat.stringFromDate(lastSacrifice)
+        let formattedStartDate = dateFormat.string(from: startDate)
+        let formattedLastSacrifice = dateFormat.string(from: lastSacrifice)
         let savingsTotalWithTwoDecimals = String(format: "%.2f", Double(savingsTotal))
         let dollarsToGoalWithTwoDecimals = String(format: "%.2f", Double(dollarsToGoal))
         
@@ -137,9 +137,9 @@ class GoalDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-    @IBAction func doneTapped(sender: AnyObject) {
+    @IBAction func doneTapped(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     

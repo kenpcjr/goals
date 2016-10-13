@@ -25,9 +25,9 @@ class NewGoalConfirmationViewController: UIViewController {
         print(dataStore.userContainer[0].tempGoal?.name)
         print(dataStore.userContainer[0].tempGoal?.giveUpItem?.name)
         
-        if let goal = dataStore.userContainer[0].tempGoal, giveItem = dataStore.userContainer[0].tempGoal!.giveUpItem {
+        if let goal = dataStore.userContainer[0].tempGoal, let giveItem = dataStore.userContainer[0].tempGoal!.giveUpItem {
             
-            let newProgressMonitor = NSEntityDescription.insertNewObjectForEntityForName("ProgressMonitor", inManagedObjectContext: dataStore.managedObjectContext) as! ProgressMonitor
+            let newProgressMonitor = NSEntityDescription.insertNewObject(forEntityName: "ProgressMonitor", into: dataStore.managedObjectContext) as! ProgressMonitor
             newProgressMonitor.goal = goal
             newProgressMonitor.giveUpItem = giveItem
             newProgressMonitor.user = dataStore.userContainer[0]
@@ -44,7 +44,7 @@ class NewGoalConfirmationViewController: UIViewController {
             
         }
         
-        if let goalName = dataStore.userContainer[0].tempGoal?.name, giveUpItem = dataStore.userContainer[0].tempGoal?.giveUpItem?.name, daysToGoal = self.progressMonitor?.initialDaysToGoal {
+        if let goalName = dataStore.userContainer[0].tempGoal?.name, let giveUpItem = dataStore.userContainer[0].tempGoal?.giveUpItem?.name, let daysToGoal = self.progressMonitor?.initialDaysToGoal {
             
             if daysToGoal >= 364 {
                 
@@ -64,7 +64,7 @@ class NewGoalConfirmationViewController: UIViewController {
         }
     }
     
-    @IBAction func tryTapped(sender: AnyObject) {
+    @IBAction func tryTapped(_ sender: AnyObject) {
         
         self.dataStore.userContainer[0].goalInProgress = dataStore.userContainer[0].tempGoal?.progressMonitor
         

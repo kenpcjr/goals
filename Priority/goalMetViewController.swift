@@ -23,16 +23,16 @@ class goalMetViewController: UIViewController {
         
         let confettiView = SAConfettiView(frame: self.view.bounds)
         self.view.addSubview(confettiView)
-        self.view.sendSubviewToBack(confettiView)
-        self.view.sendSubviewToBack(self.backgroundImage)
+        self.view.sendSubview(toBack: confettiView)
+        self.view.sendSubview(toBack: self.backgroundImage)
         
         
-        confettiView.colors = [UIColor.blackColor(), UIColor.grayColor(), UIColor.darkGrayColor()]
+        confettiView.colors = [UIColor.black, UIColor.gray, UIColor.darkGray]
         
         
         confettiView.startConfetti()
         
-        self.dataStore.userContainer[0].goalInProgress?.goal?.endDate = NSDate.init()
+        self.dataStore.userContainer[0].goalInProgress?.goal?.endDate = Date.init()
         
         self.goalNameForShare = dataStore.userContainer[0].goalInProgress?.goal?.name
         
@@ -43,24 +43,24 @@ class goalMetViewController: UIViewController {
     }
     
     
-    @IBAction func shareTapped(sender: AnyObject) {
+    @IBAction func shareTapped(_ sender: AnyObject) {
         
-        if let goal = self.goalNameForShare, sacrifice = self.skipNameForShare {
+        if let goal = self.goalNameForShare, let sacrifice = self.skipNameForShare {
             
             
             let shareText = "I just hit my goal with #PriorityApp! I'm getting a \(goal) by skipping \(sacrifice)."
             
             let activityVC = UIActivityViewController.init(activityItems: [shareText], applicationActivities: nil)
             
-            activityVC.excludedActivityTypes = [UIActivityTypePostToVimeo,
-                                                UIActivityTypeAirDrop,
-                                                UIActivityTypePrint,
-                                                UIActivityTypeOpenInIBooks,
-                                                UIActivityTypePostToFlickr,
-                                                UIActivityTypeAddToReadingList,
-                                                UIActivityTypeSaveToCameraRoll]
+            activityVC.excludedActivityTypes = [UIActivityType.postToVimeo,
+                                                UIActivityType.airDrop,
+                                                UIActivityType.print,
+                                                UIActivityType.openInIBooks,
+                                                UIActivityType.postToFlickr,
+                                                UIActivityType.addToReadingList,
+                                                UIActivityType.saveToCameraRoll]
             
-            self.presentViewController(activityVC, animated: true, completion: nil)
+            self.present(activityVC, animated: true, completion: nil)
             
         }
         
@@ -78,7 +78,7 @@ class goalMetViewController: UIViewController {
         
         if let currentProgressMonitor = currentProgressMonitor {
             
-            completedGoalMutableCopy.addObject(currentProgressMonitor)
+            completedGoalMutableCopy.add(currentProgressMonitor)
             
             dataStore.userContainer[0].goalsComplete = completedGoalMutableCopy as NSOrderedSet
             
@@ -87,15 +87,17 @@ class goalMetViewController: UIViewController {
         
         let currentCompletedCount = dataStore.userContainer[0].goalsComplete?.count
         
-        if initialCompletedCount < currentCompletedCount {
+        if let initialCompletedCount = initialCompletedCount, let currentCompletedCount = currentCompletedCount {
             
-            dataStore.userContainer[0].goalInProgress = nil
-            
-            dataStore.saveContext()
-            dataStore.fetchData()
+            if initialCompletedCount < currentCompletedCount {
+                
+                dataStore.userContainer[0].goalInProgress = nil
+                
+                dataStore.saveContext()
+                dataStore.fetchData()
+                
+            }
             
         }
-        
     }
-    
 }

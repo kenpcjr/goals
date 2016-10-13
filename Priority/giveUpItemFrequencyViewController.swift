@@ -41,14 +41,14 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
     }
     
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         
         return 2
         
     }
     
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         if component == 0 {
             
@@ -65,7 +65,7 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
         
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         if component == 0 {
             
@@ -85,24 +85,24 @@ class giveUpItemFrequencyViewController: UIViewController, UIPickerViewDelegate,
     
     
     
-    @IBAction func continueTapped(sender: AnyObject) {
+    @IBAction func continueTapped(_ sender: AnyObject) {
         
         
-        let frequencyNumber = self.pickerNumbers[self.frequencyPicker.selectedRowInComponent(0)]
+        let frequencyNumber = self.pickerNumbers[self.frequencyPicker.selectedRow(inComponent: 0)]
         
-        if self.frequencyPicker.selectedRowInComponent(1) == 1 {
+        if self.frequencyPicker.selectedRow(inComponent: 1) == 1 {
             
             print("before division \(frequencyNumber)")
             
             let frequencyDecimalAsALargeNumber = (Double(frequencyNumber)! / 7.0) * 10000
             
-            dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = frequencyDecimalAsALargeNumber
+            dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = frequencyDecimalAsALargeNumber as NSNumber?
             
             print("manual division: \(frequencyDecimalAsALargeNumber)")
             
         } else {
             
-            dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(frequencyNumber)
+            dataStore.userContainer[0].tempGoal?.giveUpItem?.frequency = Int(frequencyNumber) as NSNumber?
             
         }
         

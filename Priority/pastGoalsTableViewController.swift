@@ -36,7 +36,7 @@ class pastGoalsTableViewController: UIViewController, UITableViewDelegate, UITab
     // MARK: - Table view data source
     
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         
         if let goalsComplete = dataStore.userContainer[0].goalsComplete {
@@ -50,12 +50,12 @@ class pastGoalsTableViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     
-     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+     let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
         
         if let goalsComplete = dataStore.userContainer[0].goalsComplete {
             
-            let currentGoal = goalsComplete[indexPath.row] as! ProgressMonitor
+            let currentGoal = goalsComplete[(indexPath as NSIndexPath).row] as! ProgressMonitor
         
         cell.textLabel?.text = currentGoal.goal?.name
             
@@ -81,13 +81,13 @@ class pastGoalsTableViewController: UIViewController, UITableViewDelegate, UITab
     
      
     
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        let destinationViewController = segue.destinationViewController as! GoalDetailViewController
+        let destinationViewController = segue.destination as! GoalDetailViewController
         
-        let index = tableView.indexPathForSelectedRow?.row
+        let index = (tableView.indexPathForSelectedRow as NSIndexPath?)?.row
         
-        if let monitors = dataStore.userContainer[0].goalsComplete, index = index {
+        if let monitors = dataStore.userContainer[0].goalsComplete, let index = index {
             
             let progressToPass = monitors[index] as! ProgressMonitor
             
@@ -99,9 +99,9 @@ class pastGoalsTableViewController: UIViewController, UITableViewDelegate, UITab
     
      }
     
-    @IBAction func doneTapped(sender: AnyObject) {
+    @IBAction func doneTapped(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     

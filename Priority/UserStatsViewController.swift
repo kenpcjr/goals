@@ -45,9 +45,9 @@ class UserStatsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func doneTapped(sender: AnyObject) {
+    @IBAction func doneTapped(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
 

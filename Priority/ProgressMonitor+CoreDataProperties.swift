@@ -14,7 +14,7 @@ import CoreData
 
 extension ProgressMonitor {
 
-    @NSManaged var mostRecentSacrifice: NSDate?
+    @NSManaged var mostRecentSacrifice: Date?
     @NSManaged var numberOfSacrifices: NSNumber?
     @NSManaged var giveUpItem: GiveUpItem?
     @NSManaged var goal: Goal?

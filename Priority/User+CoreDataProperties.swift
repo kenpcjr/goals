@@ -14,7 +14,7 @@ import CoreData
 
 extension User {
 
-    @NSManaged var mostRecentSacrifice: NSDate?
+    @NSManaged var mostRecentSacrifice: Date?
     @NSManaged var goalInProgress: ProgressMonitor?
     @NSManaged var goalsComplete: NSOrderedSet?
 

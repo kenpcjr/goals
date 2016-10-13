@@ -16,9 +16,9 @@ extension Goal {
 
     @NSManaged var completed: NSNumber?
     @NSManaged var cost: NSNumber?
-    @NSManaged var endDate: NSDate?
+    @NSManaged var endDate: Date?
     @NSManaged var name: String?
-    @NSManaged var startDate: NSDate?
+    @NSManaged var startDate: Date?
     @NSManaged var giveUpItem: GiveUpItem?
     @NSManaged var progressMonitor: ProgressMonitor?
 

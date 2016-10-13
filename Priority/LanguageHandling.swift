@@ -11,10 +11,12 @@ import UIKit
 
 class LanguageHandling {
     
-    class func validateItemName(textField: UITextField) -> Bool {
+    class func validateItemName(_ textField: UITextField) -> Bool {
         
-        let hasContent = textField.text?.characters.count > 0
-        let isThreeWordsOrLess = textField.text?.componentsSeparatedByString(" ").count <= 3
+        guard let text = textField.text else {return false}
+        
+        let hasContent = text.characters.count > 0
+        let isThreeWordsOrLess = text.components(separatedBy: " ").count <= 3
         
         if hasContent && isThreeWordsOrLess {
             
@@ -26,7 +28,7 @@ class LanguageHandling {
         
     }
     
-    class func checkForValidPrice(textField: UITextField) -> Bool {
+    class func checkForValidPrice(_ textField: UITextField) -> Bool {
         
         if textField.text == "$0.00" {
             
@@ -57,7 +59,7 @@ extension String {
         
         if self.hasPrefix("a ") == true {
             
-            self = self.stringByReplacingOccurrencesOfString("a ", withString: "")
+            self = self.replacingOccurrences(of: "a ", with: "")
             
         }
         
@@ -65,7 +67,7 @@ extension String {
             
             while self.hasSuffix(" ") {
                 
-                self.removeAtIndex(self.endIndex.predecessor())
+                self.remove(at: self.characters.index(before: self.endIndex))
                 
             }
             
@@ -73,12 +75,12 @@ extension String {
         
         if self.hasPrefix("my ") {
             
-            self = self.stringByReplacingOccurrencesOfString("my ", withString: "")
+            self = self.replacingOccurrences(of: "my ", with: "")
             
         }
         
         
-        self = self.capitalizedString
+        self = self.capitalized
         
     }
 

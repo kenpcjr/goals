@@ -22,7 +22,7 @@ class GoalStatusViewController: UIViewController {
 
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         
         print("fetched")
         
@@ -33,9 +33,9 @@ class GoalStatusViewController: UIViewController {
         let storesProgressMonitor = dataStore.userContainer[0].goalInProgress
         
         if let savings = storesProgressMonitor?.currentSavingsTotal,
-            numberOfItems = storesProgressMonitor?.sacrificesToGoal,
-            giveUpName = storesProgressMonitor?.giveUpItem!.name,
-            goalName = storesProgressMonitor?.goal!.name {
+            let numberOfItems = storesProgressMonitor?.sacrificesToGoal,
+            let giveUpName = storesProgressMonitor?.giveUpItem!.name,
+            let goalName = storesProgressMonitor?.goal!.name {
             
             var giveUpNameCopy = giveUpName
             
@@ -64,7 +64,7 @@ class GoalStatusViewController: UIViewController {
         
         if dataStore.userContainer[0].goalInProgress?.isGoalAcheived == true {
             
-            self.performSegueWithIdentifier("goalMet", sender: nil)
+            self.performSegue(withIdentifier: "goalMet", sender: nil)
         }
         
     }

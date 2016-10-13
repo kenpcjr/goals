@@ -42,27 +42,27 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return settingsLabels.count
         
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("basicCell", forIndexPath: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "basicCell", for: indexPath)
         
-        cell.textLabel?.text = settingsLabels[indexPath.row]
+        cell.textLabel?.text = settingsLabels[(indexPath as NSIndexPath).row]
         
-        cell.imageView?.image = images[indexPath.row]
+        cell.imageView?.image = images[(indexPath as NSIndexPath).row]
         
         return cell
         
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let cellTapped = self.settingsLabels[indexPath.row]
+        let cellTapped = self.settingsLabels[(indexPath as NSIndexPath).row]
         
         print(cellTapped)
         
@@ -70,23 +70,23 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
         case "Modify Current Goal":
             
-            self.performSegueWithIdentifier("adjustGoal", sender: nil)
+            self.performSegue(withIdentifier: "adjustGoal", sender: nil)
             
         case "User Stats":
             
-            self.performSegueWithIdentifier("userStats", sender: nil)
+            self.performSegue(withIdentifier: "userStats", sender: nil)
             
         case "Create New Goal":
             
-            self.performSegueWithIdentifier("newGoal", sender: nil)
+            self.performSegue(withIdentifier: "newGoal", sender: nil)
             
         case "View Completed Goals":
             
-            self.performSegueWithIdentifier("pastGoals", sender: nil)
+            self.performSegue(withIdentifier: "pastGoals", sender: nil)
             
         case "Current Goal Details":
             
-            self.performSegueWithIdentifier("currentGoalDetails", sender: nil)
+            self.performSegue(withIdentifier: "currentGoalDetails", sender: nil)
             
         case "Share Goal Status":
             
@@ -94,7 +94,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
         case "About Priority":
             
-            self.performSegueWithIdentifier("showAbout", sender: nil)
+            self.performSegue(withIdentifier: "showAbout", sender: nil)
             
         default:
             
@@ -104,11 +104,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "currentGoalDetails" {
             
-            let destinationVC = segue.destinationViewController as! GoalDetailViewController
+            let destinationVC = segue.destination as! GoalDetailViewController
             
             destinationVC.progressToDisplay = self.dataStore.userContainer[0].goalInProgress
             
@@ -118,16 +118,16 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     
-    @IBAction func doneTapped(sender: AnyObject) {
+    @IBAction func doneTapped(_ sender: AnyObject) {
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
         
     }
     
     
     func shareProgress() {
         
-        if let goal = dataStore.userContainer[0].goalInProgress?.goal?.name, sacrifice = dataStore.userContainer[0].goalInProgress?.giveUpItem?.name, savings = dataStore.userContainer[0].goalInProgress?.currentSavingsTotal {
+        if let goal = dataStore.userContainer[0].goalInProgress?.goal?.name, let sacrifice = dataStore.userContainer[0].goalInProgress?.giveUpItem?.name, let savings = dataStore.userContainer[0].goalInProgress?.currentSavingsTotal {
             
             let savingsWithTwoDecimals = String(format: "%.2f", savings)
             
@@ -135,15 +135,15 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             
             let activityVC = UIActivityViewController.init(activityItems: [shareText], applicationActivities: nil)
             
-            activityVC.excludedActivityTypes = [UIActivityTypePostToVimeo,
-                                                UIActivityTypeAirDrop,
-                                                UIActivityTypePrint,
-                                                UIActivityTypeOpenInIBooks,
-                                                UIActivityTypePostToFlickr,
-                                                UIActivityTypeAddToReadingList,
-                                                UIActivityTypeSaveToCameraRoll]
+            activityVC.excludedActivityTypes = [UIActivityType.postToVimeo,
+                                                UIActivityType.airDrop,
+                                                UIActivityType.print,
+                                                UIActivityType.openInIBooks,
+                                                UIActivityType.postToFlickr,
+                                                UIActivityType.addToReadingList,
+                                                UIActivityType.saveToCameraRoll]
             
-            self.presentViewController(activityVC, animated: true, completion: nil)
+            self.present(activityVC, animated: true, completion: nil)
             
         }
         

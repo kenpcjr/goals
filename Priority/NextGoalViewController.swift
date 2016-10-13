@@ -23,14 +23,14 @@ class NextGoalViewController: UIViewController {
         
         if dataStore.userContainer[0].goalInProgress != nil {
         
-        let exisitngGoalAlert = UIAlertController.init(title: "Careful!", message: "It looks like you already have a goal in progress. If you create a new goal, all data for your current goal will be lost. Are you sure you want to replace your goal?", preferredStyle: .Alert)
+        let exisitngGoalAlert = UIAlertController.init(title: "Careful!", message: "It looks like you already have a goal in progress. If you create a new goal, all data for your current goal will be lost. Are you sure you want to replace your goal?", preferredStyle: .alert)
             
-            exisitngGoalAlert.addAction(UIAlertAction.init(title: "Cancel", style: .Cancel, handler: { (Alert) in
-                self.dismissViewControllerAnimated(true, completion: nil)
+            exisitngGoalAlert.addAction(UIAlertAction.init(title: "Cancel", style: .cancel, handler: { (Alert) in
+                self.dismiss(animated: true, completion: nil)
             }))
                 
-            exisitngGoalAlert.addAction(UIAlertAction(title: "Replace Goal", style: .Destructive, handler: nil))
-            self.presentViewController(exisitngGoalAlert, animated: true, completion: nil)
+            exisitngGoalAlert.addAction(UIAlertAction(title: "Replace Goal", style: .destructive, handler: nil))
+            self.present(exisitngGoalAlert, animated: true, completion: nil)
            
         
             

@@ -19,7 +19,7 @@ class GiveUpItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.exploreButton.enabled = false
+        self.exploreButton.isEnabled = false
         self.hideKeyboardWhenTappedAround()
         
         
@@ -30,15 +30,15 @@ class GiveUpItemViewController: UIViewController {
         
     }
     
-    @IBAction func giveUpItemEditing(sender: AnyObject) {
+    @IBAction func giveUpItemEditing(_ sender: AnyObject) {
         
         if LanguageHandling.validateItemName(self.itemTextField) {
             
-            self.exploreButton.enabled = true
+            self.exploreButton.isEnabled = true
             
         } else {
             
-            self.exploreButton.enabled = false
+            self.exploreButton.isEnabled = false
             
         }
         
@@ -46,7 +46,7 @@ class GiveUpItemViewController: UIViewController {
     
  
     
-    @IBAction func exploreTapped(sender: AnyObject) {
+    @IBAction func exploreTapped(_ sender: AnyObject) {
         
         
         var giveUpNameProper = self.itemTextField.text!
@@ -59,9 +59,9 @@ class GiveUpItemViewController: UIViewController {
         
     }
     
-    func setUpNewGiveUpItem(giveUpItemName: String) {
+    func setUpNewGiveUpItem(_ giveUpItemName: String) {
         
-        let newGiveUpItem = NSEntityDescription.insertNewObjectForEntityForName("GiveUpItem", inManagedObjectContext: dataStore.managedObjectContext) as! GiveUpItem
+        let newGiveUpItem = NSEntityDescription.insertNewObject(forEntityName: "GiveUpItem", into: dataStore.managedObjectContext) as! GiveUpItem
         
         dataStore.userContainer[0].tempGoal?.giveUpItem = newGiveUpItem
         

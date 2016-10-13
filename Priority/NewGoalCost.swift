@@ -21,7 +21,7 @@ class NewGoalCost: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.continueButton.enabled = false
+        self.continueButton.isEnabled = false
         self.hideKeyboardWhenTappedAround()
         
         
@@ -32,26 +32,26 @@ class NewGoalCost: UIViewController {
     
     }
     
-    @IBAction func priceEditing(sender: AnyObject) {
+    @IBAction func priceEditing(_ sender: AnyObject) {
         
         if LanguageHandling.checkForValidPrice(self.goalCostTextField) {
             
-            self.continueButton.enabled = true
+            self.continueButton.isEnabled = true
             
         } else {
             
-            self.continueButton.enabled = false
+            self.continueButton.isEnabled = false
             
         }
         
     }
 
-    @IBAction func continueTapped(sender: AnyObject) {
+    @IBAction func continueTapped(_ sender: AnyObject) {
         
-        let costMinusDollar = self.goalCostTextField.text?.stringByReplacingOccurrencesOfString("$", withString: "")
-        let cleanCost = costMinusDollar?.stringByReplacingOccurrencesOfString(",", withString: "")
+        let costMinusDollar = self.goalCostTextField.text?.replacingOccurrences(of: "$", with: "")
+        let cleanCost = costMinusDollar?.replacingOccurrences(of: ",", with: "")
         
-        dataStore.userContainer[0].tempGoal?.cost = Double(cleanCost!)
+        dataStore.userContainer[0].tempGoal?.cost = Double(cleanCost!) as NSNumber?
         
         
     }
